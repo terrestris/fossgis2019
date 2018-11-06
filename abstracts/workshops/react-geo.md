@@ -25,7 +25,7 @@ Informationen:
 
 Zugehöriger Talk:
 
-  [React und OpenLayers: Vorstellung und Anwendungsbeispiel react-geo](https://github.com/terrestris/fossgis2018/blob/master/abstracts/talks/react-plus-openlayers-vorstellung-und-anwendungsbeispiele-react-geo.md)
+  [react-geo und Co. - React Komponenten und Utilities für OpenLayers Anwendungen ](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/react-geo-und-co-react-komponenten-und-utilities-fuer-openlayers-anwendungen.md)
 
 react-geo:
 
@@ -40,5 +40,5 @@ AntDesign: http://ant.design/
 OpenLayers: http://openlayers.org/
 
 ## Status
-  * Submitted: Yes
+  * Submitted: Nein
   * Angenommen: Nein

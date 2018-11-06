@@ -1,6 +1,6 @@
 # Neuerungen im GeoServer
 
-## Referent: N.N
+## Autoren: N.N
 
 ## Abstract
 

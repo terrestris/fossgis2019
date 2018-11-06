@@ -1,4 +1,4 @@
-# Title
+# GDI mit Docker & Co. - Einführung, Überblick und Diskussion
 
 ## Autoren
 
