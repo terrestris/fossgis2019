@@ -1,4 +1,4 @@
-# Title
+# GeoServer: Live Demo-Session
 
 ## Autoren
 

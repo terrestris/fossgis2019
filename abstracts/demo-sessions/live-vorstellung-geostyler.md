@@ -1,4 +1,4 @@
-# Title
+# GeoStyler: Live Demo-Session
 
 ## Autoren
 
