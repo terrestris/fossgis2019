@@ -17,9 +17,9 @@ Des Weiteren werden wir eine GeoStyler Browser Extension vorstellen, die es einf
 
 Wir werden ansatzweise demonstrieren, wie weitere Plugins implementiert werden können um bspw. Mapbox oder QGIS Stile lesen und/oder schreiben zu können. Zusätzlich werden Möglichkeiten angerissen, wie die OpenSource Community zur Weiterentwicklung des GeoStylers und der Plugins beitragen kann.
 
-Quellcode: https://github.com/terrestris/geostyler
-NPM: https://www.npmjs.com/package/geostyler
-Webseite: https://terrestris.github.io/geostyler/
+* Quellcode: https://github.com/terrestris/geostyler
+* NPM: https://www.npmjs.com/package/geostyler
+* Webseite: https://terrestris.github.io/geostyler/
 
 ## Status
 
