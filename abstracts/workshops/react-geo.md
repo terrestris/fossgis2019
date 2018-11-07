@@ -13,8 +13,7 @@ ist derzeit eines der meistgenutzten Frameworks zur Entwicklung von
 Web-UI-Komponenten.
 
 react-geo koppelt mapping (OpenLayers) mit React UI (Ant Design) und bietet
-Tools für die Erstellung von hochmodernen, modularen WebGIS Frontends. Darüber
-hinaus bietet react-geo diverse Hilfsfunktionen beim Umgang mit Geodaten in OpenLayers.
+Tools für die Erstellung von hochmodernen, modularen WebGIS Frontends. Die micro packages @terrestris/ol-util und @terrestris/base-util bieten darüber hinaus diverse Hilfsfunktionen beim Umgang mit Geodaten in OpenLayers, die besonders in Kombination mit react-geo ihre Stärken präsentieren.
 
 Die Teilnehmer des Workshops lernen anhand einfacher Beispiele den Umgang mit
 Basis-Komponenten (Ortssuche, Maßstabsauswahl, …) und -Konzepten.
