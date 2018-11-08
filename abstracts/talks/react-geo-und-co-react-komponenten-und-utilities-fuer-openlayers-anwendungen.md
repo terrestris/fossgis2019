@@ -1,6 +1,8 @@
 # react-geo und Co.: React-Komponenten und -Utilities für OpenLayers-Anwendungen
 
-## Autoren
+## Autoren: Daniel Koch, Kai Volland & Jan Suleiman
+
+## Einreichen von: Jan Suleiman
 
 ## Abstract
 

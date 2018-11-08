@@ -1,14 +1,14 @@
 # GeoStyler: Live Demo-Session
 
-## Autoren: Daniel Koch, Jan Suleiman
+## Autoren: Jan Suleiman, Kai Volland & Daniel Koch
 
-## Einreichen von: Daniel Koch
+## Einreichen von: Jan Suleiman
 
 ## Abstract
 
 GeoStyler ist eine react-basierte OpenSource UI-Bibliothek zur Erstellung von Stileditoren für WebGIS-Anwendungen. Sein Herausstellungsmerkmal ist die Unabhängigkeit von Stilformaten, die einfach als Plugins eingehängt werden können. Somit können bspw. SLDs oder OpenLayers Stile erzeugt werden, weitere sind in Vorbereitung.
 
-Diese Live Demo-Session 
+Diese Live Demo-Session
 
 * vermittelt einen ersten Einblick in den Funktionsumfang und existierende UI-Komponenten des GeoStylers
 * zeigt Beispiele für die Einbindung in Projekte

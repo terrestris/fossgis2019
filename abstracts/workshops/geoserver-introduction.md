@@ -1,6 +1,6 @@
 # Einführung in GeoServer
 
-## Leitung: NN
+## Leitung: Daniel Koch und Marc Jansen
 
 ## Abstract
 

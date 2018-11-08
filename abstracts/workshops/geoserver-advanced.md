@@ -1,6 +1,8 @@
 # GeoServer Vertiefung
 
-## Leitung: NN
+## Leitung: Daniel Koch, Marc Jansen
+
+## Einreichen daniel Koch
 
 ## Abstract
 

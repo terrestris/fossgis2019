@@ -1,10 +1,12 @@
 # GeoStyler: ein generischer grafischer Stileditor für Geodaten
 
-## Daniel Koch, Jan Suleiman, Christian Mayer & Kai Volland
+## Autoren: Daniel Koch, Jan Suleiman, Christian Mayer & Kai Volland
+
+## Einreichen von: Jan Suleiman
 
 ## Abstract
 
-Das kartographische Stylen von Geodaten im Web ist seit Jahren ein wiederkehrendes Thema in der Geoinformatik-Welt. Es existieren verschiedenste Standards – Offizielle Standards, z. B. OGC Styled Layer Descriptor mit OGC Filter Encoding sowie Industriestandards, beispielsweise Mapbox Styles und projektbezogene Styling-Vorschriften, z. B. in QGIS oder OpenLayers.
+Das kartographische Stylen von Geodaten im Web ist seit Jahren ein wiederkehrendes Thema in der Geoinformatik-Welt. Es existieren verschiedenste Standards – Offizielle Standards, z. B. OGC Styled Layer Descriptor (SLD) mit OGC Filter Encoding (FE) sowie Industriestandards, beispielsweise Mapbox Styles und projektbezogene Styling-Vorschriften, z. B. in QGIS oder OpenLayers.
 
 Es fehlt jedoch eine interaktive webbasierte Software, um Anwender in die Lage zu versetzen die kartographische Ausgestaltung ihrer Geodaten auf einfache Weise zu erledigen. Es gibt zwar vereinzelte Lösungen für einzelne der oben genannten Standards. Eine gesamtheitliche Web-Oberfläche, um u. a. auch Styling-Vorschriften in diverse Formate zu überführen, fehlte bislang.
 

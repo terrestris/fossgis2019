@@ -1,6 +1,8 @@
 # Einführung in OpenLayers
 
-## Leitung: Marc Jansen, Christian Mayer und Andreas Hocevar?
+## Leitung: Marc Jansen, Christian Mayer & Andreas Hocevar
+
+## Einreichen von Marc Jansen
 
 ## Abstract
 

@@ -1,9 +1,10 @@
 # react-geo - mapping mit React
 
-## Leitung: NN
+## Leitung: Daniel Koch und Jan Suleiman
+
+## Einreichen von: Jan Suleiman
 
 ## Abstract
-react-geo - mapping mit React
 
 Dieser Workshop vermittelt die Grundlagen der aktuellsten Version von react-geo
 und bietet einen Einstieg in die Entwicklung eines WebGIS-Frontends mit React.
@@ -18,13 +19,13 @@ Tools für die Erstellung von hochmodernen, modularen WebGIS Frontends. Die micr
 Die Teilnehmer des Workshops lernen anhand einfacher Beispiele den Umgang mit
 Basis-Komponenten (Ortssuche, Maßstabsauswahl, …) und -Konzepten.
 
-Vorkenntnisse in JavaScript sind wünschenswert aber nicht zwingend erforderlich.
+Vorkenntnisse in JavaScript sind wünschenswert und sicherlich hilfreich, aber nicht zwingend zum nachvollziehen erforderlich.
 
 Informationen:
 
 Zugehöriger Talk:
 
-  [react-geo und Co. - React Komponenten und Utilities für OpenLayers Anwendungen ](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/react-geo-und-co-react-komponenten-und-utilities-fuer-openlayers-anwendungen.md)
+  [react-geo und Co. - React-Komponenten und -Utilities für OpenLayers Anwendungen ](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/react-geo-und-co-react-komponenten-und-utilities-fuer-openlayers-anwendungen.md)
 
 react-geo:
 
