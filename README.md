@@ -15,7 +15,7 @@ Abstract submissions:
   * [GeoStyler](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/geostyler-ein-generischer-grafischer-stileditor-fuer-geodaten.md)
   * [GeoServer](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/neuerungen-im-geoserver.md)
   * [OpenLayers](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/openlayers-stand-und-aktuelle-entwicklungen.md)
-  * [Progemis](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/progemis-ein-bedarfsgerechtes-nachhaltiges-und-mitwachsendes-gewaessermanagement-aus-opensource-gis-komponenten.md)
+  * [PROGEMIS®](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/progemis-ein-bedarfsgerechtes-nachhaltiges-und-mitwachsendes-gewaessermanagement-aus-opensource-gis-komponenten.md)
   * [react-geo](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/react-geo-und-co-react-komponenten-und-utilities-fuer-openlayers-anwendungen.md)
   * [SHOGun & QGIS](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/shogun-qgis-integration-vom-desktop-webgis-applikationen-administrieren.md)
 
