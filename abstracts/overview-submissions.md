@@ -19,4 +19,4 @@ Marc
 
 Torsten
   - Talk: SHOGun / QGIS
-  - Talk: Progemis, Einrecihung via Salim
+  - Talk: Progemis
