@@ -19,4 +19,4 @@ Marc
 
 Torsten
   - Talk: SHOGun / QGIS
-  - Talk: Progemis
+  - Talk: Progemis (reichen Koautoren ein)
