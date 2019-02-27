@@ -69,11 +69,11 @@
                 </p>
             </section>
 
+            <!-- TODO: Gliederung am Ende vervollständigen -->
             <section id="toc">
                 <h2>Gliederung</h2>
                 <ul>
                     <li>Über&hellip;</li>
-                    <!-- TODO: Gliederung am Ende vervollständigen -->
                 </ul>
             </section>
             <section id="about-author-michael-holthausen">
@@ -151,7 +151,6 @@
                 <div style="clear:both"></div>
             </section>
 
-            <!-- TODO: Bleibt die Section im Vortrag? -->
             <section id="about-company-terrestris">
                 <h2>terrestris</h2>
                 <div class="split-info">
@@ -177,6 +176,7 @@
                 <div style="clear:both"></div>
             </section>
 
+            <!-- TODO: Bleibt die Section im Vortrag? -->
             <section id="were-hiring">
                 <h3>Teil des Teams werden?</h3>
                 <div id="teampic"></div>
@@ -192,62 +192,389 @@
 
             <section>
                 <section>
-                    <!-- TODO: Besseren Titel für Einleitung finden-->
-                    <h1>3D-Web <br />Applikationen?</h1>
+                    <!-- TODO: Besseren Titel für erste Folie finden, evtl auch ein Bild?-->
+                    <h1>3D-Geoapplikationen</h1>
                 </section>
             </section>
-                <section id="thanks-questions">
-                    <h4>Vielen Dank</h4>
-                    <hr />
-                    <h1 style="font-size:3.0em">Fragen &amp; Anmerkungen?</h1>
-                    <hr />
-                    <p class="subtle">
-                        <a href="#/imprint">Impressum</a>
+            <section>
+                <section>
+                    <h2>Was sind 3D-Geoapplikationen?</h2>
+                    <blockquote lang="en"
+                        cite="https://www.oreilly.com/library/view/programming-3d-applications/9781449363918/ch01.html">
+                        We live in a 3D world. People move, think, and experience in three dimensions
+                    </blockquote>
+                </section>
+                <section>
+                    <h2>Eine Einführung</h2>
+                    <ul>
+                        <li>Viele Medieninhalte liegen in 3D vor, werden aber auf flachen Bildschirmen präsentiert</li>
+                        <li>Animationsfilme werden aus computergenerierten 3D-Bildern erstellt</li>
+                        <li>Online-Kartendienste lassen uns die Welt in 3D erkunden</li>
+                    </ul>
+                </section>
+                <section>
+                    <ul>
+                        <li>Ursprung bereits in den 1960er Jahren</li>
+                        <li>Umspannt viele Bereiche des Alltags </li>
+                    </ul>
+                    <!-- Piktogramme zu Technik, Bildung, Ausbildung, Architektur, Finanzen, Vertrieb und Marketing, Spiele und Unterhaltung? sonst Auflisten-->
+                </section>
+                <section>
+                    <table>
+                        <h2>Voraussetzungen früher:</h2>
+                        <tbody>
+                            <tr>
+                                <!-- TODO: Bildgröße auf Beamer testen -->
+                                <td>
+                                    <p class="fragment fade-up"><img
+                                            cite="https://commons.wikimedia.org/wiki/File:Wikimedia_Foundation_Servers-8055_35.jpg"
+                                            height="300"
+                                            data-src="https://upload.wikimedia.org/wikipedia/commons/6/69/Wikimedia_Foundation_Servers-8055_35.jpg"
+                                            alt="Wikimedia Foundation servers"></p>
+                                </td>
+                                <td>
+                                    <p class="fragment fade-up"><img
+                                            cite="https://commons.wikimedia.org/wiki/File:ArcGIS_logo.png" height="300"
+                                            data-src="https://upload.wikimedia.org/wikipedia/commons/d/df/ArcGIS_logo.png"
+                                            alt="ArcGIS logo"></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Und heute?</h2>
+                    <ul>
+                        <li>3D-fähige Hardware in jedem Computer und mobilen Endgerät</li>
+                        <li>universell verfügbar &amp; kostenlos:</li>
+                    </ul>
+                    <p class="fragment fade-up">
+                        <img cite="https://commons.wikimedia.org/wiki/File:Google_Chrome_icon_(September_2014).svg"
+                            height="60"
+                            data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Chrome_icon_%28September_2014%29.svg/1024px-Google_Chrome_icon_%28September_2014%29.svg.png"
+                            alt=" Google Chrome logo" style="border: none;">
+                        <img cite="https://commons.wikimedia.org/wiki/File:Firefox_Logo,_2017.svg" height="60"
+                            data-src="https://upload.wikimedia.org/wikipedia/commons/6/67/Firefox_Logo%2C_2017.svg"
+                            alt="Logo of Firefox since version 57 (2017)" style="border: none;">
+                        <img cite="https://commons.wikimedia.org/wiki/File:Safari_browser_logo.svg" height="60"
+                            data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Safari_browser_logo.svg/234px-Safari_browser_logo.svg.png"
+                            alt="Logo del navegador de Apple, 'Safari'" style="border: none;">
+                        <img cite="https://commons.wikimedia.org/wiki/File:Microsoft_Edge_logo.svg" height="60"
+                            data-src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Microsoft_Edge_logo.svg"
+                            alt="Logo of Microsoft Edge browser" style="border: none;">
                     </p>
                 </section>
-            
-                <section id="imprint">
-                    <h2>Impressum</h2>
-                    <h4>Autoren</h4>
-                    <div style="width: 45%; float: right;">
-                        <address style="text-align: right">
-                            <!-- <img src="../shared/img/terrestris-logo-normal.svg" class="plain" width="400"/> -->
-                            <strong>Marc Jansen</strong><br />
-                            <span style="font-size: smaller;">
-                                <!-- terrestris GmbH &amp; Co. KG<br />
+                <section>
+                    <ul>
+                        <li>Als Test für Google Chrome wurde die Anwendung "100,000 Stars" kreiert</li>
+                        <li>
+                            <p class="fragment fade-up">Browserbasierte 3D-Simulation unserer stellaren Nachbarn in der
+                                Milchstraße</p>
+                        </li>
+                        <li>
+                            <p class="fragment fade-up">Wissenschaftliche Genauigkeit der Daten kann nicht garantiert
+                                werden</p>
+                        </li>
+                        <li>
+                            <p class="fragment fade-up">Mit HTML5 Elementen kreiert</p>
+                        </li>
+
+                    </ul>
+                </section>
+                <section>
+                    <!-- TODO: vielleicht auf "Take a tour" klicken -->
+                    <!-- <iframe class="stretch" src="http://stars.chromeexperiments.com/"></iframe> -->
+                    <small><a href="http://stars.chromeexperiments.com/">"100,000 Stars", Google Data Arts
+                            Team</a></small>
+                </section>
+                <section>
+                    <h2>Anwendung im Raum</h2>
+                    <ul>
+                        <li>
+                            <p class="fragment fade-up">Darstellung von texturierten Gebäuden oder Objekten</p>
+                        </li>
+                        <li>
+                            <p class="fragment fade-up">Darstellung von Geländemodellen</p>
+                        </li>
+                        <li>
+                            <p class="fragment fade-up">Visualisierung von geologischen Untergrundschichten einer
+                                bestimmten Region</p>
+                        </li>
+                        <li>
+                            <p class="fragment fade-up">Einbindung von Orthofotos</p>
+                        </li>
+                        <li>
+                            <p class="fragment fade-up">u. v. a. m.</p>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Technische Lösungen</h2>
+                </section>
+                <section>
+                    <h2>Ziele</h2>
+                    <ul>
+                        <li>Level of Detail (LOD)</li>
+                        <li>Übertragung als Stream</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Clientseitig</h2>
+                </section>
+                <section>
+                    <table style="table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <td style="text-align: center;  width: 33%;"><img
+                                        cite="https://commons.wikimedia.org/wiki/File:WebGL_Logo.svg" height="70"
+                                        data-src="../shared/img/WebGL_Logo.png" alt="The logo of Khronos Group's WebGL"
+                                        style="border: none;"></td>
+                                <td style="text-align: center; width: 33%;"><img
+                                        cite="https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg"
+                                        height="70" data-src="../shared/img/css3_icon.png" alt="CSS3 Icon"
+                                        style="border: none; -webkit-filter: grayscale(100%); filter: grayscale(100%);">
+                                </td>
+                                <td style="text-align: center; width: 33%;"><img
+                                        cite="http://www.olivergast.de/blog/2012/05/31/css3-ubersicht-der-artikel-und-demos/"
+                                        height="70" data-src="../shared/img/HTML5_logo_and_wordmark.png"
+                                        alt="HTML5 Logo"
+                                        style="border: none; -webkit-filter: grayscale(100%); filter: grayscale(100%);">
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3">
+                                    <ul>
+                                        <li>Hardwarebeschleunigtes 3D-Rendering mit JavaScript</li>
+                                        <li>Basiert auf der bewährten Grafik-API OpenGL</li>
+                                        <li>Alle Desktopbrowser</li>
+                                        <li>Die meisten mobilen Browser</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <table style="table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <td style="text-align: center;  width: 33%;"><img
+                                        cite="https://commons.wikimedia.org/wiki/File:WebGL_Logo.svg" height="70"
+                                        data-src="../shared/img/WebGL_Logo.png" alt="The logo of Khronos Group's WebGL"
+                                        style="border: none;  -webkit-filter: grayscale(100%); filter: grayscale(100%);">
+                                </td>
+                                <td style="text-align: center; width: 33%;"><img
+                                        cite="https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg"
+                                        height="70" data-src="../shared/img/css3_icon.png" alt="CSS3 Icon"
+                                        style="border: none;">
+                                </td>
+                                <td style="text-align: center; width: 33%;"><img
+                                        cite="http://www.olivergast.de/blog/2012/05/31/css3-ubersicht-der-artikel-und-demos/"
+                                        height="70" data-src="../shared/img/HTML5_logo_and_wordmark.png"
+                                        alt="HTML5 Logo"
+                                        style="border: none; -webkit-filter: grayscale(100%); filter: grayscale(100%);">
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3">
+                                    <ul>
+                                        <li>Transformationen, Übergänge und benutzerdefinierte Filter</li>
+                                        <li>hardware-beschleunigte 3D-Rendering- und Animationsfunktionen</li>
+                                        <li>Alle Desktop- &amp; mobilen Browser</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <table style="table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <td style="text-align: center;  width: 33%;"><img
+                                        cite="https://commons.wikimedia.org/wiki/File:WebGL_Logo.svg" height="70"
+                                        data-src="../shared/img/WebGL_Logo.png" alt="The logo of Khronos Group's WebGL"
+                                        style="border: none;  -webkit-filter: grayscale(100%); filter: grayscale(100%);">
+                                </td>
+                                <td style="text-align: center; width: 33%;"><img
+                                        cite="https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg"
+                                        height="70" data-src="../shared/img/css3_icon.png" alt="CSS3 Icon"
+                                        style="border: none; -webkit-filter: grayscale(100%); filter: grayscale(100%);">
+                                </td>
+                                <td style="text-align: center; width: 33%;"><img
+                                        cite="http://www.olivergast.de/blog/2012/05/31/css3-ubersicht-der-artikel-und-demos/"
+                                        height="70" data-src="../shared/img/HTML5_logo_and_wordmark.png"
+                                        alt="HTML5 Logo" style="border: none;">
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3">
+                                    <ul>
+                                        <li>2D-Grafiken auf der Oberfläche eines DOM-Elements (Canvas)</li>
+                                        <li>zusätzliche JavaScript Bibliotheken rendern 3D-Effekte</li>
+                                        <li>Alternative zu WebGL oder CSS3 3D</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Welche Technologie?</h2>
+                    <ul>
+                        <li>Was soll mit der Anwendung abgebildet werden?</li>
+                        <li>Welche Plattformen sollen unterstützt werden?</li>
+                        <li>Welche Performance soll erreicht werden?</li>
+                        <li>Wie hoch soll der der Grad der Interaktivität sein (messen, bewegen, navigieren)?</li>
+                        <li>u. v. a. m.</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Serverkomponenten</h2>
+                </section>
+                <section>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img cite="https://commons.wikimedia.org/wiki/File:OpenLayers_logo.svg" width="250"
+                                        data-src="../shared/img/OpenLayers_logo.png" alt="OpenLayers Logo"
+                                        style="border: none;"></td>
+                                <td>
+                                    <h2>OpenLayers</h2>
+                                    <h3>Ol-Cesium</h3>
+                                    <ul>
+                                        <li>Erstellen von Karten mit OpenLayers</li>
+                                        <li>Visualisierung auf einem Globus von CesiumJS</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img cite="https://github.com/geoserver/geoserver/blob/master/doc/en/themes/geoserver/static/GeoServer_500.png"
+                                        width="370" data-src="../shared/img/GeoServer_logo.png" alt="GeoServer Logo"
+                                        style="border: none;"></td>
+                                <td>
+                                    <h2>GeoServer</h2>
+                                    <ul>
+                                        <li>W3DS (Web 3D Service)</li>
+                                        <li>WVS (Web View Service)</li>
+                                    </ul>
+                                    <p class="fragment fade-up" style="color: red;">Beide Dienste sind <span
+                                            style="font-style: italic">deprecated</span> und werden nicht weiter
+                                        entwickelt</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Schnittstellen</h2>
+                </section>
+                <section>
+                    <h3>OGC Standards</h3>
+                </section>
+                <section>
+                    <h3>3dP (3D Portrayal Service)</h3>
+                    <ul>
+                        <li>Seit 2017 OGC Standard</li>
+                        <li>Große Menge raumbezogener 3D-Daten im Web</li>
+                        <li>Keine Definition eines bestimmten Formates</li>
+                        <li>Stellt ein Framework bereit zur Bestimmung der Interoperabilität</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>CityGML (City Geography Markup Language)</h3>
+                    <ul>
+                        <li>Offenes Datenmodell und XML-basiertes Format</li>
+                        <li>Speicherung und Austausch von
+                            virtuellen 3D-Stadtmodellen</li>
+                        <li>Gemeinsame Definition der grundlegenden Bestandteile eines
+                            3D-Stadtmodells</li>
+                        <li>Wiederverwendung verschiedenen Anwendungsbereichen</li>
+                    </ul>
+                </section>
+                <section>
+                <!-- TODO: mehr Infos zu CDB in die Notizen -->
+                <h3>CDB (ehemals "Common Database")</h3>
+                <ul>
+                <li>entworfen und entwickelt für das United States Special Operations Command (USSOCOM)</li>
+                <li>standardisiertes Modell und Struktur für eine einzelne, "versionierbare" virtuelle Darstellung der Erde</li>
+                </ul>
+                </section>
+                <section>
+
+                </section>
+            </section>
+            </section>
+            <section id="thanks-questions">
+                <h4>Vielen Dank</h4>
+                <hr />
+                <h1 style="font-size:3.0em">Fragen &amp; Anmerkungen?</h1>
+                <hr />
+                <p class="subtle">
+                    <a href="#/imprint">Impressum</a>
+                </p>
+            </section>
+
+            <section id="imprint">
+                <h2>Impressum</h2>
+                <h4>Autoren</h4>
+                <div style="width: 45%; float: right;">
+                    <address style="text-align: right">
+                        <!-- <img src="../shared/img/terrestris-logo-normal.svg" class="plain" width="400"/> -->
+                        <strong>Marc Jansen</strong><br />
+                        <span style="font-size: smaller;">
+                            <!-- terrestris GmbH &amp; Co. KG<br />
               Kölnstr. 99<br />
               53111 Bonn<br /> -->
-                                <br />
-                                <br />
-                                <br />
-                                jansen@terrestris.de
-                            </span>
-                        </address>
-                    </div>
-                    <div style="width: 45%; float: left;">
-                        <address style="text-align: left">
-                            <strong>Daniel Koch</strong><br />
-                            <span style="font-size: smaller;">
-                                terrestris GmbH &amp; Co. KG<br />
-                                Kölnstr. 99<br />
-                                53111 Bonn<br />
-                                koch@terrestris.de
-                            </span>
-                        </address>
-                    </div>
-                    <h4 style="clear:both;">Lizenz</h4>
-                    <p id="license">
-                        Diese Folien sind unter <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>
-                        veröffentlicht.
-                    </p>
-                    <p>
-                        <a
-                            href="https://rawgit.com/terrestris/fossgis2018/master/talks/react-meets-openlayers.html">Vortragsfolien</a>,
-                        <a
-                            href="https://rawgit.com/terrestris/fossgis2018/master/talks/react-meets-openlayers.pdf">PDF-Version</a>,
-                        <a href="https://github.com/terrestris/fossgis2018">git repository</a>
-                    </p>
-                </section>
+                            <br />
+                            <br />
+                            <br />
+                            jansen@terrestris.de
+                        </span>
+                    </address>
+                </div>
+                <div style="width: 45%; float: left;">
+                    <address style="text-align: left">
+                        <strong>Daniel Koch</strong><br />
+                        <span style="font-size: smaller;">
+                            terrestris GmbH &amp; Co. KG<br />
+                            Kölnstr. 99<br />
+                            53111 Bonn<br />
+                            koch@terrestris.de
+                        </span>
+                    </address>
+                </div>
+                <h4 style="clear:both;">Lizenz</h4>
+                <p id="license">
+                    Diese Folien sind unter <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>
+                    veröffentlicht.
+                </p>
+                <p>
+                    <a
+                        href="https://rawgit.com/terrestris/fossgis2018/master/talks/react-meets-openlayers.html">Vortragsfolien</a>,
+                    <a
+                        href="https://rawgit.com/terrestris/fossgis2018/master/talks/react-meets-openlayers.pdf">PDF-Version</a>,
+                    <a href="https://github.com/terrestris/fossgis2018">git repository</a>
+                </p>
+            </section>
 
         </div>
         <!-- END OF SLIDES -->
