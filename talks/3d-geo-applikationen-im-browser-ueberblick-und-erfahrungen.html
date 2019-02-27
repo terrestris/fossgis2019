@@ -1,0 +1,284 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>3D-Geoapplikationen im Browser: Überblick und Erfahrungen | Vortrag auf der FOSSGIS 2019, Dresden</title>
+    <meta name="author" content="Michael Holthausen">
+    <meta name="author" content="Daniel Koch">
+    <meta name="author" content="Marc Jansen">
+    <meta name="author" content="terrestris GmbH &amp; Co. KG">
+    <meta name="description"
+        content="3D-Geoapplikationen im Browser: Überblick und Erfahrungen | Vortrag auf der FOSSGIS 2019, Dresden" />
+
+    <!--[if lt IE 9]>
+    <script src="../shared/reveal.js-3.6.0/lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="../shared/reveal.js-3.6.0/css/reveal.css">
+    <link rel="stylesheet" href="../shared/reveal.js-3.6.0/css/theme/beige.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Lato|Merriweather" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/css/customized.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../shared/reveal.js-3.6.0/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ?
+            '../shared/reveal.js-3.6.0/css/print/pdf.css' :
+            '../shared/reveal.js-3.6.0/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+
+    <div class="reveal">
+
+
+        <!-- BEGIN OF SLIDES -->
+        <div class="slides">
+
+            <!-- TODO: Section start - Hintergrundbild finden -->
+            <section id="start" data-background-image="../shared/img/react-geo-icon.svg"
+                data-background-size="auto 90%">
+                <p>&nbsp;</p>
+            </section>
+            <section id="title" data-background-image="../shared/img/react-geo-icon-filter.svg"
+                data-background-size="auto 90%">
+                <!--
+          <h2>React <img class="plain" src="../shared/img/meets.svg" alt="meets" title="meets" style="height: 1em; position: absolute; top: 0.35em;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OpenLayers</h2>
+          -->
+                <h2>3D-Geoapplikationen im Browser</h2>
+                <br />
+                <h3>Überblick &amp; Erfahrungen</h3>
+                <br />
+                <p>
+                    <small>Daniel Koch &amp; Marc Jansen, terrestris GmbH &amp; Co. KG</small>
+                </p>
+                <hr />
+                <p>
+                    <small>FOSSGIS 2019, Dresden, 14.03.2019</small>
+                </p>
+            </section>
+
+            <section id="toc">
+                <h2>Gliederung</h2>
+                <ul>
+                    <li>Über&hellip;</li>
+                    <!-- TODO: Gliederung am Ende vervollständigen -->
+                </ul>
+            </section>
+            <section id="about-author-michael-holthausen">
+                <h2>Michael Holthausen</h2>
+                <div class="split-info">
+                    <div class="part" style="width:35%">
+                        <img src="../shared/img/mh.png" class="plain" width="200" /><br />
+                        <small>
+                            <a class="email" href="mailto:holthausen@terrestris.de">holthausen@terrestris.de</a><br />
+                            <a class="github" href="https://github.com/mholthausen/">@mholthausen</a><br />
+                        </small><br />
+                    </div>
+                    <div class="part" style="width:60%">
+                        <div class="enumeration">
+                            <ul>
+                                <li>M. Sc. Geographie</li>
+                                <li>Anwendungsentwickler @terrestris</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+            </section>
+
+            <section id="about-author-daniel-koch">
+                <h2>Daniel Koch</h2>
+                <div class="split-info">
+                    <div class="part" style="width:35%">
+                        <img src="../shared/img/dk.jpg" class="plain" width="200" /><br />
+                        <small>
+                            <a class="email" href="mailto:koch@terrestris.de">koch@terrestris.de</a><br />
+                            <a class="github" href="https://github.com/dnlkoch/">@dnlkoch</a><br />
+                        </small><br />
+                    </div>
+                    <div class="part" style="width:60%">
+                        <div class="enumeration">
+                            <ul>
+                                <li>M. Sc. Geographie</li>
+                                <li>Lead developer @terrestris</li>
+                                <li>Kernentwickler react-geo</li>
+                                <li>Kernentwickler SHOGun</li>
+                                <li>Sprecher &amp; Trainer <br /> national &amp; international</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+            </section>
+
+            <section id="author-marc-jansen">
+                <h2>Marc Jansen</h2>
+                <div class="split-info">
+                    <div class="part" style="width:35%">
+                        <img src="../shared/img/mj.jpg" class="plain" width="200" /><br />
+                        <small>
+                            <a class="email" href="mailto:jansen@terrestris.de">jansen@terrestris.de</a><br />
+                            <a class="github" href="https://github.com/marcjansen/">@terrestris</a><br />
+                            <a class="twitter" href="https://twitter.com/selectoid/">@selectoid</a><br />
+                        </small><br />
+                        <img src="../shared/img/openlayers_de_1ed.png" class="plain" width=100 />
+                    </div>
+                    <div class="part" style="width:60%">
+                        <div class="enumeration">
+                            <ul>
+                                <li>Geschäftsführer @terrestris</li>
+                                <li>Kernentwickler OpenLayers</li>
+                                <li>Kernentwickler GeoExt</li>
+                                <li>Buchautor "OpenLayers"</li>
+                                <li>Sprecher &amp; Trainer <br /> national &amp; international</li>
+                                <li>OSGeo Foundation Charter Member</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+            </section>
+
+            <!-- TODO: Bleibt die Section im Vortrag? -->
+            <section id="about-company-terrestris">
+                <h2>terrestris</h2>
+                <div class="split-info">
+                    <div class="part" style="width:35%">
+                        <img src="../shared/img/terrestris-logo-normal.svg" class="plain" width="400" />
+                        <br /><small>
+                            <a class="email" href="mailto:info@terrestris.de">info@terrestris.de</a><br />
+                            <a class="github" href="https://github.com/terrestris/">@terrestris</a><br />
+                            <a class="twitter" href="https://twitter.com/terrestrisde/">@terrestrisde</a>
+                        </small>
+                    </div>
+                    <div class="part" style="width:60%">
+                        <div class="enumeration">
+                            <ul>
+                                <li><a href="https://www.terrestris.de/">terrestris.de</a></li>
+                                <li>OpenSource GIS aus Bonn</li>
+                                <li>Entwicklung, Projekte &amp; Support/Schulung</li>
+                                <li>Beratung, Planung, Implementierung &amp; Wartung</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+            </section>
+
+            <section id="were-hiring">
+                <h3>Teil des Teams werden?</h3>
+                <div id="teampic"></div>
+                <ul>
+                    <li>Softwareentwickler/in</li>
+                    <li>GIS Consultant</li>
+                    <li>Praktikanten / betreute Abschlussarbeiten</li>
+                </ul>
+                <p>
+                    Details gerne am terrestris Stand
+                </p>
+            </section>
+
+            <section>
+                <section>
+                    <!-- TODO: Besseren Titel für Einleitung finden-->
+                    <h1>3D-Web <br />Applikationen?</h1>
+                </section>
+            </section>
+                <section id="thanks-questions">
+                    <h4>Vielen Dank</h4>
+                    <hr />
+                    <h1 style="font-size:3.0em">Fragen &amp; Anmerkungen?</h1>
+                    <hr />
+                    <p class="subtle">
+                        <a href="#/imprint">Impressum</a>
+                    </p>
+                </section>
+            
+                <section id="imprint">
+                    <h2>Impressum</h2>
+                    <h4>Autoren</h4>
+                    <div style="width: 45%; float: right;">
+                        <address style="text-align: right">
+                            <!-- <img src="../shared/img/terrestris-logo-normal.svg" class="plain" width="400"/> -->
+                            <strong>Marc Jansen</strong><br />
+                            <span style="font-size: smaller;">
+                                <!-- terrestris GmbH &amp; Co. KG<br />
+              Kölnstr. 99<br />
+              53111 Bonn<br /> -->
+                                <br />
+                                <br />
+                                <br />
+                                jansen@terrestris.de
+                            </span>
+                        </address>
+                    </div>
+                    <div style="width: 45%; float: left;">
+                        <address style="text-align: left">
+                            <strong>Daniel Koch</strong><br />
+                            <span style="font-size: smaller;">
+                                terrestris GmbH &amp; Co. KG<br />
+                                Kölnstr. 99<br />
+                                53111 Bonn<br />
+                                koch@terrestris.de
+                            </span>
+                        </address>
+                    </div>
+                    <h4 style="clear:both;">Lizenz</h4>
+                    <p id="license">
+                        Diese Folien sind unter <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>
+                        veröffentlicht.
+                    </p>
+                    <p>
+                        <a
+                            href="https://rawgit.com/terrestris/fossgis2018/master/talks/react-meets-openlayers.html">Vortragsfolien</a>,
+                        <a
+                            href="https://rawgit.com/terrestris/fossgis2018/master/talks/react-meets-openlayers.pdf">PDF-Version</a>,
+                        <a href="https://github.com/terrestris/fossgis2018">git repository</a>
+                    </p>
+                </section>
+
+        </div>
+        <!-- END OF SLIDES -->
+
+
+    </div>
+
+    <script src="../shared/reveal.js-3.6.0/lib/js/head.min.js"></script>
+    <script src="../shared/reveal.js-3.6.0/js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            // Push each slide change to the browser history
+            history: true,
+            dependencies: [
+                { src: '../shared/reveal.js-3.6.0/plugin/markdown/marked.js' },
+                { src: '../shared/reveal.js-3.6.0/plugin/markdown/markdown.js' },
+                { src: '../shared/reveal.js-3.6.0/plugin/notes/notes.js', async: true },
+                {
+                    src: '../shared/reveal.js-3.6.0/plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                }
+            ]
+        });
+    </script>
+</body>
+
+</html>
