@@ -45,13 +45,10 @@
 
         <!-- BEGIN OF SLIDES -->
         <div class="slides">
-
-            <!-- TODO: Section start - Hintergrundbild finden -->
-            <section id="start" data-background-image="../shared/img/react-geo-icon.svg"
-                data-background-size="auto 90%">
+            <section id="start" data-background-image="../shared/img/3d_title.png" data-background-size="auto 90%">
                 <p>&nbsp;</p>
             </section>
-            <section id="title" data-background-image="../shared/img/react-geo-icon-filter.svg"
+            <section id="title" data-background-image="../shared/img/3d_title_faded.png"
                 data-background-size="auto 90%">
                 <!--
           <h2>React <img class="plain" src="../shared/img/meets.svg" alt="meets" title="meets" style="height: 1em; position: absolute; top: 0.35em;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OpenLayers</h2>
@@ -61,7 +58,7 @@
                 <h3>Überblick &amp; Erfahrungen</h3>
                 <br />
                 <p>
-                    <small>Daniel Koch &amp; Marc Jansen, terrestris GmbH &amp; Co. KG</small>
+                    <small>Michael Holthausen, Daniel Koch &amp; Marc Jansen, terrestris GmbH &amp; Co. KG</small>
                 </p>
                 <hr />
                 <p>
@@ -74,6 +71,10 @@
                 <h2>Gliederung</h2>
                 <ul>
                     <li>Über&hellip;</li>
+                    <li>Was sind 3D-Geoapplikationen?</li>
+                    <li>Technische Lösungen</li>
+                    <li>Datenformate & Schnittstellen</li>
+                    <li>Vergleich von Bibliotheken</li>
                 </ul>
             </section>
             <section id="about-author-michael-holthausen">
@@ -189,13 +190,6 @@
                     Details gerne am terrestris Stand
                 </p>
             </section>
-
-            <section>
-                <section>
-                    <!-- TODO: Besseren Titel für erste Folie finden, evtl auch ein Bild?-->
-                    <h1>3D-Geoapplikationen</h1>
-                </section>
-            </section>
             <section>
                 <section>
                     <h2>Was sind 3D-Geoapplikationen?</h2>
@@ -211,36 +205,61 @@
                         <li>Animationsfilme werden aus computergenerierten 3D-Bildern erstellt</li>
                         <li>Online-Kartendienste lassen uns die Welt in 3D erkunden</li>
                     </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>Menschheit bewegt sich, denkt, lebt und erlebt in einer dreidimensionalen Welt</li>
+                            <li>Viele Medieninhalte liegen auch in 3D vor, obwohl sie in der Regel auf flachen
+                                Bildschirmen
+                                präsentiert werden</li>
+                            <li>Animationsfilme werden aus computergenerierten 3D-Bildern erstellt</li>
+                            <li>Online-Kartendienste ermöglichen es uns, unsere Ziele virtuell in einer 3D-Umgebung zu
+                                erkunden, noch bevor wir selbst an diesen Orten sind</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <ul>
                         <li>Ursprung bereits in den 1960er Jahren</li>
                         <li>Umspannt viele Bereiche des Alltags </li>
                     </ul>
-                    <!-- Piktogramme zu Technik, Bildung, Ausbildung, Architektur, Finanzen, Vertrieb und Marketing, Spiele und Unterhaltung? sonst Auflisten-->
+                    <!-- TODO: Piktogramme zu Technik, Bildung, Ausbildung, Architektur, Finanzen, Vertrieb und Marketing, Spiele und Unterhaltung? sonst Auflisten-->
+                    <aside class="notes">
+                        <ul>
+                            <li>Die Darstellung von 3D-Grafiken ist fast so alt wie der Computer selbst und reicht bis
+                                in die 1960er Jahre zurück</li>
+                            <li>Umspannt die Bereiche Technik, Bildung, Ausbildung, Wissenschaft, Architektur, Finanzen,
+                                Vertrieb und
+                                Marketing, Spiele und Unterhaltung</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <table>
                         <h2>Voraussetzungen früher:</h2>
                         <tbody>
                             <tr>
-                                <!-- TODO: Bildgröße auf Beamer testen -->
                                 <td>
-                                    <p class="fragment fade-up"><img
-                                            cite="https://commons.wikimedia.org/wiki/File:Wikimedia_Foundation_Servers-8055_35.jpg"
-                                            height="300"
-                                            data-src="https://upload.wikimedia.org/wikipedia/commons/6/69/Wikimedia_Foundation_Servers-8055_35.jpg"
-                                            alt="Wikimedia Foundation servers"></p>
+                                    <img class="fragment fade-up plain"
+                                        cite="https://commons.wikimedia.org/wiki/File:Wikimedia_Foundation_Servers-8055_35.jpg"
+                                        height="300"
+                                        data-src="https://upload.wikimedia.org/wikipedia/commons/6/69/Wikimedia_Foundation_Servers-8055_35.jpg"
+                                        alt="Wikimedia Foundation servers">
                                 </td>
                                 <td>
-                                    <p class="fragment fade-up"><img
-                                            cite="https://commons.wikimedia.org/wiki/File:ArcGIS_logo.png" height="300"
-                                            data-src="https://upload.wikimedia.org/wikipedia/commons/d/df/ArcGIS_logo.png"
-                                            alt="ArcGIS logo"></p>
+                                    <!-- TODO: Logo von 3DS Max und Adobe -->
+                                    <img class="fragment fade-up plain"
+                                        cite="https://commons.wikimedia.org/wiki/File:ArcGIS_logo.png" height="300"
+                                        data-src="https://upload.wikimedia.org/wikipedia/commons/d/df/ArcGIS_logo.png"
+                                        alt="ArcGIS logo">
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+                    <aside class="notes">
+                        <ul>
+                            <li>Voraussetzungen früher: high-end Computersysteme und teure Software</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h2>Und heute?</h2>
@@ -252,21 +271,29 @@
                         <img cite="https://commons.wikimedia.org/wiki/File:Google_Chrome_icon_(September_2014).svg"
                             height="60"
                             data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Chrome_icon_%28September_2014%29.svg/1024px-Google_Chrome_icon_%28September_2014%29.svg.png"
-                            alt=" Google Chrome logo" style="border: none;">
+                            alt=" Google Chrome logo" class="plain">
                         <img cite="https://commons.wikimedia.org/wiki/File:Firefox_Logo,_2017.svg" height="60"
                             data-src="https://upload.wikimedia.org/wikipedia/commons/6/67/Firefox_Logo%2C_2017.svg"
-                            alt="Logo of Firefox since version 57 (2017)" style="border: none;">
+                            alt="Logo of Firefox since version 57 (2017)" class="plain">
                         <img cite="https://commons.wikimedia.org/wiki/File:Safari_browser_logo.svg" height="60"
                             data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Safari_browser_logo.svg/234px-Safari_browser_logo.svg.png"
-                            alt="Logo del navegador de Apple, 'Safari'" style="border: none;">
+                            alt="Logo del navegador de Apple, 'Safari'" class="plain">
                         <img cite="https://commons.wikimedia.org/wiki/File:Microsoft_Edge_logo.svg" height="60"
                             data-src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Microsoft_Edge_logo.svg"
-                            alt="Logo of Microsoft Edge browser" style="border: none;">
+                            alt="Logo of Microsoft Edge browser" class="plain">
                     </p>
+                    <aside class="notes">
+                        <ul>
+                            <li>Heutzutage: 3D-fähige Hardware wird in jedem Computer und mobilem Endgerät ausgeliefert,
+                                mit dem mehr Grafikleistung möglich ist, als noch vor 15 Jahren</li>
+                            <li>Das wichtigste dabei: die Software um 3D-Anwendungen darzustellen (bzw zu. rendern) ist
+                                nun nicht mehr nur universell verfügbar, sondern auch kostenlos: der Webbrowser!</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <ul>
-                        <li>Als Test für Google Chrome wurde die Anwendung "100,000 Stars" kreiert</li>
+                        <h4>Google Chrome Anwendung "100,000 Stars"</h4>
                         <li>
                             <p class="fragment fade-up">Browserbasierte 3D-Simulation unserer stellaren Nachbarn in der
                                 Milchstraße</p>
@@ -280,12 +307,38 @@
                         </li>
 
                     </ul>
+                    <aside>
+                        <ul>
+                            <li>Im Rahmen eines Tests für den Google Chrome wurde vom Team "Google Data Arts" das
+                                Projekt "100,000 Stars" kreiert, eine browserbasierte 3D-Simulation unserer stellaren
+                                Nachbarn in der Milchstraße</li>
+                            <li>Während die wissenschaftliche Genauigkeit der Daten nicht garantiert werden kann und von
+                                einer Verwendung der Anwendung zur interstellaren Navigation abgeraten wird, ist die
+                                Technik zur Visualisierung bereits seit längerem etabliert:
+                                die Anwendung wurde mit HTML5 Elementen kreiert, das in den meisten modernen Webbrowsern
+                                verarbeitet werden kann</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <!-- TODO: vielleicht auf "Take a tour" klicken -->
-                    <!-- <iframe class="stretch" src="http://stars.chromeexperiments.com/"></iframe> -->
+                    <iframe class="stretch" src="http://stars.chromeexperiments.com/"></iframe>
                     <small><a href="http://stars.chromeexperiments.com/">"100,000 Stars", Google Data Arts
                             Team</a></small>
+                    <aside class="notes">
+                        <ul>
+                            <li>Die Galaxie und die Sterne werden über WebGL in Echtzeit gerendert, die Beschriftungen
+                                werden über 3D-Transformationen aus CSS3 platziert und die Überlagerungen fügen sich
+                                nahtlos in den 3D-Inhalt ein, da der Webbrowser alle Seitenelemente zu einer
+                                einheitlichen Darstellung kombiniert</li>
+                            <li>Erst noch vor wenigen Jahren konnte solch eine Applikation nur durch eine teure, native,
+                                clientseitige Anwendung erreicht werden</li>
+                            <li>Heutzutage können Anwendungen dieser Art mit einem Browser, "free and open
+                                source"-Bibliotheken und einer Standard-Webtechnologie entwickelt werden</li>
+                            <li>Ohne die Verwendung von PlugIns wie Flash oder QuickTime können die Informationen
+                                einfach und aktuell weltweit per URL aufgerufen werden</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h2>Anwendung im Raum</h2>
@@ -307,11 +360,30 @@
                             <p class="fragment fade-up">u. v. a. m.</p>
                         </li>
                     </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>Keine Reise zu den interstellaren Nachbarn notwendig um den Nutzen von 3D-Webanwendungen
+                                zu erkennen, auch auf der Erde bieten sich vielfätige Einsatzmöglichkeiten an,
+                                insbesondere in geographischen Informationssystemen, wie z.B.:</li>
+                            <ul>
+                                <li>die Darstellung von texturierten Gebäuden oder Objekten innerhalb eines definierten
+                                    Raumes auf der Erdoberfläche,</li>
+                                <li>die Darstellung von Geländemodellen oder</li>
+                                <li>die Visualisierung von geologischen Untergrundschichten einer bestimmten Region von
+                                    Interesse</li>
+                                <li>Einbindung von Orthofotos</li>
+                                <li>...</li>
+                            </ul>
+                        </ul>
+                    </aside>
                 </section>
             </section>
             <section>
                 <section>
                     <h2>Technische Lösungen</h2>
+                    <aside class="notes">
+                        Welche technischen Lösungen gibt es?
+                    </aside>
                 </section>
                 <section>
                     <h2>Ziele</h2>
@@ -319,6 +391,12 @@
                         <li>Level of Detail (LOD)</li>
                         <li>Übertragung als Stream</li>
                     </ul>
+                    <aside class="notes">
+                        Ziel: mit möglichst geringer Dateigröße so viel Detail wie möglich, aber nicht mehr als nötig
+                        darzustellen <br />
+                        -> Level of Detail <br />
+                        -> Übertragung der Daten (in Form eines Streamings)
+                    </aside>
                 </section>
                 <section>
                     <h2>Clientseitig</h2>
@@ -327,21 +405,22 @@
                     <table style="table-layout: fixed;">
                         <thead>
                             <tr>
-                                <td style="text-align: center;  width: 33%;"><img
+                                <th style="text-align: center;  width: 33%;"><img
                                         cite="https://commons.wikimedia.org/wiki/File:WebGL_Logo.svg" height="70"
                                         data-src="../shared/img/WebGL_Logo.png" alt="The logo of Khronos Group's WebGL"
-                                        style="border: none;"></td>
-                                <td style="text-align: center; width: 33%;"><img
+                                        class="plain"></th>
+                                <th style="text-align: center; width: 33%;"><img
                                         cite="https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg"
                                         height="70" data-src="../shared/img/css3_icon.png" alt="CSS3 Icon"
-                                        style="border: none; -webkit-filter: grayscale(100%); filter: grayscale(100%);">
-                                </td>
-                                <td style="text-align: center; width: 33%;"><img
+                                        style=" -webkit-filter: grayscale(100%); filter: grayscale(100%);"
+                                        class="plain">
+                                </th>
+                                <th style="text-align: center; width: 33%;"><img
                                         cite="http://www.olivergast.de/blog/2012/05/31/css3-ubersicht-der-artikel-und-demos/"
                                         height="70" data-src="../shared/img/HTML5_logo_and_wordmark.png"
                                         alt="HTML5 Logo"
-                                        style="border: none; -webkit-filter: grayscale(100%); filter: grayscale(100%);">
-                                </td>
+                                        style="-webkit-filter: grayscale(100%); filter: grayscale(100%);" class="plain">
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -357,27 +436,38 @@
                             </tr>
                         </tbody>
                     </table>
+                    <aside class="notes">
+                        WebGL
+                        <ul>
+                            <li>für hardwarebeschleunigtes 3D-Rendering mit JavaScript</li>
+                            <li>Basierend auf der bewährten Grafik-API OpenGL ist WebGL ein Standard, der von allen
+                                Webbrowsern auf dem Desktop sowie einer großen Anzahl von mobilen Browsern unterstützt
+                                wird</li>
+                            <li>Die neueren Webbrowser unterstützen mittlerweile die 2017 veröffentlichten WebGL 2.0
+                                Spezifiaktionen</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <table style="table-layout: fixed;">
                         <thead>
                             <tr>
-                                <td style="text-align: center;  width: 33%;"><img
+                                <th style="text-align: center;  width: 33%;"><img
                                         cite="https://commons.wikimedia.org/wiki/File:WebGL_Logo.svg" height="70"
                                         data-src="../shared/img/WebGL_Logo.png" alt="The logo of Khronos Group's WebGL"
-                                        style="border: none;  -webkit-filter: grayscale(100%); filter: grayscale(100%);">
-                                </td>
-                                <td style="text-align: center; width: 33%;"><img
+                                        style="-webkit-filter: grayscale(100%); filter: grayscale(100%);" class="plain">
+                                </th>
+                                <th style="text-align: center; width: 33%;"><img
                                         cite="https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg"
                                         height="70" data-src="../shared/img/css3_icon.png" alt="CSS3 Icon"
-                                        style="border: none;">
-                                </td>
-                                <td style="text-align: center; width: 33%;"><img
+                                        class="plain">
+                                    </h>
+                                <th style="text-align: center; width: 33%;"><img
                                         cite="http://www.olivergast.de/blog/2012/05/31/css3-ubersicht-der-artikel-und-demos/"
                                         height="70" data-src="../shared/img/HTML5_logo_and_wordmark.png"
                                         alt="HTML5 Logo"
-                                        style="border: none; -webkit-filter: grayscale(100%); filter: grayscale(100%);">
-                                </td>
+                                        style="-webkit-filter: grayscale(100%); filter: grayscale(100%);" class="plain">
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -392,26 +482,36 @@
                             </tr>
                         </tbody>
                     </table>
+                    <aside class="notes">
+                        CSS 3D
+                        <ul>
+                            <li>Transformationen, Übergänge und benutzerdefinierte Filter für erweiterte Seiteneffekte
+                            </li>
+                            <li>Bereits seit einigen Jahren stellt CSS hardware-beschleunigte 3D-Rendering- und
+                                Animationsfunktionen bereit</li>
+                            <li>von allen Browsern, sowohl Desktop als auch mobil, unterstützt</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <table style="table-layout: fixed;">
                         <thead>
                             <tr>
-                                <td style="text-align: center;  width: 33%;"><img
+                                <th style="text-align: center;  width: 33%;"><img
                                         cite="https://commons.wikimedia.org/wiki/File:WebGL_Logo.svg" height="70"
                                         data-src="../shared/img/WebGL_Logo.png" alt="The logo of Khronos Group's WebGL"
-                                        style="border: none;  -webkit-filter: grayscale(100%); filter: grayscale(100%);">
-                                </td>
-                                <td style="text-align: center; width: 33%;"><img
+                                        style="-webkit-filter: grayscale(100%); filter: grayscale(100%);" class="plain">
+                                </th>
+                                <th style="text-align: center; width: 33%;"><img
                                         cite="https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg"
                                         height="70" data-src="../shared/img/css3_icon.png" alt="CSS3 Icon"
-                                        style="border: none; -webkit-filter: grayscale(100%); filter: grayscale(100%);">
-                                </td>
-                                <td style="text-align: center; width: 33%;"><img
+                                        style="-webkit-filter: grayscale(100%); filter: grayscale(100%);" class="plain">
+                                </th>
+                                <th style="text-align: center; width: 33%;"><img
                                         cite="http://www.olivergast.de/blog/2012/05/31/css3-ubersicht-der-artikel-und-demos/"
                                         height="70" data-src="../shared/img/HTML5_logo_and_wordmark.png"
-                                        alt="HTML5 Logo" style="border: none;">
-                                </td>
+                                        alt="HTML5 Logo" class="plain">
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -426,6 +526,15 @@
                             </tr>
                         </tbody>
                     </table>
+                    <aside class="notes">
+                        Das Canvas Element und die dazugehörige 2D Zeichnungs API
+                        <ul>
+                            <li>Entwickler können 2D-Grafiken auf die Oberfläche eines DOM-Elements zeichnen</li>
+                            <li>mit zusätzlichen JavaScript Bibliotheken können 3D-Effekte gerendert werden</li>
+                            <li>insbesondere zu Empfehlen für als Alternative für Plattformen, auf denen WebGL oder CSS3
+                                3D nicht unterstützt werden</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h2>Welche Technologie?</h2>
@@ -436,6 +545,17 @@
                         <li>Wie hoch soll der der Grad der Interaktivität sein (messen, bewegen, navigieren)?</li>
                         <li>u. v. a. m.</li>
                     </ul>
+                    <aside class="notes">
+                        Welche Technologie soll verwendet werden?<br />
+                        Abhängig von diversen Faktoren:
+                        <ul>
+                            <li>Was soll mit der Anwendung abgebildet werden?</li>
+                            <li>Welche Plattformen sollen unterstützt werden?</li>
+                            <li>Welche Performance soll erreicht werden?</li>
+                            <li>Wie hoch soll der der Grad der Interaktivität sein (messen, bewegen, navigieren)?</li>
+                            <li>usw.</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h2>Serverkomponenten</h2>
@@ -447,7 +567,7 @@
                                 <td>
                                     <img cite="https://commons.wikimedia.org/wiki/File:OpenLayers_logo.svg" width="250"
                                         data-src="../shared/img/OpenLayers_logo.png" alt="OpenLayers Logo"
-                                        style="border: none;"></td>
+                                        class="plain"></td>
                                 <td>
                                     <h2>OpenLayers</h2>
                                     <h3>Ol-Cesium</h3>
@@ -459,6 +579,12 @@
                             </tr>
                         </tbody>
                     </table>
+                    <aside class="notes">
+                        Ol-Cesium
+                        <ul>
+                            <li>Erstellen von Karten mit OpenLayers und mit Cesium auf einem Globus visualisieren</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <table>
@@ -467,7 +593,7 @@
                                 <td>
                                     <img cite="https://github.com/geoserver/geoserver/blob/master/doc/en/themes/geoserver/static/GeoServer_500.png"
                                         width="370" data-src="../shared/img/GeoServer_logo.png" alt="GeoServer Logo"
-                                        style="border: none;"></td>
+                                        class="plain"></td>
                                 <td>
                                     <h2>GeoServer</h2>
                                     <ul>
@@ -481,11 +607,19 @@
                             </tr>
                         </tbody>
                     </table>
+                    <aside class="notes">
+                        GeoServer<br />
+                        <ul>
+                            <li>W3DS (Web 3D Service)</li>
+                            <li>WVS (Web View Service)</li>
+                            <li>beide Dienst sind deprecated und werden nicht weiter verfolgt</li>
+                        </ul>
+                    </aside>
                 </section>
             </section>
             <section>
                 <section>
-                    <h2>Schnittstellen</h2>
+                    <h2>Datenformate & Schnittstellen</h2>
                 </section>
                 <section>
                     <h3>OGC Standards</h3>
@@ -502,6 +636,7 @@
                 <section>
                     <h3>CityGML (City Geography Markup Language)</h3>
                     <ul>
+                        <li>Seit 2008 OGC Standard</li>
                         <li>Offenes Datenmodell und XML-basiertes Format</li>
                         <li>Speicherung und Austausch von
                             virtuellen 3D-Stadtmodellen</li>
@@ -511,17 +646,205 @@
                     </ul>
                 </section>
                 <section>
-                <!-- TODO: mehr Infos zu CDB in die Notizen -->
-                <h3>CDB (ehemals "Common Database")</h3>
-                <ul>
-                <li>entworfen und entwickelt für das United States Special Operations Command (USSOCOM)</li>
-                <li>standardisiertes Modell und Struktur für eine einzelne, "versionierbare" virtuelle Darstellung der Erde</li>
-                </ul>
+                    <!-- TODO: mehr Infos zu CDB in die Notizen -->
+                    <h3>CDB (ehemals "Common Database")</h3>
+                    <ul>
+                        <li>Seit 2016 OGC Standard</li>
+                        <li>Entworfen und entwickelt für das United States Special Operations Command (USSOCOM)</li>
+                        <li>Standardisiertes Modell und Struktur für eine einzelne, "versionierbare" virtuelle
+                            Darstellung der Erde</li>
+                    </ul>
                 </section>
                 <section>
-
+                    <h3>KML (ehemals "Keyhole Markup Language")</h3>
+                    <ul>
+                        <li>Seit 2008 OGC Standard</li>
+                        <li>geographische Anmerkungen und Visualisierung webbasierten Onlinekarten und
+                            Globusdarstellungen</li>
+                        <li>Ziel: Interoperabilität von Globusdarstellungen</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>i3s (Indexed 3D Scene Layers)</h3>
+                    <ul>
+                        <li>Seit 2017 OGC Standard</li>
+                        <li>Container für 3D-Geodaten</li>
+                        <li>Entwickelt mobile, Desktop- und serverbasierte Workflows</li>
+                        <li>Zugriff über das Web oder als lokale Dateien</li>
+                        <li>Cloud-, Web- und mobilfreundlich</li>
+                        <li>Basiert auf JSON, REST und anderen modernen Webstandards</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Web3D Consortium</h3>
+                </section>
+                <section>
+                    <h3>X3D (Extensible 3D Graphics)</h3>
+                    <ul>
+                        <li>Ersetzt das Vorgängerformat VRML (Virtual Reality Modeling Language)</li>
+                        <li>Offener internationaler Standard (ISO-zertifiziert) für 3D-Grafiken im Web</li>
+                        <li>Animierte Objekte aus verschiedenen Blickwinkel</li>
+                        <li>Kompatibel mit anderen Open-Source-Standards (DOM, XML)</li>
+                        <li>Szenen werden direkt in das HTML-Markup geschrieben</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Bisher ohne Standardisierung</h3>
+                </section>
+                <section>
+                    <h3>CZML (Cesium Language)</h3>
+                    <ul>
+                        <li>Ähnlich wie KML, basiert aber auf JSON </li>
+                        <li>Punkte, Flächen, Modelle und andere grafische Grundelemente</li>
+                        <li>Beschreibung einer zeitdynamischen grafischen Szene</li>
+                        <li>Effizientes Streaming &amp; einfach zu parsen</li>
+                        <li>Von Menschen les- und schreibbar</li>
+                        <li>Hauptsächlich zur Anzeige in einem Webbrowser mit CesiumJS</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>3D Tiles</h3>
+                    <ul>
+                        <li>Seit 2016 OGC Community Standard, auf dem Weg zum OGC Standard</li>
+                        <li>Konzipiert für das Streaming und Rendern von 3D-Inhalten auf einen Globus</li>
+                        <li>Photogrammetrie, 3D-Gebäude, BIM/CAD (Bauwerksdatenmodellierung) und Punktwolken</li>
+                        <li>Definiert eigene Binärfomate für das Streaming</li>
+                        <li>Styling-Spezifikationen</li>
+                        <li>Baumstruktur (Konzept der "Hierarchical Level of Detail")</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>3D Tiles</h3>
+                    <ul>
+                        <li>
+                            b3dm (Batched 3D Model)
+                            <ul>
+                                <li>heterogene 3D-Modelle</li>
+                                <li>z.B. für verschiedene Gebäude in einer Stadt</li>
+                            </ul>
+                        </li>
+                        <li class="fragment fade-up">
+                            i3dm (Instanced 3D Model)
+                            <ul>
+                                <li>effizientes Streaming und Rendern einer großen Anzahl von Modellen mit geringfügigen
+                                    Abweichungen</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>3D Tiles</h3>
+                    <ul>
+                        <li>
+                            pnts (Point Cloud)
+                            <ul>
+                                <li>effizientes Streaming von Punktwolken zur 3D-Visualisierung</li>
+                            </ul>
+                        </li>
+                        <li class="fragment fade-up">
+                            cmpt (Composite)
+                            <ul>
+                                <li>flexibles Streaming kombinierter, heterogener Datensätze</li>
+                                <li>z.B. aus b3dm- und i3dm-Modellen</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>glTF (GL Transmission Format)</h3>
+                    <ul>
+                        <li>"JPEG of 3D"</li>
+                        <li>Konzipiert für das Streaming und Rendern von 3D-Inhalten auf einen Globus</li>
+                        <li>Besteht aus:
+                            <ul>
+                                <li>Einer JSON Datei (.gltf), Szenenbeschreibung &amp; Verweis auf externe Dateien</li>
+                                <li>Binärdateien (.bin), Geometrie- und Animationsdaten</li>
+                                <li>Bilddateien (.jpg, .png, usw.), Texturen</li>
+                            </ul>
+                        </li>
+                    </ul>
                 </section>
             </section>
+            <section>
+                <section>
+                    <h2>Vergleich von Bibliotheken</h2>
+                </section>
+                <section>
+                    <h3>three.js</h3>
+                    <img src="../shared/img/threejs_example.png" class="plain" />
+                </section>
+                <section>
+                    <h3>x3dom</h3>
+                    <img src="../shared/img/x3dom_example.png" class="plain" />
+                </section>
+                <section>
+                    <h3>CesiumJS</h3>
+                    <img src="../shared/img/cesiumjs_example.png" class="plain" />
+                </section>
+                <section>
+                    <h3>CesiumJS 3D Tiles</h3>
+                    Styling von 3D Tiles im Cesium Sandcastle
+                    <img src="../shared/img/cesiumjs_3dtile_example.png" class="plain" />
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Zusammenfassung</h2>
+                    <table style="table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;  width: 40%;"></th>
+                                <th style="text-align: left;  width: 20%;">three.js</th>
+                                <th style="text-align: left;  width: 20%;">x3dom</th>
+                                <th style="text-align: left;  width: 20%;">CesiumJS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Beispiele/Tutorials</td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dokumentation &amp; API</td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                            </tr>
+                            <tr>
+                                <td>Support Community</td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                                <td style="text-align: center"><span style="color: orange;">&#9711</span></td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                            </tr>
+                            <tr>
+                                <td>Updates</td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                                <td style="text-align: center"><span style="color: orange;">&#9711</span></td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                            </tr>
+                            <tr>
+                                <td>Raumbezug</td>
+                                <td style="text-align: center"><span style="color: red;">&#10060</span></td>
+                                <td style="text-align: center"><span style="color: red;">&#10060</span></td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h2>Zusammenfassung</h2>
+                    <ul>
+                        <li>Mehr Aktivitäten und Nachfragen zur Darstellung 3D-Inhalten im Web erkennbar, auch im
+                            Geo-Bereich</li>
+                        <li>Noch immer gibt es viele unterschiedliche Datenformate</li>
+                        <li>Schwer oder nicht untereinander austauschbar</li>
+                        <li>Alle Bibliotheken arbeiten ohne zusätzliche Plugins</li>
+                        <li>Verwenden WebGL zur Visualisierung</li>
+                        <li>Kostenlos im Webbrowser</li>
+                    </ul>
+                </section>
             </section>
             <section id="thanks-questions">
                 <h4>Vielen Dank</h4>
@@ -536,31 +859,40 @@
             <section id="imprint">
                 <h2>Impressum</h2>
                 <h4>Autoren</h4>
-                <div style="width: 45%; float: right;">
-                    <address style="text-align: right">
-                        <!-- <img src="../shared/img/terrestris-logo-normal.svg" class="plain" width="400"/> -->
-                        <strong>Marc Jansen</strong><br />
-                        <span style="font-size: smaller;">
-                            <!-- terrestris GmbH &amp; Co. KG<br />
-              Kölnstr. 99<br />
-              53111 Bonn<br /> -->
-                            <br />
-                            <br />
-                            <br />
-                            jansen@terrestris.de
-                        </span>
-                    </address>
-                </div>
-                <div style="width: 45%; float: left;">
-                    <address style="text-align: left">
-                        <strong>Daniel Koch</strong><br />
-                        <span style="font-size: smaller;">
-                            terrestris GmbH &amp; Co. KG<br />
-                            Kölnstr. 99<br />
-                            53111 Bonn<br />
-                            koch@terrestris.de
-                        </span>
-                    </address>
+                <div style="display: table; width: 100%; table-layout: fixed; border-spacing: 10px;">
+                    <div style="display: table-cell;">
+                        <address style="text-align: left">
+                            <strong style="font-size:0.8em">Michael Holthausen</strong><br />
+                            <span style="font-size: 0.6em;">
+                                terrestris GmbH &amp; Co. KG<br />
+                                Kölnstr. 99<br />
+                                53111 Bonn<br />
+                                holthausen@terrestris.de
+                            </span>
+                        </address>
+                    </div>
+                    <div style="display: table-cell;">
+                        <address style="text-align: left">
+                            <strong style="font-size:0.8em">Daniel Koch</strong><br />
+                            <span style="font-size: 0.6em;">
+                                <br />
+                                <br />
+                                <br />
+                                koch@terrestris.de
+                            </span>
+                        </address>
+                    </div>
+                    <div style="display: table-cell;">
+                        <address style="text-align: left">
+                            <strong style="font-size:0.8em">Marc Jansen</strong><br />
+                            <span style="font-size: 0.6em;">
+                                <br />
+                                <br />
+                                <br />
+                                jansen@terrestris.de
+                            </span>
+                        </address>
+                    </div>
                 </div>
                 <h4 style="clear:both;">Lizenz</h4>
                 <p id="license">
