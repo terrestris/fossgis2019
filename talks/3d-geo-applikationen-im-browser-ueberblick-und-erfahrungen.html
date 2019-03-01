@@ -1,0 +1,1159 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>3D-Geoapplikationen im Browser: Überblick und Erfahrungen | Vortrag auf der FOSSGIS 2019, Dresden</title>
+    <meta name="author" content="Michael Holthausen">
+    <meta name="author" content="Daniel Koch">
+    <meta name="author" content="Marc Jansen">
+    <meta name="author" content="terrestris GmbH &amp; Co. KG">
+    <meta name="description"
+        content="3D-Geoapplikationen im Browser: Überblick und Erfahrungen | Vortrag auf der FOSSGIS 2019, Dresden" />
+
+    <!--[if lt IE 9]>
+    <script src="../shared/reveal.js-3.6.0/lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="../shared/reveal.js-3.6.0/css/reveal.css">
+    <link rel="stylesheet" href="../shared/reveal.js-3.6.0/css/theme/beige.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Lato|Merriweather" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/css/customized.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../shared/reveal.js-3.6.0/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ?
+            '../shared/reveal.js-3.6.0/css/print/pdf.css' :
+            '../shared/reveal.js-3.6.0/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+
+    <div class="reveal">
+
+
+        <!-- BEGIN OF SLIDES -->
+        <div class="slides">
+            <section id="start" data-background-image="../shared/img/3d_title.png" data-background-size="auto 90%">
+                <p>&nbsp;</p>
+            </section>
+            <section id="title" data-background-image="../shared/img/3d_title_faded.png"
+                data-background-size="auto 90%">
+                <!--
+          <h2>React <img class="plain" src="../shared/img/meets.svg" alt="meets" title="meets" style="height: 1em; position: absolute; top: 0.35em;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OpenLayers</h2>
+          -->
+                <h2>3D-Geoapplikationen im Browser</h2>
+                <br />
+                <h3>Überblick &amp; Erfahrungen</h3>
+                <br />
+                <p>
+                    <small>Michael Holthausen, Daniel Koch &amp; Marc Jansen, terrestris GmbH &amp; Co. KG</small>
+                </p>
+                <hr />
+                <p>
+                    <small>FOSSGIS 2019, Dresden, 14.03.2019</small>
+                </p>
+            </section>
+            <section id="toc">
+                <h2>Gliederung</h2>
+                <ul>
+                    <li>Über&hellip;</li>
+                    <li>Was sind 3D-Geoapplikationen?</li>
+                    <li>Technische Lösungen</li>
+                    <li>Datenformate & Schnittstellen</li>
+                    <li>Vergleich von Bibliotheken</li>
+                </ul>
+            </section>
+            <section id="about-author-michael-holthausen">
+                <h2>Michael Holthausen</h2>
+                <div class="split-info">
+                    <div class="part" style="width:35%">
+                        <img src="../shared/img/mh.jpg" class="plain" width="200" /><br />
+                        <small>
+                            <a class="email" href="mailto:holthausen@terrestris.de">holthausen@terrestris.de</a><br />
+                            <a class="github" href="https://github.com/mholthausen/">@mholthausen</a><br />
+                        </small><br />
+                    </div>
+                    <div class="part" style="width:60%">
+                        <div class="enumeration">
+                            <ul>
+                                <li>M. Sc. Geographie</li>
+                                <li>Anwendungsentwickler @terrestris</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+            </section>
+
+            <section id="about-author-daniel-koch">
+                <h2>Daniel Koch</h2>
+                <div class="split-info">
+                    <div class="part" style="width:35%">
+                        <img src="../shared/img/dk.jpg" class="plain" width="200" /><br />
+                        <small>
+                            <a class="email" href="mailto:koch@terrestris.de">koch@terrestris.de</a><br />
+                            <a class="github" href="https://github.com/dnlkoch/">@dnlkoch</a><br />
+                        </small><br />
+                    </div>
+                    <div class="part" style="width:60%">
+                        <div class="enumeration">
+                            <ul>
+                                <li>M. Sc. Geographie</li>
+                                <li>Lead developer @terrestris</li>
+                                <li>Kernentwickler react-geo</li>
+                                <li>Kernentwickler SHOGun</li>
+                                <li>Sprecher &amp; Trainer <br /> national &amp; international</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+            </section>
+
+            <section id="author-marc-jansen">
+                <h2>Marc Jansen</h2>
+                <div class="split-info">
+                    <div class="part" style="width:35%">
+                        <img src="../shared/img/mj.jpg" class="plain" width="200" /><br />
+                        <small>
+                            <a class="email" href="mailto:jansen@terrestris.de">jansen@terrestris.de</a><br />
+                            <a class="github" href="https://github.com/marcjansen/">@terrestris</a><br />
+                            <a class="twitter" href="https://twitter.com/selectoid/">@selectoid</a><br />
+                        </small><br />
+                        <img src="../shared/img/openlayers_de_1ed.png" class="plain" width=100 />
+                    </div>
+                    <div class="part" style="width:60%">
+                        <div class="enumeration">
+                            <ul>
+                                <li>Geschäftsführer @terrestris</li>
+                                <li>Kernentwickler OpenLayers</li>
+                                <li>Kernentwickler GeoExt</li>
+                                <li>Buchautor "OpenLayers"</li>
+                                <li>Sprecher &amp; Trainer <br /> national &amp; international</li>
+                                <li>OSGeo Foundation Charter Member</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+            </section>
+
+            <section id="about-company-terrestris">
+                <h2>terrestris</h2>
+                <div class="split-info">
+                    <div class="part" style="width:35%">
+                        <img src="../shared/img/terrestris-logo-normal.svg" class="plain" width="400" />
+                        <br /><small>
+                            <a class="email" href="mailto:info@terrestris.de">info@terrestris.de</a><br />
+                            <a class="github" href="https://github.com/terrestris/">@terrestris</a><br />
+                            <a class="twitter" href="https://twitter.com/terrestrisde/">@terrestrisde</a>
+                        </small>
+                    </div>
+                    <div class="part" style="width:60%">
+                        <div class="enumeration">
+                            <ul>
+                                <li><a href="https://www.terrestris.de/">terrestris.de</a></li>
+                                <li>OpenSource GIS aus Bonn</li>
+                                <li>Entwicklung, Projekte &amp; Support/Schulung</li>
+                                <li>Beratung, Planung, Implementierung &amp; Wartung</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+            </section>
+
+            <!-- TODO: Bleibt die Section im Vortrag? -->
+            <section id="were-hiring">
+                <h3>Teil des Teams werden?</h3>
+                <div id="teampic"></div>
+                <ul>
+                    <li>Softwareentwickler/in</li>
+                    <li>GIS Consultant</li>
+                    <li>Praktikanten / betreute Abschlussarbeiten</li>
+                </ul>
+                <p>
+                    Details gerne am terrestris Stand
+                </p>
+            </section>
+            <section>
+                <section>
+                    <h2>Was sind 3D-Geoapplikationen?</h2>
+                    <blockquote lang="en"
+                        cite="https://www.oreilly.com/library/view/programming-3d-applications/9781449363918/ch01.html">
+                        We live in a 3D world. People move, think, and experience in three dimensions
+                    </blockquote>
+                </section>
+                <section>
+                    <h2>Eine Einführung</h2>
+                    <ul>
+                        <li>Viele Medieninhalte liegen in 3D vor, werden aber auf flachen Bildschirmen präsentiert</li>
+                        <li>Animationsfilme werden aus computergenerierten 3D-Bildern erstellt</li>
+                        <li>Online-Kartendienste lassen uns die Welt in 3D erkunden</li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>Menschheit bewegt sich, denkt, lebt und erlebt in einer dreidimensionalen Welt</li>
+                            <li>Viele Medieninhalte liegen auch in 3D vor, obwohl sie in der Regel auf flachen
+                                Bildschirmen
+                                präsentiert werden</li>
+                            <li>Animationsfilme werden aus computergenerierten 3D-Bildern erstellt</li>
+                            <li>Online-Kartendienste ermöglichen es uns, unsere Ziele virtuell in einer 3D-Umgebung zu
+                                erkunden, noch bevor wir selbst an diesen Orten sind</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <ul>
+                        <li>Ursprung bereits in den 1960er Jahren</li>
+                        <li>Umspannt viele Bereiche des Alltags </li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>Die Darstellung von 3D-Grafiken ist fast so alt wie der Computer selbst und reicht bis
+                                in die 1960er Jahre zurück</li>
+                            <li>Umspannt die Bereiche Technik, Bildung, Ausbildung, Wissenschaft, Architektur, Finanzen,
+                                Vertrieb und
+                                Marketing, Spiele und Unterhaltung</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <table>
+                        <h2>Voraussetzungen früher:</h2>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img class="fragment fade-up plain"
+                                        cite="https://commons.wikimedia.org/wiki/File:Wikimedia_Foundation_Servers-8055_35.jpg"
+                                        height="300"
+                                        data-src="../shared/img/Wikimedia_Foundation_Servers-8055_35.jpg"
+                                        alt="Wikimedia Foundation servers">
+                                </td>
+                                <td>
+                                    <img class="fragment fade-up plain"
+                                        cite="https://commons.wikimedia.org/wiki/File:Adobe_After_Effects_CC_icon.svg, https://commons.wikimedia.org/wiki/File:3ds-max-logo.png" height="300"
+                                        data-src="../shared/img/3d_software.png"
+                                        alt="Adobe After Effects und 3ds max logo">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <aside class="notes">
+                        <ul>
+                            <li>Voraussetzungen früher: high-end Computersysteme und teure Software</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2>Und heute?</h2>
+                    <ul>
+                        <li>3D-fähige Hardware in jedem Computer und mobilen Endgerät</li>
+                        <li>universell verfügbar &amp; kostenlos:</li>
+                    </ul>
+                    <p class="fragment fade-up">
+                        <img cite="https://commons.wikimedia.org/wiki/File:Google_Chrome_icon_(September_2014).svg"
+                            height="60"
+                            data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Google_Chrome_icon_%28September_2014%29.svg/1024px-Google_Chrome_icon_%28September_2014%29.svg.png"
+                            alt=" Google Chrome logo" class="plain">
+                        <img cite="https://commons.wikimedia.org/wiki/File:Firefox_Logo,_2017.svg" height="60"
+                            data-src="https://upload.wikimedia.org/wikipedia/commons/6/67/Firefox_Logo%2C_2017.svg"
+                            alt="Logo of Firefox since version 57 (2017)" class="plain">
+                        <img cite="https://commons.wikimedia.org/wiki/File:Safari_browser_logo.svg" height="60"
+                            data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Safari_browser_logo.svg/234px-Safari_browser_logo.svg.png"
+                            alt="Logo del navegador de Apple, 'Safari'" class="plain">
+                        <img cite="https://commons.wikimedia.org/wiki/File:Microsoft_Edge_logo.svg" height="60"
+                            data-src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Microsoft_Edge_logo.svg"
+                            alt="Logo of Microsoft Edge browser" class="plain">
+                    </p>
+                    <aside class="notes">
+                        <ul>
+                            <li>Heutzutage: 3D-fähige Hardware wird in jedem Computer und mobilem Endgerät ausgeliefert,
+                                mit dem mehr Grafikleistung möglich ist, als noch vor 15 Jahren</li>
+                            <li>Das wichtigste dabei: die Software um 3D-Anwendungen darzustellen (bzw zu. rendern) ist
+                                nun nicht mehr nur universell verfügbar, sondern auch kostenlos: der Webbrowser!</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <ul>
+                        <h4>Google Chrome Anwendung "100,000 Stars"</h4>
+                        <li>
+                            <p class="fragment fade-up">Browserbasierte 3D-Simulation unserer stellaren Nachbarn in der
+                                Milchstraße</p>
+                        </li>
+                        <li>
+                            <p class="fragment fade-up">Wissenschaftliche Genauigkeit der Daten kann nicht garantiert
+                                werden</p>
+                        </li>
+                        <li>
+                            <p class="fragment fade-up">Mit HTML5 Elementen kreiert</p>
+                        </li>
+
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>Im Rahmen eines Tests für den Google Chrome wurde vom Team "Google Data Arts" das
+                                Projekt "100,000 Stars" kreiert, eine browserbasierte 3D-Simulation unserer stellaren
+                                Nachbarn in der Milchstraße</li>
+                            <li>Während die wissenschaftliche Genauigkeit der Daten nicht garantiert werden kann und von
+                                einer Verwendung der Anwendung zur interstellaren Navigation abgeraten wird, ist die
+                                Technik zur Visualisierung bereits seit längerem etabliert:
+                                die Anwendung wurde mit HTML5 Elementen kreiert, das in den meisten modernen Webbrowsern
+                                verarbeitet werden kann</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <!-- TODO: vielleicht auf "Take a tour" klicken -->
+                    <iframe class="stretch" src="http://stars.chromeexperiments.com/"></iframe>
+                    <small><a href="http://stars.chromeexperiments.com/">"100,000 Stars", Google Data Arts
+                            Team</a></small>
+                    <aside class="notes">
+                        <ul>
+                            <li>Die Galaxie und die Sterne werden über WebGL in Echtzeit gerendert, die Beschriftungen
+                                werden über 3D-Transformationen aus CSS3 platziert und die Überlagerungen fügen sich
+                                nahtlos in den 3D-Inhalt ein, da der Webbrowser alle Seitenelemente zu einer
+                                einheitlichen Darstellung kombiniert</li>
+                            <li>Erst noch vor wenigen Jahren konnte solch eine Applikation nur durch eine teure, native,
+                                clientseitige Anwendung erreicht werden</li>
+                            <li>Heutzutage können Anwendungen dieser Art mit einem Browser, "free and open
+                                source"-Bibliotheken und einer Standard-Webtechnologie entwickelt werden</li>
+                            <li>Ohne die Verwendung von PlugIns wie Flash oder QuickTime können die Informationen
+                                einfach und aktuell weltweit per URL aufgerufen werden</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2>Anwendung im Raum</h2>
+                    <ul>
+                        <li>
+                            <p class="fragment fade-up">Darstellung von texturierten Gebäuden oder Objekten</p>
+                        </li>
+                        <li>
+                            <p class="fragment fade-up">Darstellung von Geländemodellen</p>
+                        </li>
+                        <li>
+                            <p class="fragment fade-up">Visualisierung von geologischen Untergrundschichten einer
+                                bestimmten Region</p>
+                        </li>
+                        <li>
+                            <p class="fragment fade-up">Einbindung von Orthofotos</p>
+                        </li>
+                        <li>
+                            <p class="fragment fade-up">u. v. a. m.</p>
+                        </li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>Keine Reise zu den interstellaren Nachbarn notwendig um den Nutzen von 3D-Webanwendungen
+                                zu erkennen, auch auf der Erde bieten sich vielfätige Einsatzmöglichkeiten an,
+                                insbesondere in geographischen Informationssystemen, wie z.B.:</li>
+                            <ul>
+                                <li>die Darstellung von texturierten Gebäuden oder Objekten innerhalb eines definierten
+                                    Raumes auf der Erdoberfläche,</li>
+                                <li>die Darstellung von Geländemodellen oder</li>
+                                <li>die Visualisierung von geologischen Untergrundschichten einer bestimmten Region von
+                                    Interesse</li>
+                                <li>Einbindung von Orthofotos</li>
+                                <li>...</li>
+                            </ul>
+                        </ul>
+                    </aside>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Technische Lösungen</h2>
+                    <aside class="notes">
+                        Welche technischen Lösungen gibt es?
+                    </aside>
+                </section>
+                <section>
+                    <h2>Ziele</h2>
+                    <ul>
+                        <li>Level of Detail (LOD)</li>
+                        <li>Übertragung als Stream</li>
+                    </ul>
+                    <aside class="notes">
+                        Ziel: mit möglichst geringer Dateigröße so viel Detail wie möglich, aber nicht mehr als nötig
+                        darzustellen <br />
+                        -> Level of Detail <br />
+                        -> Übertragung der Daten (in Form eines Streamings)
+                    </aside>
+                </section>
+                <section>
+                    <h2>Clientseitig</h2>
+                </section>
+                <section>
+                    <table style="table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;  width: 33%;"><img
+                                        cite="https://commons.wikimedia.org/wiki/File:WebGL_Logo.svg" height="70"
+                                        data-src="../shared/img/WebGL_Logo.png" alt="The logo of Khronos Group's WebGL"
+                                        class="plain"></th>
+                                <th style="text-align: center; width: 33%;"><img
+                                        cite="https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg"
+                                        height="70" data-src="../shared/img/css3_icon.png" alt="CSS3 Icon"
+                                        style=" -webkit-filter: grayscale(100%); filter: grayscale(100%);"
+                                        class="plain">
+                                </th>
+                                <th style="text-align: center; width: 33%;"><img
+                                        cite="http://www.olivergast.de/blog/2012/05/31/css3-ubersicht-der-artikel-und-demos/"
+                                        height="70" data-src="../shared/img/HTML5_logo_and_wordmark.png"
+                                        alt="HTML5 Logo"
+                                        style="-webkit-filter: grayscale(100%); filter: grayscale(100%);" class="plain">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3">
+                                    <ul>
+                                        <li>Hardwarebeschleunigtes 3D-Rendering mit JavaScript</li>
+                                        <li>Basiert auf der bewährten Grafik-API OpenGL</li>
+                                        <li>Alle Desktopbrowser</li>
+                                        <li>Die meisten mobilen Browser</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <aside class="notes">
+                        WebGL
+                        <ul>
+                            <li>für hardwarebeschleunigtes 3D-Rendering mit JavaScript</li>
+                            <li>Basierend auf der bewährten Grafik-API OpenGL ist WebGL ein Standard, der von allen
+                                Webbrowsern auf dem Desktop sowie einer großen Anzahl von mobilen Browsern unterstützt
+                                wird</li>
+                            <li>Die neueren Webbrowser unterstützen mittlerweile die 2017 veröffentlichten WebGL 2.0
+                                Spezifiaktionen</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <table style="table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;  width: 33%;"><img
+                                        cite="https://commons.wikimedia.org/wiki/File:WebGL_Logo.svg" height="70"
+                                        data-src="../shared/img/WebGL_Logo.png" alt="The logo of Khronos Group's WebGL"
+                                        style="-webkit-filter: grayscale(100%); filter: grayscale(100%);" class="plain">
+                                </th>
+                                <th style="text-align: center; width: 33%;"><img
+                                        cite="https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg"
+                                        height="70" data-src="../shared/img/css3_icon.png" alt="CSS3 Icon"
+                                        class="plain">
+                                    </h>
+                                <th style="text-align: center; width: 33%;"><img
+                                        cite="http://www.olivergast.de/blog/2012/05/31/css3-ubersicht-der-artikel-und-demos/"
+                                        height="70" data-src="../shared/img/HTML5_logo_and_wordmark.png"
+                                        alt="HTML5 Logo"
+                                        style="-webkit-filter: grayscale(100%); filter: grayscale(100%);" class="plain">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3">
+                                    <ul>
+                                        <li>Transformationen, Übergänge und benutzerdefinierte Filter</li>
+                                        <li>hardware-beschleunigte 3D-Rendering- und Animationsfunktionen</li>
+                                        <li>Alle Desktop- &amp; mobilen Browser</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <aside class="notes">
+                        CSS 3D
+                        <ul>
+                            <li>Transformationen, Übergänge und benutzerdefinierte Filter für erweiterte Seiteneffekte
+                            </li>
+                            <li>Bereits seit einigen Jahren stellt CSS hardware-beschleunigte 3D-Rendering- und
+                                Animationsfunktionen bereit</li>
+                            <li>von allen Browsern, sowohl Desktop als auch mobil, unterstützt</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <table style="table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <th style="text-align: center;  width: 33%;"><img
+                                        cite="https://commons.wikimedia.org/wiki/File:WebGL_Logo.svg" height="70"
+                                        data-src="../shared/img/WebGL_Logo.png" alt="The logo of Khronos Group's WebGL"
+                                        style="-webkit-filter: grayscale(100%); filter: grayscale(100%);" class="plain">
+                                </th>
+                                <th style="text-align: center; width: 33%;"><img
+                                        cite="https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg"
+                                        height="70" data-src="../shared/img/css3_icon.png" alt="CSS3 Icon"
+                                        style="-webkit-filter: grayscale(100%); filter: grayscale(100%);" class="plain">
+                                </th>
+                                <th style="text-align: center; width: 33%;"><img
+                                        cite="http://www.olivergast.de/blog/2012/05/31/css3-ubersicht-der-artikel-und-demos/"
+                                        height="70" data-src="../shared/img/HTML5_logo_and_wordmark.png"
+                                        alt="HTML5 Logo" class="plain">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3">
+                                    <ul>
+                                        <li>2D-Grafiken auf der Oberfläche eines DOM-Elements (Canvas)</li>
+                                        <li>zusätzliche JavaScript Bibliotheken rendern 3D-Effekte</li>
+                                        <li>Alternative zu WebGL oder CSS3 3D</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <aside class="notes">
+                        Das Canvas Element und die dazugehörige 2D Zeichnungs API
+                        <ul>
+                            <li>Entwickler können 2D-Grafiken auf die Oberfläche eines DOM-Elements zeichnen</li>
+                            <li>mit zusätzlichen JavaScript Bibliotheken können 3D-Effekte gerendert werden</li>
+                            <li>insbesondere zu Empfehlen für als Alternative für Plattformen, auf denen WebGL oder CSS3
+                                3D nicht unterstützt werden</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2>Welche Technologie?</h2>
+                    <ul>
+                        <li>Was soll mit der Anwendung abgebildet werden?</li>
+                        <li>Welche Plattformen sollen unterstützt werden?</li>
+                        <li>Welche Performance soll erreicht werden?</li>
+                        <li>Wie hoch soll der der Grad der Interaktivität sein (messen, bewegen, navigieren)?</li>
+                        <li>u. v. a. m.</li>
+                    </ul>
+                    <aside class="notes">
+                        Welche Technologie soll verwendet werden?<br />
+                        Abhängig von diversen Faktoren:
+                        <ul>
+                            <li>Was soll mit der Anwendung abgebildet werden?</li>
+                            <li>Welche Plattformen sollen unterstützt werden?</li>
+                            <li>Welche Performance soll erreicht werden?</li>
+                            <li>Wie hoch soll der der Grad der Interaktivität sein (messen, bewegen, navigieren)?</li>
+                            <li>usw.</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2>Serverkomponenten</h2>
+                </section>
+                <section>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img cite="https://commons.wikimedia.org/wiki/File:OpenLayers_logo.svg" width="250"
+                                        data-src="../shared/img/OpenLayers_logo.png" alt="OpenLayers Logo"
+                                        class="plain"></td>
+                                <td>
+                                    <h2>OpenLayers</h2>
+                                    <h3>Ol-Cesium</h3>
+                                    <ul>
+                                        <li>Erstellen von Karten mit OpenLayers</li>
+                                        <li>Visualisierung auf einem Globus von CesiumJS</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <aside class="notes">
+                        Ol-Cesium
+                        <ul>
+                            <li>Erstellen von Karten mit OpenLayers und mit Cesium auf einem Globus visualisieren</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img cite="https://github.com/geoserver/geoserver/blob/master/doc/en/themes/geoserver/static/GeoServer_500.png"
+                                        width="370" data-src="../shared/img/GeoServer_logo.png" alt="GeoServer Logo"
+                                        class="plain"></td>
+                                <td>
+                                    <h2>GeoServer</h2>
+                                    <ul>
+                                        <li>W3DS (Web 3D Service)</li>
+                                        <li>WVS (Web View Service)</li>
+                                    </ul>
+                                    <p class="fragment fade-up" style="color: red;">Beide Dienste sind <span
+                                            style="font-style: italic">deprecated</span> und werden nicht weiter
+                                        entwickelt</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <aside class="notes">
+                        GeoServer<br />
+                        <ul>
+                            <li>W3DS (Web 3D Service)</li>
+                            <li>WVS (Web View Service)</li>
+                            <li>beide Dienst sind deprecated und werden nicht weiter verfolgt</li>
+                        </ul>
+                    </aside>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Datenformate & Schnittstellen</h2>
+                    <aside class="notes">
+                        Viele unterschiedliche Datenformate, die als Standard definiert werden
+                    </aside>
+                </section>
+                <section>
+                    <h3>OGC Standards</h3>
+                    <aside class="notes">
+                        OGC (unter anderem):
+                    </aside>
+                </section>
+                <section>
+                    <h3>3dP (3D Portrayal Service)</h3>
+                    <ul>
+                        <li>Seit 2017 OGC Standard</li>
+                        <li>Große Menge raumbezogener 3D-Daten im Web</li>
+                        <li>Keine Definition eines bestimmten Formates</li>
+                        <li>Stellt ein Framework bereit zur Bestimmung der Interoperabilität</li>
+                    </ul>
+                    <aside class="notes">
+                        3dP (3D Portrayal Service, seit 2017 OGC Standard)
+                        <ul>
+                            <li>Spezifikation zur Implementierung für die Bereitstellung von einer großen Menge
+                                raumbezogener 3D-Daten im Web</li>
+                            <li>keine Definition von bestimmten Formaten zur Organisation, Übertragung oder Präsentation
+                                von Inhalten</li>
+                            <li>stellt ein Framework bereit, um zu bestimmen, ob 3D-Inhalte auf der Ebene der
+                                Inhaltsdarstellung interoperabel sind</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h3>CityGML (City Geography Markup Language)</h3>
+                    <ul>
+                        <li>Seit 2008 OGC Standard</li>
+                        <li>Offenes Datenmodell und XML-basiertes Format</li>
+                        <li>Speicherung und Austausch von
+                            virtuellen 3D-Stadtmodellen</li>
+                        <li>Gemeinsame Definition der grundlegenden Bestandteile eines
+                            3D-Stadtmodells</li>
+                        <li>Wiederverwendung in verschiedenen Anwendungsbereichen </li>
+                        <li>CityJSON: kompakte Beschreibung von CityGML Daten</li>
+                    </ul>
+                    <aside class="notes">
+                        CityGML (City Geography Markup Language, seit 2008 OGC Standard, Version 3 soll 2019
+                        verabschiedet werden)
+                        <ul>
+                            <li>Offenes Datenmodell und XML-basiertes Format für die Speicherung und den Austausch von
+                                virtuellen 3D-Stadtmodellen</li>
+                            <li>gemeinsame Definition der grundlegenden Entitäten, Attribute und Beziehungen eines
+                                3D-Stadtmodells</li>
+                            <li>Wiederverwendung der gleichen Daten in verschiedenen Anwendungsbereichen soll ermöglicht
+                                werden
+                            </li>
+                            <li>CityJSON ermöglicht eine kompaktere Beschreibung von CityGML-Architektur;
+                                Implementierung der Stadtobjekte an letzter Stelle der Baumstruktur führt zu
+                                Verinfachung, ohne dass Informationen verloren gehen</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h3>CDB (ehemals "Common Database")</h3>
+                    <ul>
+                        <li>Seit 2016 OGC Standard</li>
+                        <li>Entworfen und entwickelt für das United States Special Operations Command (USSOCOM)</li>
+                        <li>Standardisiertes Modell und Struktur für eine einzelne, synthetische, virtuelle
+                            Darstellung der Erde</li>
+                    </ul>
+                    <aside class="notes">
+                        CDB (ehemals "Common Database", seit 2016 OGC Standard)
+                        <ul>
+                            <li>entworfen und entwickelt für das United States Special Operations Command (USSOCOM)</li>
+                            <li>standardisiertes Modell und Struktur für eine einzelne, synthetische virtuelle
+                                Darstellung der Erde</li>
+                            <li>Alle Simulationssysteme verwenden dieselbe Datenbank: die CDB</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h3>KML (ehemals "Keyhole Markup Language")</h3>
+                    <ul>
+                        <li>Seit 2008 OGC Standard</li>
+                        <li>geographische Anmerkungen und Visualisierung webbasierten Onlinekarten und
+                            Globusdarstellungen</li>
+                        <li>Ziel: Interoperabilität von Globusdarstellungen</li>
+                    </ul>
+                    <aside class="notes">
+                        KML (ehemals "Keyhole Markup Language", seit 2008 OGC Standard)
+                        <ul>
+                            <li>ein internationaler Standard zum Ausdruck geographischer Anmerkungen und Visualisierung
+                                auf webbasierten Onlinekarten (2D) und Globusdarstellungen
+                                (3D)</li>
+                            <li>Interoperabilität von Globusdarstellungen</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h3>i3s (Indexed 3D Scene Layers)</h3>
+                    <ul>
+                        <li>Seit 2017 OGC Standard</li>
+                        <li>Container für 3D-Geodaten</li>
+                        <li>Entwickelt für mobile, Desktop- und serverbasierte Workflows</li>
+                        <li>Zugriff über das Web oder als lokale Dateien</li>
+                        <li>Cloud-, Web- und mobilfreundlich</li>
+                        <li>Basiert auf JSON, REST und anderen modernen Webstandards</li>
+                    </ul>
+                    <aside class="notes">
+                        i3s (Indexed 3D Scene Layers, seit 2017 OGC Standard)
+                        <ul>
+                            <li>Container für beliebig große Mengen von heterogen verteilten 3D-Geodaten</li>
+                            <li>Entwickelt für den Einsatz in mobilen, Desktop- und serverbasierten Workflows</li>
+                            <li>Zugriff über das Web oder als lokale Dateien</li>
+                            <li>Cloud-, Web- und mobilfreundlich</li>
+                            <li>basiert auf JSON, REST und anderen modernen Webstandards</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h3>Web3D Consortium</h3>
+                    <aside class="notes">
+                        Web3D Consortium
+                    </aside>
+                </section>
+                <section>
+                    <h3>X3D (Extensible 3D Graphics)</h3>
+                    <ul>
+                        <li>Ersetzt das Vorgängerformat VRML (Virtual Reality Modeling Language)</li>
+                        <li>Offener internationaler Standard (ISO-zertifiziert) für 3D-Grafiken im Web</li>
+                        <li>Animierte Objekte aus verschiedenen Blickwinkel</li>
+                        <li>Kompatibel mit anderen Open-Source-Standards (DOM, XML)</li>
+                        <li>Szenen werden direkt in das HTML-Markup geschrieben</li>
+                        <li>Bevorstehendes Upgrade auf Version 4</li>
+                    </ul>
+                    <aside class="notes">
+                        X3D (Extensible 3D Graphics)
+                        <ul>
+                            <li>VRML-Format </li>
+                            <li>offener internationaler Standard (ISO-zertifiziert) für 3D-Grafiken im Web</li>
+                            <li>animierte Objekte aus verschiedenen Blickwinkeln ansehen</li>
+                            <li>kompatibel mit anderen Open-Source-Standards wie DOM, XML</li>
+                            <li>Szenen werden direkt in das HTML-Markup geschrieben</li>
+                            <li>Bevorstehendes Upgrade auf Verson 4 soll eine noch einfachere Veröffentlichung von
+                                interaktiven
+                                3D-Inhalten an beliebigen Stellen im Web, ohne Einschränkungen oder Plugins ermöglichen
+                            </li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h3>Bisher ohne Standardisierung</h3>
+                    <aside class="notes">
+                        Bisher ohne standardisierte Spezifikationen
+                    </aside>
+                </section>
+                <section>
+                    <h3>CZML (Cesium Language)</h3>
+                    <ul>
+                        <li>Ähnlich wie KML, basiert aber auf JSON </li>
+                        <li>Punkte, Flächen, Modelle und andere grafische Grundelemente</li>
+                        <li>Beschreibung einer zeitdynamischen grafischen Szene</li>
+                        <li>Effizientes Streaming &amp; einfach zu parsen</li>
+                        <li>Von Menschen les- und schreibbar</li>
+                        <li>Hauptsächlich zur Anzeige in einem Webbrowser mit CesiumJS</li>
+                    </ul>
+                    <aside class="notes">
+                        CZML (Cesium Language, ähnlich wie KML)
+                        <ul>
+                            <li>basiert aber auf JSON</li>
+                            <li>zur Darstellung von Linien, Punkte, Flächen, Modelle und andere grafische Grundelemente
+                            </li>
+                            <li>Beschreibung einer zeitdynamischen grafischen Szene</li>
+                            <li>strukturiert für effizientes Streaming zu einem Client</li>
+                            <li>kompakt und einfach zu parsen</li>
+                            <li>von Menschen les- und schreibbar</li>
+                            <li>hauptsächlich zur Anzeige in einem Webbrowser auf einem Globus von CesiumJS</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h3>3D Tiles</h3>
+                    <ul>
+                        <li>Seit 2016 OGC Community Standard, auf dem Weg zum OGC Standard</li>
+                        <li>Konzipiert für das Streaming und Rendern von 3D-Inhalten auf einen Globus</li>
+                        <li>Photogrammetrie, 3D-Gebäude, BIM/CAD (Bauwerksdatenmodellierung) und Punktwolken</li>
+                        <li>Definiert eigene Binärfomate für das Streaming</li>
+                        <li>Styling-Spezifikationen</li>
+                        <li>Baumstruktur (Konzept der "Hierarchical Level of Detail")</li>
+                    </ul>
+                    <aside class="notes">
+                        3D Tiles (seit 2016 OGC Community Standard)
+                        <ul>
+                            <li>Konzipiert für das Streaming und Rendern von einer großen Menge an 3D-Inhalten auf einen
+                                Globus</li>
+                            <li>insbesondere Photogrammetrie, 3D-Gebäude, BIM/CAD (Bauwerksdatenmodellierung) und
+                                Punktwolken</li>
+                            <li>beinhaltet außerdem Styling-Spezifikationen, die auf die Tilesets angewendet werden
+                                können</li>
+                            <li>Tiles sind in einer Baumstruktur angeordnet, um das Konzept der des "Hierarchical Level
+                                of Detail" (HLOD) für optimales Rendern räumlicher Daten zu unterstützen</li>
+                            <li>Dafür wurden eigene binäre Tile-Formate entwickelt:</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h3>3D Tiles</h3>
+                    <ul>
+                        <li>
+                            b3dm (Batched 3D Model)
+                            <ul>
+                                <li>heterogene 3D-Modelle</li>
+                                <li>z.B. für verschiedene Gebäude in einer Stadt</li>
+                            </ul>
+                        </li>
+                        <li class="fragment fade-up">
+                            i3dm (Instanced 3D Model)
+                            <ul>
+                                <li>effizientes Streaming und Rendern einer großen Anzahl von Modellen mit geringfügigen
+                                    Abweichungen</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <aside class="notes">
+                        b3dm (Batched 3D Model)
+                        <ul>
+                            <li>heterogene 3D-Modelle</li>
+                            <li>z. B. verschiedene Gebäude in einer Stadt</li>
+                        </ul>
+                        i3dm (Instanced 3D Model)
+                        <ul>
+                            <li>effizientes Streaming und Rendern einer großen Anzahl von Modellen mit geringfügigen
+                                Abweichungen</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h3>3D Tiles</h3>
+                    <ul>
+                        <li>
+                            pnts (Point Cloud)
+                            <ul>
+                                <li>effizientes Streaming von Punktwolken zur 3D-Visualisierung</li>
+                            </ul>
+                        </li>
+                        <li class="fragment fade-up">
+                            cmpt (Composite)
+                            <ul>
+                                <li>flexibles Streaming kombinierter, heterogener Datensätze</li>
+                                <li>z.B. aus b3dm- und i3dm-Modellen</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <aside class="notes">
+                        pnts (Point Cloud)
+                        <ul>
+                            <li>effizientes Streaming massiver Punktwolken zur 3D-Visualisierung</li>
+                        </ul>
+                        cmpt (Composite)
+                        <ul>
+                            <li>flexibles Streaming kombinierter, heterogener Datensätze</li>
+                            <li>z.B. aus b3dm und i3dm</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h3>glTF (GL Transmission Format)</h3>
+                    <ul>
+                        <li>"JPEG of 3D"</li>
+                        <li>Konzipiert für das Streaming und Rendern von 3D-Inhalten auf einen Globus</li>
+                        <li>Besteht aus:
+                            <ul>
+                                <li>Einer JSON Datei (.gltf), Szenenbeschreibung &amp; Verweis auf externe Dateien</li>
+                                <li>Binärdateien (.bin), Geometrie- und Animationsdaten</li>
+                                <li>Bilddateien (.jpg, .png, usw.), Texturen</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <aside class="notes">
+                        glTF (GL Transmission Format)
+                        <ul>
+                            <li>"JPEG of 3D"</li>
+                            <li>Spezifikation zum effizienten Übertragen und Laden von 3D-Szenen und -Modellen</li>
+                            <li>Minimiert die Größe von 3D-Objekten</li>
+                            <li>besteht im Grunde aus:
+                                <ul>
+                                    <li>einer JSON Datei (.gltf), die eine vollständige Szenenbeschreibung enthält und
+                                        auf externe Daten verweist</li>
+                                    <li>Binärdateien (.bin) mit Geometrie- und Animationsdaten und</li>
+                                    <li>Bilddateien (.jpg, .png usw.) für die Texturen</li>
+                                </ul>
+                            </li>
+                            <li>Konvertierung in einzelne Binärdatei (.glb) möglich</li>
+                        </ul>
+                    </aside>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Vergleich von Bibliotheken</h2>
+                    <aside class="notes">
+                        Übersicht & Vergleich der Client-Bibliotheken (CesiumJS, x3dom, three.js)<br />
+                        Die Zukunft liegt in lebendigen Karten, dessen Basis die Darstellung von 3D-Inhalten bildet.
+                        Einige Bibliotheken bieten dazu möglicherweise einen guten Ausgangspunkt:
+                    </aside>
+                </section>
+                <section>
+                    <h3>three.js</h3>
+                    <img src="../shared/img/threejs_example.png" class="plain" />
+                    <aside class="notes">
+                        three.js (JavaScript 3D-Bibliothek)
+                        <ul>
+                            <li>Beispiele</li>
+                            <li>Dokumentation / API</li>
+                            <li>Community (stackoverflow, Forum, Slack)</li>
+                            <li>Updates (regelmäßig über GitHub)</li>
+                            <li>Auch als PlugIn für QGIS verfügbar</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h3>x3dom</h3>
+                    <img src="../shared/img/x3dom_example.png" class="plain" />
+                    <aside class="notes">
+                        x3dom (Framework zur Integration und Bearbeitung von X3D-Szenen als HTML5 / DOM-Elemente)
+                        <ul>
+                            <li>Beispiele</li>
+                            <li>Tutorials</li>
+                            <li>Dokumentation / API</li>
+                            <li>Community (Mailingliste archiviert, GitHub)</li>
+                            <li>Updates (Letzter stable Release: 2016, Developer Release: regelmäßig)</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h3>CesiumJS</h3>
+                    <img src="../shared/img/cesiumjs_example.png" class="plain" />
+                    <aside class="notes">
+                        CesiumJS (Bibliothek für 3D-Globen und -Karten)
+                        <ul>
+                            <li>Beispiele</li>
+                            <li>API</li>
+                            <li>kommerzielle "Cesium Ion"- Plattform (z.B. Tilingservice)</li>
+                            <li>Community (Forum, GitHub für Fehler und Vorschläge)</li>
+                            <li>Updates (in der Regel monatlich)</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h3>CesiumJS 3D Tiles</h3>
+                    Styling von 3D Tiles im Cesium Sandcastle
+                    <img src="../shared/img/cesiumjs_3dtile_example.png" class="plain" />
+                    <aside class="notes">
+                        <ul>
+                            <li>Besonderheit: Sandcastle (Beispiel aus 3D Tiles-Sektion, Color by latitude)</li>
+                            <li>Interaktive Bereitstellung von Beispielen</li>
+                        </ul>
+                    </aside>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Zusammenfassung</h2>
+                    <table style="table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;  width: 40%;"></th>
+                                <th style="text-align: left;  width: 20%;">three.js</th>
+                                <th style="text-align: left;  width: 20%;">x3dom</th>
+                                <th style="text-align: left;  width: 20%;">CesiumJS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Beispiele/Tutorials</td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                            </tr>
+                            <tr>
+                                <td>Dokumentation &amp; API</td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                            </tr>
+                            <tr>
+                                <td>Support Community</td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                                <td style="text-align: center"><span style="color: orange;">&#9711</span></td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                            </tr>
+                            <tr>
+                                <td>Updates</td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                                <td style="text-align: center"><span style="color: orange;">&#9711</span></td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                            </tr>
+                            <tr>
+                                <td>Raumbezug</td>
+                                <td style="text-align: center"><span style="color: red;">&#10060</span></td>
+                                <td style="text-align: center"><span style="color: red;">&#10060</span></td>
+                                <td style="text-align: center"><span style="color: green;">&#10004</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <aside class="notes">
+                        <ul>
+                            <li>Beispiele: Alle Projekte verlinken Beispiele (auch auf externe Projekte), oder Tutorials,
+                                CesiumJS stellt mit dem Sandcastle die Möglichkeit zur direkten Anpassung der Beispiele
+                                bereit</li>
+                            <li>Dokumentation und API in CesiumJS und x3dom getrennt, Three.js hingegen bindet die API
+                                direkt in die Dokumentation ein</li>
+                            <li>kommerzielle Plattform nur bei Cesium mit der Ion-Plattform verfügbar (Speicherplatz und
+                                Tiling Service, persönlicher Support oder individuelle Lösungen)</li>
+                            <li>die größte Support-Community liegt wohl bei three.js vor, bei CesiumJS werden Fragen im
+                                Forum hauptsächlich von Entwicklern des CesiumJS-Projektes beantwortet</li>
+                            <li>three.js und CesiumJS werden regelmäßig gepflegt und veröffentlicht, aktuelle Versionen
+                                von x3dom zur Zeit nur im developer branch</li>
+                            <li>für geographische Fragestellungen bietet sich CesiumJS an, aufgrund der Vollständigkeit
+                                als Software für 3D Prozessierung, Darstellung auf dem Globus sowie eine Navigation
+                                durch Raum und Zeit</li>
+                            <li>three.js und x3dom bieten keine implementierte Unterstützung für die Einbindung von
+                                3D-Szenen im geographischen Kontext</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <h2>Zusammenfassung</h2>
+                    <ul>
+                        <li>Mehr Aktivitäten und Nachfragen zur Darstellung 3D-Inhalten im Web erkennbar, auch im
+                            Geo-Bereich</li>
+                        <li>Noch immer gibt es viele unterschiedliche Datenformate</li>
+                        <li>Schwer oder nicht untereinander austauschbar</li>
+                        <li>Alle Bibliotheken arbeiten ohne zusätzliche Plugins</li>
+                        <li>Verwenden WebGL zur Visualisierung</li>
+                        <li>Kostenlos im Webbrowser</li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>immer mehr Aktivitäten und Nachfragen zu 3D-Inhalten im Web erkennbar (Geologische
+                                Dienste, Städte und Gemeinden, Verlage, ...)</li>
+                            <li>noch immer gibt es viele unterschiedliche Datenformate, die zwar als Standard definiert
+                                werden, aber unter den einzelnen Bibliotheken schwer oder nicht austauschbar sind</li>
+                            <li>technisch arbeiten alle Bibliotheken ohne zustzliche Browserplugins, kostenlos, mit
+                                WebGL</li>
+                        </ul>
+                    </aside>
+                </section>
+            </section>
+            <section id="thanks-questions">
+                <h4>Vielen Dank</h4>
+                <hr />
+                <h1 style="font-size:3.0em">Fragen &amp; Anmerkungen?</h1>
+                <hr />
+                <p class="subtle">
+                    <a href="#/imprint">Impressum</a>
+                </p>
+            </section>
+
+            <section id="imprint">
+                <h2>Impressum</h2>
+                <h4>Autoren</h4>
+                <div style="display: table; width: 100%; table-layout: fixed; border-spacing: 10px;">
+                    <div style="display: table-cell;">
+                        <address style="text-align: left">
+                            <strong style="font-size:0.8em">Michael Holthausen</strong><br />
+                            <span style="font-size: 0.6em;">
+                                terrestris GmbH &amp; Co. KG<br />
+                                Kölnstr. 99<br />
+                                53111 Bonn<br />
+                                holthausen@terrestris.de
+                            </span>
+                        </address>
+                    </div>
+                    <div style="display: table-cell;">
+                        <address style="text-align: left">
+                            <strong style="font-size:0.8em">Daniel Koch</strong><br />
+                            <span style="font-size: 0.6em;">
+                                <br />
+                                <br />
+                                <br />
+                                koch@terrestris.de
+                            </span>
+                        </address>
+                    </div>
+                    <div style="display: table-cell;">
+                        <address style="text-align: left">
+                            <strong style="font-size:0.8em">Marc Jansen</strong><br />
+                            <span style="font-size: 0.6em;">
+                                <br />
+                                <br />
+                                <br />
+                                jansen@terrestris.de
+                            </span>
+                        </address>
+                    </div>
+                </div>
+                <h4 style="clear:both;">Lizenz</h4>
+                <p id="license">
+                    Diese Folien sind unter <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>
+                    veröffentlicht.
+                </p>
+                <p>
+                    <a
+                        href="https://rawgit.com/terrestris/fossgis2019/master/talks/3d-geo-applikationen-im-browser-ueberblick-und-erfahrungen.html">Vortragsfolien</a>,
+                    <a
+                        href="https://rawgit.com/terrestris/fossgis2019/master/talks/3d-geo-applikationen-im-browser-ueberblick-und-erfahrungen.pdf">PDF-Version</a>,
+                    <a href="https://github.com/terrestris/fossgis2018">git repository</a>
+                </p>
+            </section>
+
+        </div>
+        <!-- END OF SLIDES -->
+
+
+    </div>
+
+    <script src="../shared/reveal.js-3.6.0/lib/js/head.min.js"></script>
+    <script src="../shared/reveal.js-3.6.0/js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            // Push each slide change to the browser history
+            history: true,
+            dependencies: [
+                { src: '../shared/reveal.js-3.6.0/plugin/markdown/marked.js' },
+                { src: '../shared/reveal.js-3.6.0/plugin/markdown/markdown.js' },
+                { src: '../shared/reveal.js-3.6.0/plugin/notes/notes.js', async: true },
+                {
+                    src: '../shared/reveal.js-3.6.0/plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                }
+            ]
+        });
+    </script>
+</body>
+
+</html>
