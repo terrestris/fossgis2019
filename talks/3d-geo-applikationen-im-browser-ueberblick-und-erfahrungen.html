@@ -238,14 +238,13 @@
                                 <td>
                                     <img class="fragment fade-up plain"
                                         cite="https://commons.wikimedia.org/wiki/File:Wikimedia_Foundation_Servers-8055_35.jpg"
-                                        height="300"
-                                        data-src="../shared/img/Wikimedia_Foundation_Servers-8055_35.jpg"
+                                        height="300" data-src="../shared/img/Wikimedia_Foundation_Servers-8055_35.jpg"
                                         alt="Wikimedia Foundation servers">
                                 </td>
                                 <td>
                                     <img class="fragment fade-up plain"
-                                        cite="https://commons.wikimedia.org/wiki/File:Adobe_After_Effects_CC_icon.svg, https://commons.wikimedia.org/wiki/File:3ds-max-logo.png" height="300"
-                                        data-src="../shared/img/3d_software.png"
+                                        cite="https://commons.wikimedia.org/wiki/File:Adobe_After_Effects_CC_icon.svg, https://commons.wikimedia.org/wiki/File:3ds-max-logo.png"
+                                        height="300" data-src="../shared/img/3d_software.png"
                                         alt="Adobe After Effects und 3ds max logo">
                                 </td>
                             </tr>
@@ -533,6 +532,32 @@
                     </aside>
                 </section>
                 <section>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img cite="https://commons.wikimedia.org/wiki/File:OpenLayers_logo.svg" width="250"
+                                        data-src="../shared/img/OpenLayers_logo.png" alt="OpenLayers Logo"
+                                        class="plain"></td>
+                                <td>
+                                    <h2>OpenLayers</h2>
+                                    <h3>Ol-Cesium</h3>
+                                    <ul>
+                                        <li>Erstellen von Karten mit OpenLayers</li>
+                                        <li>Visualisierung auf einem Globus von CesiumJS</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <aside class="notes">
+                        Ol-Cesium
+                        <ul>
+                            <li>Erstellen von Karten mit OpenLayers und mit Cesium auf einem Globus visualisieren</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
                     <h2>Welche Technologie?</h2>
                     <ul>
                         <li>Was soll mit der Anwendung abgebildet werden?</li>
@@ -561,32 +586,6 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <img cite="https://commons.wikimedia.org/wiki/File:OpenLayers_logo.svg" width="250"
-                                        data-src="../shared/img/OpenLayers_logo.png" alt="OpenLayers Logo"
-                                        class="plain"></td>
-                                <td>
-                                    <h2>OpenLayers</h2>
-                                    <h3>Ol-Cesium</h3>
-                                    <ul>
-                                        <li>Erstellen von Karten mit OpenLayers</li>
-                                        <li>Visualisierung auf einem Globus von CesiumJS</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <aside class="notes">
-                        Ol-Cesium
-                        <ul>
-                            <li>Erstellen von Karten mit OpenLayers und mit Cesium auf einem Globus visualisieren</li>
-                        </ul>
-                    </aside>
-                </section>
-                <section>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>
                                     <img cite="https://github.com/geoserver/geoserver/blob/master/doc/en/themes/geoserver/static/GeoServer_500.png"
                                         width="370" data-src="../shared/img/GeoServer_logo.png" alt="GeoServer Logo"
                                         class="plain"></td>
@@ -609,6 +608,40 @@
                             <li>W3DS (Web 3D Service)</li>
                             <li>WVS (Web View Service)</li>
                             <li>beide Dienst sind deprecated und werden nicht weiter verfolgt</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <img cite="https://www.3dcitydb.org/3dcitydb/3dcitydbhomepage/" width="370"
+                                        data-src="../shared/img/3dcitydb_logo.jpg" alt="3D CityDB Logo" class="plain">
+                                </td>
+                                <td>
+                                    <h2>3D City DB</h2>
+                                    <ul>
+                                        <li>Kostenlose Geodatenbank zum Speichern, Darstellen und Verwalten von
+                                            virtuellen 3D-Stadtmodellen</li>
+                                        <li>Implementiert den CityGML-Standard</li>
+                                        <li>Produktive und kommerzielle Nutzung seit mehr als 14 Jahren</li>
+                                        <li>Direkter Export in den Formaten KML, COLLADA und glTF</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <aside class="notes">
+                        <ul>
+                            <li>Alternative für 3D-Stadtmodelle: 3D City DB</li>
+                            <li>Kostenlose Geodatenbank zum Speichern, Darstellen und Verwalten von virtuellen
+                                3D-Stadtmodellen</li>
+                            <li>Implementiert den CityGML-Standard mit semantisch reichen und vielschichtigen
+                                städtischen Objekten</li>
+                            <li>Produktive und kommerzielle Nutzung seit mehr als 14 Jahren</li>
+                            <li>Zur Visualisierung ist ein direkter Export in den Formaten KML, COLLADA und glTF möglich
+                            </li>
                         </ul>
                     </aside>
                 </section>
@@ -647,6 +680,7 @@
                     </aside>
                 </section>
                 <section>
+
                     <h3>CityGML (City Geography Markup Language)</h3>
                     <ul>
                         <li>Seit 2008 OGC Standard</li>
@@ -764,6 +798,43 @@
                     </aside>
                 </section>
                 <section>
+                    <h3>Beispiel einer 3D-Box mit X3D</h3>
+                    <pre>
+                    <code class="html" data-trim style="font-size: small">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd"&gt;
+&lt;X3D profile='Interchange' version='3.3'  xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation =' http://www.web3d.org/specifications/x3d-3.3.xsd '&gt;
+ &lt;head&gt;
+  &lt;meta name='title' content='Box.x3d'/&gt;
+  &lt;meta name='description' content='Simple Box shape used as test scene for GeoInline/Inline loading and unloading.'/&gt;
+  &lt;meta name='translator' content=' Xeena VRML importer, X3D-Edit 3.1, http://www.web3d.org/x3d/content/README.X3D-Edit.html '/&gt; 
+  &lt;meta name='translated' content='22 April 2003'/&gt; 
+  &lt;meta name='modified' content='8 July 2018'/&gt;
+  &lt;meta name='creator' content='GeoVRML Working Group'/&gt;
+  &lt;meta name='reference' content=' http://www.web3d.org/x3d/content/examples/Basic/Geospatial/A3_GeoInline.x3d '/&gt; 
+  &lt;meta name='identifier' content=' http://www.web3d.org/x3d/content/examples/Basic/Geospatial/Box.x3d '/&gt;
+  &lt;meta name='generator' content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit'/&gt; 
+  &lt;meta name='generator' content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html'/&gt; 
+  &lt;meta name='license' content=' ../license.html'/&gt;
+ &lt;/head&gt; 
+ &lt;Scene&gt;
+  &lt;Transform translation='-1.0 0.0 0.0'&gt;
+   &lt;Shape&gt;
+    &lt;Appearance&gt;
+     &lt;Material diffuseColor='0.0 1.0 0.0'/&gt;
+    &lt;/Appearance&gt;
+   &lt;Box/&gt;
+  &lt;/Shape&gt;
+  &lt;/Transform&gt;
+ &lt;/Scene&gt;
+&lt;/X3D&gt;
+
+                    </code>
+                    </pre>
+                    <a href="http://www.web3d.org/x3d/content/examples/Basic/Geospatial/BoxIndex.html">X3D Beispiel
+                        (Box)</a>
+                </section>
+                <section>
                     <h3>Bisher ohne Standardisierung</h3>
                     <aside class="notes">
                         Bisher ohne standardisierte Spezifikationen
@@ -792,6 +863,19 @@
                             <li>hauptsächlich zur Anzeige in einem Webbrowser auf einem Globus von CesiumJS</li>
                         </ul>
                     </aside>
+                </section>
+                <section>
+                    <h3>Beispiel zur Positionierung eines Punktes mit CZML</h3>
+                    <pre>
+                    <code class="hjs" data-trim >
+{
+ "id": "GroundControlStation"
+ "position": { "cartographicDegrees": [-75.5, 40.0, 0.0] },
+ "point": {
+ "color": { "rgba": [0, 0, 255, 255] },
+}
+                    </code>
+                    </pre>
                 </section>
                 <section>
                     <h3>3D Tiles</h3>
@@ -879,6 +963,34 @@
                     </aside>
                 </section>
                 <section>
+                    <h3>3D Tiles</h3>
+                    Hierarchical Level of Detail (HLOD) <br />zur optimalen Wiedergabe räumlicher Daten
+                    <table>
+                        <tr>
+                            <td style="vertical-align:middle"><img
+                                    cite="https://github.com/AnalyticalGraphicsInc/3d-tiles/blob/master/specification/figures/tree.png"
+                                    width="400" data-src="../shared/img/3dtiles_tree.png" alt="3D Tiles Tree"
+                                    class="plain"></td>
+                            <td style="vertical-align:middle">
+                                <img cite="https://github.com/AnalyticalGraphicsInc/3d-tiles/blob/master/specification/figures/contentsBox.png"
+                                    width="400" data-src="../shared/img/3dtiles_contentsBox.png"
+                                    alt="3D Tiles Contents Box" class="plain">
+                            </td>
+                        </tr>
+                    </table>
+
+                    <aside class="notes">
+                        <ul>
+                            <li>Kacheln sind nach dem Konzept des "Hierarchical Level of Detail" in einer Baumstruktur
+                                angeordnet</li>
+                            <li>Jedes Tile wird von einem boundingVolume zur Definition der räumlichen Ausdehung umgeben
+                            </li>
+                            <li>Der Inhalt der untergeordneten Tiles befindet sich vollständig innerhalb des
+                                boundingVolumes des übergeordneten Elements</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section>
                     <h3>glTF (GL Transmission Format)</h3>
                     <ul>
                         <li>"JPEG of 3D"</li>
@@ -921,7 +1033,10 @@
                 </section>
                 <section>
                     <h3>three.js</h3>
-                    <img src="../shared/img/threejs_example.png" class="plain" />
+                    <!-- <img src="../shared/img/threejs_example.png" class="plain" /> -->
+                    <iframe class="stretch" src="https://threejs.org/examples/#webgl_geometry_terrain_raycast"></iframe>
+                    <small><a href="https://threejs.org/examples/#webgl_geometry_terrain_raycast">three.js
+                            Beispiel</a></small>
                     <aside class="notes">
                         three.js (JavaScript 3D-Bibliothek)
                         <ul>
@@ -935,7 +1050,10 @@
                 </section>
                 <section>
                     <h3>x3dom</h3>
-                    <img src="../shared/img/x3dom_example.png" class="plain" />
+                    <!-- <img src="../shared/img/x3dom_example.png" class="plain" /> -->
+                    <iframe class="stretch" src="https://examples.x3dom.org/BVHRefiner/BVHRefiner.html"></iframe>
+                    <small><a href="https://examples.x3dom.org/BVHRefiner/BVHRefiner.html">x3dom Beispiel</a></small>
+
                     <aside class="notes">
                         x3dom (Framework zur Integration und Bearbeitung von X3D-Szenen als HTML5 / DOM-Elemente)
                         <ul>
@@ -949,7 +1067,10 @@
                 </section>
                 <section>
                     <h3>CesiumJS</h3>
-                    <img src="../shared/img/cesiumjs_example.png" class="plain" />
+                    <!-- <img src="../shared/img/cesiumjs_example.png" class="plain" /> -->
+                    <iframe class="stretch" src="https://oregonhowl.org/?view=wildfires"></iframe>
+                    <small><a href="https://oregonhowl.org/?view=wildfires">CesiumJS Beispiel (History of Wildfire
+                            Severity, oregonhowl.org)</a></small>
                     <aside class="notes">
                         CesiumJS (Bibliothek für 3D-Globen und -Karten)
                         <ul>
@@ -963,8 +1084,14 @@
                 </section>
                 <section>
                     <h3>CesiumJS 3D Tiles</h3>
-                    Styling von 3D Tiles im Cesium Sandcastle
-                    <img src="../shared/img/cesiumjs_3dtile_example.png" class="plain" />
+                    <!-- Styling von 3D Tiles im Cesium Sandcastle -->
+                    <!-- <img src="../shared/img/cesiumjs_3dtile_example.png" class="plain" /> -->
+                    <iframe class="stretch"
+                        src="https://cesiumjs.org/Cesium/Build/Apps/Sandcastle/#c=rVhtT+M4EP4rFlqpqVTyniZlWe5YurpF2jdBdafVdj+4iUmtdezKdlp6iP9+4yQNKRSusORDSZyZeR57nnHGOA46RRkpBBJXiHJNJE41XRIUjNGEMqKQ0mtGeT7ljoMu63vEMM9LnBM0FmlZEK6xpoIfobnWC3XkODnV83Jmp6JwTjlma01TzP6SeDGnqTrnqRNkh9pEd7QkxCmwAmBHLUhKr8DUBHMuO7jvS8oyA5xhjVEqSqmJWhvKX76foa8LwsfmxUJIjVlNA1isVivP5uvUzsXSUVQTJxNUa4dyqik2s1SGyKwJbi9gRlO+xBItKVkRid4hTlbojChaFvbf1ZjVS6vHMwGTppzI3gDdTDmCC6YgYeibFEuaEXm0cUwlwZr8IyTLJrWJ1Z/y2/7bKQe0KqqtUsKJnTMxI3ZGFno+IUqf5mCrdOMEbLQsSeVlUkE00nOC6skwlOICclcxR1ogJsQvhDX6jPkca415PbHG+puA5YBFhpgNyTNslpRiHthXUhRjkkNilHUYh7brJYkXuH7iun6YDFDo2sOR54VBEMRemPjeAMVRYKbTQfgq6UYW28v4kWCz2N+oTucXgrEtON+z/TiJR0mc+KMgCaIBOoSxIAxGbhS5SeyHQ4BzbTf2hqPIGwG1URJ6UYXeXcp6OWxFtMmb1aQog1WlvBHrvbUY1CbijvjRjsk0VoRnE4m5uhKyaBP9GWtJr0P7fPzhy+R88r1NMqTrk8BZlS8j2I3iFKqKgGi7XrvmaXvB6j/BeFK/tG5QKVmLeS74BVFQECmpVvJUgc15ZkVx6PXR7YN1WUha0Er6Ns4yq0FsaZ4JJmSH3wwrkiHIIVCnEsFPPjdsr0qeVrlNjcP79cfqhdVva6GZl9k8yOPzMTVONskxVxXuCHVG6lGeVTlSR+jH9itz/ei9uamZ3aKTdyhwXSjKnsxn2ApBQa7RpxFN1O/9HPyvu9+6W57rgy8Izou8vXy9jm8MuN4QAvhuuJdz1Pr6fghu/hB+gmQ/0lHrGxnIwDW47p6kW19T3l4MuEm8H+V2tiPj6YKn9+hKmd2rtffjAYpGAATW28adx9v6tlLx7WMKXTfaZFCfuswIqEXIzFQ52SHUT43V70s1I1ew/6sHYt3wuIB9DhvF9mR9Z7252by77fc6sxy8gv7voVbZce3Yq4QxPajiWr1FKReM9PrTg8eS+2icbhhJspfE8La4CNg/8xdx8bph1oQxsXpJGHeLDqPFi8i43SDpGvPHgzQF0FrPWFlD/m4BZFTBFz4lyHwBEDbtWVZg+WuH/seN6avpHz1Qa8sGpL+5t5Yk9a1OIQieN5UwQLvqA4Yrl0PoCEZeHMeRX334Tdpidzj0w/6TNYSeKCL0aBVt6EJ2TZPhGtm36colXj+lkPvOblIlu6DX1j2tDlC3kAbI6jofVs5JHzl1lPA5kOF9SNNX8Q7iHYUdoID1PNTj2tjdqsjVHFrtPaqgw7KuhJZkS7qL1SX2WwWzgsMJFEkv6EF/13w8OLSLO6rlCwxfkJxcv1JnA8qbHliS5B+uFxYQ6NvQdGvrEvpGnkNCDA3Qfh/9gbo7ihH+qA/O29u4GfZgOXbM+XIuVtC2sXVn3nl1DoEuc465aQ5QQeBRmUV42NfN4Qjzem2dMnRgO+g0D1WfdZ/5JWxcKRwGGTHd6UQINsPyM+Gl9aM9ZF1rE6lO6vs1qin2Nt07V4SR1JhspnLHvk3D3cTeNgwAv3OOuwex6RmeC3LXa+wFs9manwtzt6XvBWM0jSpRPxeoUw1PIX0E6bwgM9uK6wD8rE8nDzM35QeDg+NKiye1+Z+0MP8DMCcky7YdTYoFfFLgmD8r01+g21Qp43jsbJyOM7pENHsHm9f2sX56gFKGlYI3VyVjl/RfMj04OXbAfsuNieo4+3VJJMNrYzL3Tj7Vg7ZtHzvw+NBL18ruRPwP"></iframe>
+                    <small><a
+                            href="https://cesiumjs.org/Cesium/Build/Apps/Sandcastle/#c=rVhtT+M4EP4rFlqpqVTyniZlWe5YurpF2jdBdafVdj+4iUmtdezKdlp6iP9+4yQNKRSusORDSZyZeR57nnHGOA46RRkpBBJXiHJNJE41XRIUjNGEMqKQ0mtGeT7ljoMu63vEMM9LnBM0FmlZEK6xpoIfobnWC3XkODnV83Jmp6JwTjlma01TzP6SeDGnqTrnqRNkh9pEd7QkxCmwAmBHLUhKr8DUBHMuO7jvS8oyA5xhjVEqSqmJWhvKX76foa8LwsfmxUJIjVlNA1isVivP5uvUzsXSUVQTJxNUa4dyqik2s1SGyKwJbi9gRlO+xBItKVkRid4hTlbojChaFvbf1ZjVS6vHMwGTppzI3gDdTDmCC6YgYeibFEuaEXm0cUwlwZr8IyTLJrWJ1Z/y2/7bKQe0KqqtUsKJnTMxI3ZGFno+IUqf5mCrdOMEbLQsSeVlUkE00nOC6skwlOICclcxR1ogJsQvhDX6jPkca415PbHG+puA5YBFhpgNyTNslpRiHthXUhRjkkNilHUYh7brJYkXuH7iun6YDFDo2sOR54VBEMRemPjeAMVRYKbTQfgq6UYW28v4kWCz2N+oTucXgrEtON+z/TiJR0mc+KMgCaIBOoSxIAxGbhS5SeyHQ4BzbTf2hqPIGwG1URJ6UYXeXcp6OWxFtMmb1aQog1WlvBHrvbUY1CbijvjRjsk0VoRnE4m5uhKyaBP9GWtJr0P7fPzhy+R88r1NMqTrk8BZlS8j2I3iFKqKgGi7XrvmaXvB6j/BeFK/tG5QKVmLeS74BVFQECmpVvJUgc15ZkVx6PXR7YN1WUha0Er6Ns4yq0FsaZ4JJmSH3wwrkiHIIVCnEsFPPjdsr0qeVrlNjcP79cfqhdVva6GZl9k8yOPzMTVONskxVxXuCHVG6lGeVTlSR+jH9itz/ei9uamZ3aKTdyhwXSjKnsxn2ApBQa7RpxFN1O/9HPyvu9+6W57rgy8Izou8vXy9jm8MuN4QAvhuuJdz1Pr6fghu/hB+gmQ/0lHrGxnIwDW47p6kW19T3l4MuEm8H+V2tiPj6YKn9+hKmd2rtffjAYpGAATW28adx9v6tlLx7WMKXTfaZFCfuswIqEXIzFQ52SHUT43V70s1I1ew/6sHYt3wuIB9DhvF9mR9Z7252by77fc6sxy8gv7voVbZce3Yq4QxPajiWr1FKReM9PrTg8eS+2icbhhJspfE8La4CNg/8xdx8bph1oQxsXpJGHeLDqPFi8i43SDpGvPHgzQF0FrPWFlD/m4BZFTBFz4lyHwBEDbtWVZg+WuH/seN6avpHz1Qa8sGpL+5t5Yk9a1OIQieN5UwQLvqA4Yrl0PoCEZeHMeRX334Tdpidzj0w/6TNYSeKCL0aBVt6EJ2TZPhGtm36colXj+lkPvOblIlu6DX1j2tDlC3kAbI6jofVs5JHzl1lPA5kOF9SNNX8Q7iHYUdoID1PNTj2tjdqsjVHFrtPaqgw7KuhJZkS7qL1SX2WwWzgsMJFEkv6EF/13w8OLSLO6rlCwxfkJxcv1JnA8qbHliS5B+uFxYQ6NvQdGvrEvpGnkNCDA3Qfh/9gbo7ihH+qA/O29u4GfZgOXbM+XIuVtC2sXVn3nl1DoEuc465aQ5QQeBRmUV42NfN4Qjzem2dMnRgO+g0D1WfdZ/5JWxcKRwGGTHd6UQINsPyM+Gl9aM9ZF1rE6lO6vs1qin2Nt07V4SR1JhspnLHvk3D3cTeNgwAv3OOuwex6RmeC3LXa+wFs9manwtzt6XvBWM0jSpRPxeoUw1PIX0E6bwgM9uK6wD8rE8nDzM35QeDg+NKiye1+Z+0MP8DMCcky7YdTYoFfFLgmD8r01+g21Qp43jsbJyOM7pENHsHm9f2sX56gFKGlYI3VyVjl/RfMj04OXbAfsuNieo4+3VJJMNrYzL3Tj7Vg7ZtHzvw+NBL18ruRPwP">CesiumJS
+                            Beispiel (3D Tiles)</a></small>
+
                     <aside class="notes">
                         <ul>
                             <li>Besonderheit: Sandcastle (Beispiel aus 3D Tiles-Sektion, Color by latitude)</li>
@@ -1020,7 +1147,8 @@
                     </table>
                     <aside class="notes">
                         <ul>
-                            <li>Beispiele: Alle Projekte verlinken Beispiele (auch auf externe Projekte), oder Tutorials,
+                            <li>Beispiele: Alle Projekte verlinken Beispiele (auch auf externe Projekte), oder
+                                Tutorials,
                                 CesiumJS stellt mit dem Sandcastle die Möglichkeit zur direkten Anpassung der Beispiele
                                 bereit</li>
                             <li>Dokumentation und API in CesiumJS und x3dom getrennt, Three.js hingegen bindet die API
