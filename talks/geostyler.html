@@ -79,7 +79,7 @@
               </ul>
             </li>
             <li>Beispiele</li>
-            <li>Ausblick</li>
+            <li>Stand & Ausblick</li>
           </ul>
         </section>
 
@@ -253,18 +253,18 @@
         <section style="position: relative;">
         <h2>GeoStyler Core</h2>
           <!-- <br/> -->
-          <h3>UI-Komponenten</h3>
+          <p>UI-Komponenten</p>
           <!-- <i>Details UI-Komponenten (bspw. customizable vs gebrauchsfertig)</i> -->
-          <img src="../shared/img/geostyler-talk/symbolizer.png" class="plain" width="300"/>
-          <img src="../shared/img/geostyler-talk/wellknownname.png" class="plain" style="position: absolute; top: 300px;" width="300"/>
-          <img src="../shared/img/geostyler-talk/filter.png" class="plain" width="300"/>
-          <img src="../shared/img/geostyler-talk/codeeditor.png" class="plain" width="300"/>
+          <img src="../shared/img/geostyler-talk/symbolizer.png" class="plain shadow" width="300"/>
+          <img src="../shared/img/geostyler-talk/wellknownname.png" class="plain shadow" style="position: absolute; top: 300px;" width="300"/>
+          <img src="../shared/img/geostyler-talk/filter.png" class="plain shadow" width="300"/>
+          <img src="../shared/img/geostyler-talk/codeeditor.png" class="plain shadow" width="300"/>
         </section>
 
         <section>
           <!-- <h2>GeoStyler - Architektur</h2> -->
           <h2>GeoStyler Core</h2>
-          <h3>Stil Definition</h3>
+          <p>Stil Definition</p>
           <!-- <i>Details Stil Definition (das Beste aus SLD und Mapbox)</i> -->
           <ul style="float: left; width: 40%;">
             <li>Ein JSON-Objekt pro Stil</li>
@@ -273,8 +273,7 @@
             <li>Typisiert</li>
             <li>Lingua Franca d. GeoStylers</li>
           </ul>
-          <pre style="float: right; width: 55%; margin-top: 0px;">
-            <code data-trim class="javascript">
+          <pre style="float: right; width: 55%; margin-top: 0px;"><code data-trim class="javascript">
 {
   "name": "Demo Style",
   "rules": [
@@ -290,17 +289,11 @@
     }
   ]
 }
-            </code>
-          </pre>
+            </code></pre>
         </section>
 
         <section>
           <h2>GeoStyler Parser</h2>
-          <!-- <h2><i>GeoStyler-Core</i><br/>Stil Definition</h2> -->
-          <!-- <i>Details Parser</i><br/>
-          <i>(lesen & schreiben von internem Stil von/zu externen Stil)</i><br/>
-          <i>(lesen & schreiben verschiedener Datenformate)</i><br/>
-          <i>Entwicklung & Integration eigener Parser möglich</i> -->
           <img src="../shared/img/geostyler-talk/parser.png" class="plain" width="1000"/>
           <br/>
           <br/>
@@ -308,7 +301,8 @@
         </section>
 
         <section>
-          <h2>GeoStyler - Features</h2>
+          <h2>GeoStyler</h2>
+          <p>Features</p>
             <ul>
               <li>Regelbasierte Stile (incl. Symbolizer)</li>
               <li>Einfache bis komplexe Komponenten</li>
@@ -320,7 +314,8 @@
         </section>
 
         <section>
-          <h2>GeoStyler - Features</h2>
+          <h2>GeoStyler</h2>
+          <p>Features</p>
             <ul>
               <li>Einbindung in bestehende Web(GIS) Projekte</li>
               <li>Nutzung ohne UI-Komponenten</li>
@@ -331,8 +326,7 @@
 
         <section>
           <h2>Installation</h2>
-          <pre>
-            <code data-trim class="bash">
+          <pre><code data-trim class="bash">
               $ npm i geostyler
 
               $ npm i geostyler-style
@@ -345,44 +339,72 @@
 
               $ npm i geostyler-wfs-parser
               $ npm i geostyler-geojson-parser
-            </code>
-          </pre>
+            </code></pre>
           <small style="float: right;">(*) Release ausstehend</small>
         </section>
 
         <section>
-          <h2>Beispiele</h2>
-          <pre>
-            <code data-trim class="html">
-              &lt;Editor
+          <h2>Beispiel</h2>
+          <p>Default Line Editor</p>
+          <pre style="float: left; width: 650px;"><code data-trim class="html">
+              &lt;LineEditor
                 symbolizer={symbolizer}
                 onSymbolizerChange={this.onSymbolizerChange}
-                iconLibraries={iconLibraries}
               /&gt;
-            </code>
-          </pre>
-          <i>Platzhalter default Editor</i>
+            </code></pre>
+          <img style="float: right;" src="../shared/img/geostyler-talk/lineeditor_default.png" class="plain shadow" width="300"/>
         </section>
 
         <section>
-          <h2>Beispiele</h2>
-          <i>Platzhalter customized Editor</i>
+          <h2>Beispiel</h2>
+          <p>Custom Line Editor</p>
+          <pre><code data-trim class="html">
+              class CustomLineEditor extends React.Component {
+                // ...
+                render() {
+                  return (
+                    &lt;ColorField
+                      color={color}
+                      onChange={this.onColorChange}
+                    /&gt;
+                    &lt;WidthField
+                      width={width}
+                      onChange={this.onWidthChange}
+                    /&gt;
+                  );
+                }
+              }
+            </code></pre>
         </section>
 
         <section>
-          <h2>Beispiele</h2>
-          <!-- <i>Platzhalter Rule Table</i> -->
-          <img src="../shared/img/geostyler-talk/classification.png" class="plain" width="900"/><br />
+          <h2>Beispiel</h2>
+          <p>Custom Line Editor</p>
+          <pre><code data-trim class="html">
+              &lt;CustomLineEditor
+                symbolizer={symbolizer}
+                onSymbolizerChange={this.onSymbolizerChange}
+              /&gt;
+            </code></pre>
+          <img src="../shared/img/geostyler-talk/lineeditor_custom.png" class="plain shadow" width="300"/>
         </section>
 
         <section>
-          <h2>Beispiele Applikationen</h2>
+          <h2>Beispiel</h2>
+          <p>Klassifikationen</p>
+          <img src="../shared/img/geostyler-talk/classification.png" class="plain" width="750"/><br />
+        </section>
+
+        <section>
+          <h2>Beispiel</h2>
+          <p>Browser Extension</p>
           <!-- <i>Platzhalter GeoStyler Browser Extension?</i> -->
           <img src="../shared/img/geostyler-talk/browser-extension.png" class="plain" width="900"/><br />
         </section>
 
         <section>
-          <h2>Beispiele Applikationen</h2>
+          <h2>Beispiel</h2>
+          <p>Vollständig Anpassbar</p>
           <img src="../shared/img/geostyler-talk/bismap.png" class="plain" width="900"/><br />
           <!-- <i>Platzhalter BisMap?</i> -->
         </section>
@@ -414,16 +436,26 @@
           </code></pre>
       </section>
 
-        <section>
-          <h2>Ausblick</h2>
-          <ul>
-            <li>Weitere UI-Komponenten</li>
-            <li>Weitere Stilparser</li>
-            <li>Unterstützung FontIcons</li>
-            <li>Unterstützung Rasterdaten</li>
-            <li>GeoServer Plugin</li>
-          </ul>
-        </section>
+      <section>
+        <h2>Stand</h2>
+        <ul>
+          <li>Aktuell: v3.1.1, 01.03.2019</li>
+          <li>43 Releases</li>
+          <li>>1600 Commits im Main-Repository</li>
+          <li>10 Contributors</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Ausblick</h2>
+        <ul>
+          <li>Weitere UI-Komponenten</li>
+          <li>Weitere Stilparser</li>
+          <li>Unterstützung FontIcons</li>
+          <li>Unterstützung Rasterdaten</li>
+          <li>GeoServer Plugin</li>
+        </ul>
+      </section>
 
         <section id="thanks-questions">
           <h4>Vielen Dank</h4>
