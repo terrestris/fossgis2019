@@ -65,8 +65,6 @@
                     <small>FOSSGIS 2019, Dresden, 14.03.2019</small>
                 </p>
             </section>
-
-            <!-- TODO: Gliederung am Ende vervollständigen -->
             <section id="toc">
                 <h2>Gliederung</h2>
                 <ul>
@@ -81,7 +79,7 @@
                 <h2>Michael Holthausen</h2>
                 <div class="split-info">
                     <div class="part" style="width:35%">
-                        <img src="../shared/img/mh.png" class="plain" width="200" /><br />
+                        <img src="../shared/img/mh.jpg" class="plain" width="200" /><br />
                         <small>
                             <a class="email" href="mailto:holthausen@terrestris.de">holthausen@terrestris.de</a><br />
                             <a class="github" href="https://github.com/mholthausen/">@mholthausen</a><br />
@@ -222,7 +220,6 @@
                         <li>Ursprung bereits in den 1960er Jahren</li>
                         <li>Umspannt viele Bereiche des Alltags </li>
                     </ul>
-                    <!-- TODO: Piktogramme zu Technik, Bildung, Ausbildung, Architektur, Finanzen, Vertrieb und Marketing, Spiele und Unterhaltung? sonst Auflisten-->
                     <aside class="notes">
                         <ul>
                             <li>Die Darstellung von 3D-Grafiken ist fast so alt wie der Computer selbst und reicht bis
@@ -242,15 +239,14 @@
                                     <img class="fragment fade-up plain"
                                         cite="https://commons.wikimedia.org/wiki/File:Wikimedia_Foundation_Servers-8055_35.jpg"
                                         height="300"
-                                        data-src="https://upload.wikimedia.org/wikipedia/commons/6/69/Wikimedia_Foundation_Servers-8055_35.jpg"
+                                        data-src="../shared/img/Wikimedia_Foundation_Servers-8055_35.jpg"
                                         alt="Wikimedia Foundation servers">
                                 </td>
                                 <td>
-                                    <!-- TODO: Logo von 3DS Max und Adobe -->
                                     <img class="fragment fade-up plain"
-                                        cite="https://commons.wikimedia.org/wiki/File:ArcGIS_logo.png" height="300"
-                                        data-src="https://upload.wikimedia.org/wikipedia/commons/d/df/ArcGIS_logo.png"
-                                        alt="ArcGIS logo">
+                                        cite="https://commons.wikimedia.org/wiki/File:Adobe_After_Effects_CC_icon.svg, https://commons.wikimedia.org/wiki/File:3ds-max-logo.png" height="300"
+                                        data-src="../shared/img/3d_software.png"
+                                        alt="Adobe After Effects und 3ds max logo">
                                 </td>
                             </tr>
                         </tbody>
@@ -307,7 +303,7 @@
                         </li>
 
                     </ul>
-                    <aside>
+                    <aside class="notes">
                         <ul>
                             <li>Im Rahmen eines Tests für den Google Chrome wurde vom Team "Google Data Arts" das
                                 Projekt "100,000 Stars" kreiert, eine browserbasierte 3D-Simulation unserer stellaren
@@ -620,9 +616,15 @@
             <section>
                 <section>
                     <h2>Datenformate & Schnittstellen</h2>
+                    <aside class="notes">
+                        Viele unterschiedliche Datenformate, die als Standard definiert werden
+                    </aside>
                 </section>
                 <section>
                     <h3>OGC Standards</h3>
+                    <aside class="notes">
+                        OGC (unter anderem):
+                    </aside>
                 </section>
                 <section>
                     <h3>3dP (3D Portrayal Service)</h3>
@@ -632,6 +634,17 @@
                         <li>Keine Definition eines bestimmten Formates</li>
                         <li>Stellt ein Framework bereit zur Bestimmung der Interoperabilität</li>
                     </ul>
+                    <aside class="notes">
+                        3dP (3D Portrayal Service, seit 2017 OGC Standard)
+                        <ul>
+                            <li>Spezifikation zur Implementierung für die Bereitstellung von einer großen Menge
+                                raumbezogener 3D-Daten im Web</li>
+                            <li>keine Definition von bestimmten Formaten zur Organisation, Übertragung oder Präsentation
+                                von Inhalten</li>
+                            <li>stellt ein Framework bereit, um zu bestimmen, ob 3D-Inhalte auf der Ebene der
+                                Inhaltsdarstellung interoperabel sind</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h3>CityGML (City Geography Markup Language)</h3>
@@ -642,18 +655,43 @@
                             virtuellen 3D-Stadtmodellen</li>
                         <li>Gemeinsame Definition der grundlegenden Bestandteile eines
                             3D-Stadtmodells</li>
-                        <li>Wiederverwendung verschiedenen Anwendungsbereichen</li>
+                        <li>Wiederverwendung in verschiedenen Anwendungsbereichen </li>
+                        <li>CityJSON: kompakte Beschreibung von CityGML Daten</li>
                     </ul>
+                    <aside class="notes">
+                        CityGML (City Geography Markup Language, seit 2008 OGC Standard, Version 3 soll 2019
+                        verabschiedet werden)
+                        <ul>
+                            <li>Offenes Datenmodell und XML-basiertes Format für die Speicherung und den Austausch von
+                                virtuellen 3D-Stadtmodellen</li>
+                            <li>gemeinsame Definition der grundlegenden Entitäten, Attribute und Beziehungen eines
+                                3D-Stadtmodells</li>
+                            <li>Wiederverwendung der gleichen Daten in verschiedenen Anwendungsbereichen soll ermöglicht
+                                werden
+                            </li>
+                            <li>CityJSON ermöglicht eine kompaktere Beschreibung von CityGML-Architektur;
+                                Implementierung der Stadtobjekte an letzter Stelle der Baumstruktur führt zu
+                                Verinfachung, ohne dass Informationen verloren gehen</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
-                    <!-- TODO: mehr Infos zu CDB in die Notizen -->
                     <h3>CDB (ehemals "Common Database")</h3>
                     <ul>
                         <li>Seit 2016 OGC Standard</li>
                         <li>Entworfen und entwickelt für das United States Special Operations Command (USSOCOM)</li>
-                        <li>Standardisiertes Modell und Struktur für eine einzelne, "versionierbare" virtuelle
+                        <li>Standardisiertes Modell und Struktur für eine einzelne, synthetische, virtuelle
                             Darstellung der Erde</li>
                     </ul>
+                    <aside class="notes">
+                        CDB (ehemals "Common Database", seit 2016 OGC Standard)
+                        <ul>
+                            <li>entworfen und entwickelt für das United States Special Operations Command (USSOCOM)</li>
+                            <li>standardisiertes Modell und Struktur für eine einzelne, synthetische virtuelle
+                                Darstellung der Erde</li>
+                            <li>Alle Simulationssysteme verwenden dieselbe Datenbank: die CDB</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h3>KML (ehemals "Keyhole Markup Language")</h3>
@@ -663,20 +701,42 @@
                             Globusdarstellungen</li>
                         <li>Ziel: Interoperabilität von Globusdarstellungen</li>
                     </ul>
+                    <aside class="notes">
+                        KML (ehemals "Keyhole Markup Language", seit 2008 OGC Standard)
+                        <ul>
+                            <li>ein internationaler Standard zum Ausdruck geographischer Anmerkungen und Visualisierung
+                                auf webbasierten Onlinekarten (2D) und Globusdarstellungen
+                                (3D)</li>
+                            <li>Interoperabilität von Globusdarstellungen</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h3>i3s (Indexed 3D Scene Layers)</h3>
                     <ul>
                         <li>Seit 2017 OGC Standard</li>
                         <li>Container für 3D-Geodaten</li>
-                        <li>Entwickelt mobile, Desktop- und serverbasierte Workflows</li>
+                        <li>Entwickelt für mobile, Desktop- und serverbasierte Workflows</li>
                         <li>Zugriff über das Web oder als lokale Dateien</li>
                         <li>Cloud-, Web- und mobilfreundlich</li>
                         <li>Basiert auf JSON, REST und anderen modernen Webstandards</li>
                     </ul>
+                    <aside class="notes">
+                        i3s (Indexed 3D Scene Layers, seit 2017 OGC Standard)
+                        <ul>
+                            <li>Container für beliebig große Mengen von heterogen verteilten 3D-Geodaten</li>
+                            <li>Entwickelt für den Einsatz in mobilen, Desktop- und serverbasierten Workflows</li>
+                            <li>Zugriff über das Web oder als lokale Dateien</li>
+                            <li>Cloud-, Web- und mobilfreundlich</li>
+                            <li>basiert auf JSON, REST und anderen modernen Webstandards</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h3>Web3D Consortium</h3>
+                    <aside class="notes">
+                        Web3D Consortium
+                    </aside>
                 </section>
                 <section>
                     <h3>X3D (Extensible 3D Graphics)</h3>
@@ -686,10 +746,28 @@
                         <li>Animierte Objekte aus verschiedenen Blickwinkel</li>
                         <li>Kompatibel mit anderen Open-Source-Standards (DOM, XML)</li>
                         <li>Szenen werden direkt in das HTML-Markup geschrieben</li>
+                        <li>Bevorstehendes Upgrade auf Version 4</li>
                     </ul>
+                    <aside class="notes">
+                        X3D (Extensible 3D Graphics)
+                        <ul>
+                            <li>VRML-Format </li>
+                            <li>offener internationaler Standard (ISO-zertifiziert) für 3D-Grafiken im Web</li>
+                            <li>animierte Objekte aus verschiedenen Blickwinkeln ansehen</li>
+                            <li>kompatibel mit anderen Open-Source-Standards wie DOM, XML</li>
+                            <li>Szenen werden direkt in das HTML-Markup geschrieben</li>
+                            <li>Bevorstehendes Upgrade auf Verson 4 soll eine noch einfachere Veröffentlichung von
+                                interaktiven
+                                3D-Inhalten an beliebigen Stellen im Web, ohne Einschränkungen oder Plugins ermöglichen
+                            </li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h3>Bisher ohne Standardisierung</h3>
+                    <aside class="notes">
+                        Bisher ohne standardisierte Spezifikationen
+                    </aside>
                 </section>
                 <section>
                     <h3>CZML (Cesium Language)</h3>
@@ -701,6 +779,19 @@
                         <li>Von Menschen les- und schreibbar</li>
                         <li>Hauptsächlich zur Anzeige in einem Webbrowser mit CesiumJS</li>
                     </ul>
+                    <aside class="notes">
+                        CZML (Cesium Language, ähnlich wie KML)
+                        <ul>
+                            <li>basiert aber auf JSON</li>
+                            <li>zur Darstellung von Linien, Punkte, Flächen, Modelle und andere grafische Grundelemente
+                            </li>
+                            <li>Beschreibung einer zeitdynamischen grafischen Szene</li>
+                            <li>strukturiert für effizientes Streaming zu einem Client</li>
+                            <li>kompakt und einfach zu parsen</li>
+                            <li>von Menschen les- und schreibbar</li>
+                            <li>hauptsächlich zur Anzeige in einem Webbrowser auf einem Globus von CesiumJS</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h3>3D Tiles</h3>
@@ -712,6 +803,20 @@
                         <li>Styling-Spezifikationen</li>
                         <li>Baumstruktur (Konzept der "Hierarchical Level of Detail")</li>
                     </ul>
+                    <aside class="notes">
+                        3D Tiles (seit 2016 OGC Community Standard)
+                        <ul>
+                            <li>Konzipiert für das Streaming und Rendern von einer großen Menge an 3D-Inhalten auf einen
+                                Globus</li>
+                            <li>insbesondere Photogrammetrie, 3D-Gebäude, BIM/CAD (Bauwerksdatenmodellierung) und
+                                Punktwolken</li>
+                            <li>beinhaltet außerdem Styling-Spezifikationen, die auf die Tilesets angewendet werden
+                                können</li>
+                            <li>Tiles sind in einer Baumstruktur angeordnet, um das Konzept der des "Hierarchical Level
+                                of Detail" (HLOD) für optimales Rendern räumlicher Daten zu unterstützen</li>
+                            <li>Dafür wurden eigene binäre Tile-Formate entwickelt:</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h3>3D Tiles</h3>
@@ -731,6 +836,18 @@
                             </ul>
                         </li>
                     </ul>
+                    <aside class="notes">
+                        b3dm (Batched 3D Model)
+                        <ul>
+                            <li>heterogene 3D-Modelle</li>
+                            <li>z. B. verschiedene Gebäude in einer Stadt</li>
+                        </ul>
+                        i3dm (Instanced 3D Model)
+                        <ul>
+                            <li>effizientes Streaming und Rendern einer großen Anzahl von Modellen mit geringfügigen
+                                Abweichungen</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h3>3D Tiles</h3>
@@ -749,6 +866,17 @@
                             </ul>
                         </li>
                     </ul>
+                    <aside class="notes">
+                        pnts (Point Cloud)
+                        <ul>
+                            <li>effizientes Streaming massiver Punktwolken zur 3D-Visualisierung</li>
+                        </ul>
+                        cmpt (Composite)
+                        <ul>
+                            <li>flexibles Streaming kombinierter, heterogener Datensätze</li>
+                            <li>z.B. aus b3dm und i3dm</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h3>glTF (GL Transmission Format)</h3>
@@ -763,28 +891,86 @@
                             </ul>
                         </li>
                     </ul>
+                    <aside class="notes">
+                        glTF (GL Transmission Format)
+                        <ul>
+                            <li>"JPEG of 3D"</li>
+                            <li>Spezifikation zum effizienten Übertragen und Laden von 3D-Szenen und -Modellen</li>
+                            <li>Minimiert die Größe von 3D-Objekten</li>
+                            <li>besteht im Grunde aus:
+                                <ul>
+                                    <li>einer JSON Datei (.gltf), die eine vollständige Szenenbeschreibung enthält und
+                                        auf externe Daten verweist</li>
+                                    <li>Binärdateien (.bin) mit Geometrie- und Animationsdaten und</li>
+                                    <li>Bilddateien (.jpg, .png usw.) für die Texturen</li>
+                                </ul>
+                            </li>
+                            <li>Konvertierung in einzelne Binärdatei (.glb) möglich</li>
+                        </ul>
+                    </aside>
                 </section>
             </section>
             <section>
                 <section>
                     <h2>Vergleich von Bibliotheken</h2>
+                    <aside class="notes">
+                        Übersicht & Vergleich der Client-Bibliotheken (CesiumJS, x3dom, three.js)<br />
+                        Die Zukunft liegt in lebendigen Karten, dessen Basis die Darstellung von 3D-Inhalten bildet.
+                        Einige Bibliotheken bieten dazu möglicherweise einen guten Ausgangspunkt:
+                    </aside>
                 </section>
                 <section>
                     <h3>three.js</h3>
                     <img src="../shared/img/threejs_example.png" class="plain" />
+                    <aside class="notes">
+                        three.js (JavaScript 3D-Bibliothek)
+                        <ul>
+                            <li>Beispiele</li>
+                            <li>Dokumentation / API</li>
+                            <li>Community (stackoverflow, Forum, Slack)</li>
+                            <li>Updates (regelmäßig über GitHub)</li>
+                            <li>Auch als PlugIn für QGIS verfügbar</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h3>x3dom</h3>
                     <img src="../shared/img/x3dom_example.png" class="plain" />
+                    <aside class="notes">
+                        x3dom (Framework zur Integration und Bearbeitung von X3D-Szenen als HTML5 / DOM-Elemente)
+                        <ul>
+                            <li>Beispiele</li>
+                            <li>Tutorials</li>
+                            <li>Dokumentation / API</li>
+                            <li>Community (Mailingliste archiviert, GitHub)</li>
+                            <li>Updates (Letzter stable Release: 2016, Developer Release: regelmäßig)</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h3>CesiumJS</h3>
                     <img src="../shared/img/cesiumjs_example.png" class="plain" />
+                    <aside class="notes">
+                        CesiumJS (Bibliothek für 3D-Globen und -Karten)
+                        <ul>
+                            <li>Beispiele</li>
+                            <li>API</li>
+                            <li>kommerzielle "Cesium Ion"- Plattform (z.B. Tilingservice)</li>
+                            <li>Community (Forum, GitHub für Fehler und Vorschläge)</li>
+                            <li>Updates (in der Regel monatlich)</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h3>CesiumJS 3D Tiles</h3>
                     Styling von 3D Tiles im Cesium Sandcastle
                     <img src="../shared/img/cesiumjs_3dtile_example.png" class="plain" />
+                    <aside class="notes">
+                        <ul>
+                            <li>Besonderheit: Sandcastle (Beispiel aus 3D Tiles-Sektion, Color by latitude)</li>
+                            <li>Interaktive Bereitstellung von Beispielen</li>
+                        </ul>
+                    </aside>
                 </section>
             </section>
             <section>
@@ -832,6 +1018,26 @@
                             </tr>
                         </tbody>
                     </table>
+                    <aside class="notes">
+                        <ul>
+                            <li>Beispiele: Alle Projekte verlinken Beispiele (auch auf externe Projekte), oder Tutorials,
+                                CesiumJS stellt mit dem Sandcastle die Möglichkeit zur direkten Anpassung der Beispiele
+                                bereit</li>
+                            <li>Dokumentation und API in CesiumJS und x3dom getrennt, Three.js hingegen bindet die API
+                                direkt in die Dokumentation ein</li>
+                            <li>kommerzielle Plattform nur bei Cesium mit der Ion-Plattform verfügbar (Speicherplatz und
+                                Tiling Service, persönlicher Support oder individuelle Lösungen)</li>
+                            <li>die größte Support-Community liegt wohl bei three.js vor, bei CesiumJS werden Fragen im
+                                Forum hauptsächlich von Entwicklern des CesiumJS-Projektes beantwortet</li>
+                            <li>three.js und CesiumJS werden regelmäßig gepflegt und veröffentlicht, aktuelle Versionen
+                                von x3dom zur Zeit nur im developer branch</li>
+                            <li>für geographische Fragestellungen bietet sich CesiumJS an, aufgrund der Vollständigkeit
+                                als Software für 3D Prozessierung, Darstellung auf dem Globus sowie eine Navigation
+                                durch Raum und Zeit</li>
+                            <li>three.js und x3dom bieten keine implementierte Unterstützung für die Einbindung von
+                                3D-Szenen im geographischen Kontext</li>
+                        </ul>
+                    </aside>
                 </section>
                 <section>
                     <h2>Zusammenfassung</h2>
@@ -844,6 +1050,16 @@
                         <li>Verwenden WebGL zur Visualisierung</li>
                         <li>Kostenlos im Webbrowser</li>
                     </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>immer mehr Aktivitäten und Nachfragen zu 3D-Inhalten im Web erkennbar (Geologische
+                                Dienste, Städte und Gemeinden, Verlage, ...)</li>
+                            <li>noch immer gibt es viele unterschiedliche Datenformate, die zwar als Standard definiert
+                                werden, aber unter den einzelnen Bibliotheken schwer oder nicht austauschbar sind</li>
+                            <li>technisch arbeiten alle Bibliotheken ohne zustzliche Browserplugins, kostenlos, mit
+                                WebGL</li>
+                        </ul>
+                    </aside>
                 </section>
             </section>
             <section id="thanks-questions">
@@ -901,9 +1117,9 @@
                 </p>
                 <p>
                     <a
-                        href="https://rawgit.com/terrestris/fossgis2018/master/talks/react-meets-openlayers.html">Vortragsfolien</a>,
+                        href="https://rawgit.com/terrestris/fossgis2019/master/talks/3d-geo-applikationen-im-browser-ueberblick-und-erfahrungen.html">Vortragsfolien</a>,
                     <a
-                        href="https://rawgit.com/terrestris/fossgis2018/master/talks/react-meets-openlayers.pdf">PDF-Version</a>,
+                        href="https://rawgit.com/terrestris/fossgis2019/master/talks/3d-geo-applikationen-im-browser-ueberblick-und-erfahrungen.pdf">PDF-Version</a>,
                     <a href="https://github.com/terrestris/fossgis2018">git repository</a>
                 </p>
             </section>
