@@ -229,6 +229,7 @@
             <li>Komponenten basiert</li>
             <li>Stilformat unabhängig</li>
             <li>Datenformat unabhängig</li>
+            <li>Framework unabhängig</li>
             <li>Vollständig anpassbar</li>
           </ul>
         </section>
@@ -270,6 +271,7 @@
             <li>Regelbasierte Stile</li>
             <li>Inspiriert durch SLD und Mapbox</li>
             <li>Typisiert</li>
+            <li>Lingua Franca d. GeoStylers</li>
           </ul>
           <pre style="float: right; width: 55%; margin-top: 0px;">
             <code data-trim class="javascript">
@@ -311,11 +313,19 @@
               <li>Regelbasierte Stile (incl. Symbolizer)</li>
               <li>Einfache bis komplexe Komponenten</li>
               <li>Previews der Stile</li>
-              <li>Verschiedene Layouts</li>
               <li>Klassifikationen</li>
               <li>ScaleDenominator & komplexe Filter</li>
-              <li>i18n</li>
               <li>Berechnung überschneidender Regeln</li>
+            </ul>
+        </section>
+
+        <section>
+          <h2>GeoStyler - Features</h2>
+            <ul>
+              <li>Einbindung in bestehende Web(GIS) Projekte</li>
+              <li>Nutzung ohne UI-Komponenten</li>
+              <li>Verschiedene Layouts</li>
+              <li>i18n</li>
             </ul>
         </section>
 
@@ -376,6 +386,33 @@
           <img src="../shared/img/geostyler-talk/bismap.png" class="plain" width="900"/><br />
           <!-- <i>Platzhalter BisMap?</i> -->
         </section>
+
+        <section>
+          <h2>Beispiel</h2>
+          <p>Nutzung von SLDs in OpenLayers</p>
+          <img src="../shared/img/geostyler-talk/geostyler-sld-usage-in-ol.jpg" class="plain" width="900"/><br />
+        </section>
+
+        <section>
+          <h2>Beispiel</h2>
+          <p>Nutzung von SLDs in OpenLayers</p>
+          <pre><code lang="javascript" data-trim>
+
+              const sldParser = new GeoStylerSLDParser.SldStyleParser();
+              const olParser =
+                new GeoStylerOpenlayersParser.OlStyleParser(ol);
+
+              sldParser.readStyle(sldXml)
+                  .then(function (gs) {
+                      olParser.writeStyle(gs).then(function (olStyle) {
+                          mapLayer.setStyle(olStyle);
+                      });
+                  }, function() {
+                      // handle error
+                  });
+
+          </code></pre>
+      </section>
 
         <section>
           <h2>Ausblick</h2>
