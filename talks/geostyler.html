@@ -388,6 +388,33 @@
         </section>
 
         <section>
+          <h2>Beispiel</h2>
+          <p>Nutzung von SLDs in OpenLayers</p>
+          <img src="../shared/img/geostyler-talk/geostyler-sld-usage-in-ol.jpg" class="plain" width="900"/><br />
+        </section>
+
+        <section>
+          <h2>Beispiel</h2>
+          <p>Nutzung von SLDs in OpenLayers</p>
+          <pre><code lang="javascript" data-trim>
+
+              const sldParser = new GeoStylerSLDParser.SldStyleParser();
+              const olParser =
+                new GeoStylerOpenlayersParser.OlStyleParser(ol);
+
+              sldParser.readStyle(sldXml)
+                  .then(function (gs) {
+                      olParser.writeStyle(gs).then(function (olStyle) {
+                          mapLayer.setStyle(olStyle);
+                      });
+                  }, function() {
+                      // handle error
+                  });
+
+          </code></pre>
+      </section>
+
+        <section>
           <h2>Ausblick</h2>
           <ul>
             <li>Weitere UI-Komponenten</li>
