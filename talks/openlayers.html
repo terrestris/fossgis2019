@@ -1,0 +1,512 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>OpenLayers: Stand und Zukunft | Vortrag auf der FOSSGIS 2018, Bonn</title>
+    <meta name="author" content="Marc Jansen">
+    <meta name="author" content="terrestris GmbH &amp; Co. KG">
+    <meta name="author" content="Andreas Hocevar">
+    <meta name="author" content="Boundless">
+    <meta name="description" content="OpenLayers: Stand und Zukunft | Vortrag auf der FOSSGIS 2018, Bonn" />
+
+    <!--[if lt IE 9]>
+    <script src="../shared/reveal.js-3.6.0/lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="../shared/reveal.js-3.6.0/css/reveal.css">
+    <link rel="stylesheet" href="../shared/reveal.js-3.6.0/css/theme/beige.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Lato|Merriweather" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/css/customized.css" />
+    <link rel="stylesheet" href="../shared/css/animate.css" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../shared/reveal.js-3.6.0/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ?
+          '../shared/reveal.js-3.6.0/css/print/pdf.css' :
+          '../shared/reveal.js-3.6.0/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <script src="example-galore.js"></script>
+  </head>
+  <body>
+
+    <div class="reveal">
+
+      <!-- BEGIN OF SLIDES -->
+      <div class="slides">
+
+        <section id="start"
+          data-background-image="../shared/img/ol-logo.svg"
+          data-background-size="auto 90%">
+          <p>&nbsp;</p>
+        </section>
+
+        <section id="title"
+          data-background-image="../shared/img/ol-logo-filter.svg"
+          data-background-size="auto 90%">
+          <h1>OpenLayers</h1>
+          <br />
+          <h3>Stand und Zukunft</h3>
+          <br />
+          <p>
+            <small>Marc Jansen <br />terrestris GmbH &amp; Co. KG</small>
+          </p>
+          <p>
+            <small>Andreas Hocevar <br />Boundless</small>
+          </p>
+          <hr />
+          <p>
+            <small style="text-shadow: 0px 0px 2px #ffffff;">FOSSGIS 2018, Bonn, 21.03.2018</small>
+          </p>
+        </section>
+
+        <section id="toc">
+          <h2>Gliederung</h2>
+          <ul>
+            <li>&uuml;ber&hellip;</li>
+            <li>OpenLayers</li>
+            <li>Stand</li>
+            <li>Zukunft</li>
+          </ul>
+        </section>
+
+        <section id="author-marc-jansen">
+          <h2>Marc Jansen</h2>
+          <div class="split-info">
+            <div class="part" style="width:35%">
+              <img src="../shared/img/mj.jpg" class="plain" width="200"/><br />
+              <small>
+                <a class="email" href="mailto:jansen@terrestris.de">jansen@terrestris.de</a><br />
+                <a class="github" href="https://github.com/marcjansen/">@terrestris</a><br />
+                <a class="twitter" href="https://twitter.com/selectoid/">@selectoid</a><br />
+              </small><br />
+              <img src="../shared/img/openlayers_de_1ed.png" class="plain" width=100 />
+            </div>
+            <div class="part" style="width:60%">
+              <div class="enumeration">
+                <ul>
+                  <li>Gesch&auml;ftsf&uuml;hrer @terrestris</li>
+                  <li>Kernentwickler OpenLayers</li>
+                  <li>Kernentwickler GeoExt</li>
+                  <li>Buchautor "OpenLayers"</li>
+                  <li>Sprecher &amp; Trainer <br /> national &amp; international</li>
+                  <li>OSGeo Foundation Charter Member</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+        </section>
+
+        <section id="about-company-terrestris">
+          <h2>terrestris</h2>
+          <div class="split-info">
+            <div class="part" style="width:35%">
+              <img src="../shared/img/terrestris-logo-normal.svg" class="plain" width="400"/>
+              <br /><small>
+              <a class="email" href="mailto:info@terrestris.de">info@terrestris.de</a><br />
+              <a class="github" href="https://github.com/terrestris/">@terrestris</a><br />
+              <a class="twitter" href="https://twitter.com/terrestrisde/">@terrestrisde</a>
+            </small>
+            </div>
+            <div class="part" style="width:60%">
+              <div class="enumeration">
+                <ul>
+                  <li><a href="https://www.terrestris.de/">terrestris.de</a></li>
+                  <li>OpenSource GIS aus Bonn</li>
+                  <li>Entwicklung, Projekte &amp; Support/Schulung</li>
+                  <li>Beratung, Planung, Implementierung &amp; Wartung</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+        </section>
+
+        <section id="were-hiring">
+          <h3>Teil des Teams werden?</h3>
+          <div id="teampic"></div>
+          <ul>
+            <li>Softwareentwickler/in</li>
+            <li>GIS Consultant</li>
+            <li>Praktikanten / betreute Abschlussarbeiten</li>
+          </ul>
+          <p>
+            Details gerne am terrestris Stand
+          </p>
+        </section>
+
+        <section id="author-andreas-hocevar">
+          <h2>Andreas Hocevar</h2>
+          <div class="split-info">
+            <div class="part" style="width:35%">
+              <img src="../shared/img/ah.jpg" class="plain" width="200"/><br />
+              <small>
+                <a class="email" href="mailto:ahocevar@boundlessgeo.com">ahocevar@boundlessgeo.com</a><br />
+                <a class="github" href="https://github.com/ahocevar/">@ahocevar</a><br />
+                <a class="twitter" href="https://twitter.com/ahoce/">@ahoce</a><br />
+              </small>
+            </div>
+            <div class="part" style="width:60%">
+              <div class="enumeration">
+                <ul>
+                  <li>OpenLayers core developer and steering committee member</lI>
+                  <li>Consultant for Boundless</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+        </section>
+
+        <section id="about-company-boundless">
+          <h2>Boundless</h2>
+          <div class="split-info">
+            <div class="part" style="width:35%">
+              <img src="../shared/img/boundless-logo.png" class="plain" width="200"/>
+              <br /><br />
+              <a class="github" href="https://github.com//boundlessgeo/">@boundlessgeo</a><br />
+              <a class="twitter" href="https://twitter.com/boundlessgeo/">@boundlessgeo</a>
+            </div>
+            <div class="part" style="width:60%">
+              <div class="enumeration">
+                <ul>
+                  <li><a href="http://boundlessgeo.com/">boundlessgeo.com</a></li>
+                  <li>Active leader in the open source community</li>
+                  <li>Has developed and supported powerful software for enterprise GIS applications since 2002</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div style="clear:both"></div>
+        </section>
+
+        <section>
+          <h2>Was ist OpenLayers?</h2>
+          <blockquote lang="en">
+            A high-performance, feature-packed library for all your mapping
+            needs.
+            <footer>&mdash; <cite><a href="https://openlayers.org/">openlayers.org, 16. M&auml;rz 2018</a></cite></footer>
+          </blockquote>
+          <ul class="fragment">
+            <li>OpenSource (BSD)</li>
+            <li>JavaScript</li>
+            <li>OSGeo Projekt</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>OpenLayers</h2>
+          <ul>
+            <li>Viele Daten- &amp; Layerquellen</li>
+            <li>Interaktionen &amp; Steuerelemente</li>
+            <li>Aktiv entwickelt &amp; große Community</li>
+            <li>Gut dokumentiert &amp; viele Beispiele</li>
+            <li>Universal einsetzbar</li>
+          </ul>
+        </section>
+
+        <section id="example-galore">
+          <img class="stretch plain animated rotateInUpLeft entering" src="../shared/img/ol-talk/https_openlayers.org_en_latest_examples_accessible.html.png" alt="">
+        </section>
+
+        <section>
+          <h2>OpenLayers</h2>
+          <ul>
+            <li>…lange Historie
+              <ul>
+                <li>v1.0.0, Mai 2006</li>
+                <li>v2.0.0, August 2006</li>
+                <li>v3.0.0, August 2014</li>
+                <li>v4.0.0, Februar 2017</li>
+                <li>seitdem <a href="https://semver.org/">Semantic Versioning</a></li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+            <h1>Stand</h1>
+        </section>
+
+        <section>
+            <h2>Stand</h2>
+            <ul>
+                <li>Aktuell: <span class="highlight">v4.6.5</span>, 19.03.2018</li>
+                <li>Letzte FOSSGIS: <span class="highlight">v4.0.1</span>, 14.02.2017</li>
+                <li>22 Releases</li>
+                <li>&gt; 1.300 Commits</li>
+                <li>&gt; 800 ge&auml;nderte Dateien</li>
+                <li><a href="https://github.com/openlayers/openlayers/compare/v4.0.1...v4.6.5">GitHub: compare/v4.0.1...v4.6.5</a></li>
+            </ul>
+        </section>
+
+        <section>
+          <img src="../shared/img/ol-talk/contributors-v4.0.1-v4.6.4.png" class="plain stretch">
+        </section>
+
+        <section>
+            <h1>Highlights</h1>
+        </section>
+
+        <section>
+          <h2>Take home:</h2>
+
+          <div class="fragment">
+            <pre><code data-trim class="bash">$ npm install ol</code></pre>
+            <pre><code data-trim class="bash">$ yarn add ol</code></pre>
+          </div>
+          <p class="fragment">Vor einem Jahr: Beta &amp; Obacht! <br><br> <strong class="highlight">Heute: Bitte nur so</strong></p>
+        </section>
+
+        <section>
+          <h2>Gradnetz-Labels</h2>
+          <img src="../shared/img/ol-talk/graticule.png" class="plain stretch">
+          <a class="pr-detail" href="https://github.com/openlayers/openlayers/pull/6737">PR #6737</a>
+        </section>
+
+        <section>
+          <h2>Kurvenförmige Label</h2>
+          <img src="../shared/img/ol-talk/text-along-lines.gif" class="plain stretch">
+          <a class="pr-detail" href="https://github.com/openlayers/openlayers/pull/7239">PR #7239</a>
+        </section>
+
+        <section>
+          <h2>Label <del>exceedLength</del> => overflow</h2>
+          <img src="../shared/img/ol-talk/overflow.gif" class="plain stretch">
+          <a class="pr-detail" href="https://github.com/openlayers/openlayers/pull/7292">PR #7292</a>
+        </section>
+
+        <section>
+          <h2>Texthintergrund</h2>
+          <img src="../shared/img/ol-talk/text-background.png" class="plain stretch">
+          <a class="pr-detail" href="https://github.com/openlayers/openlayers/pull/7454">PR #7454</a>
+        </section>
+
+        <section>
+          <h2>VectorTiles</h2>
+          <iframe src="https://codesandbox.io/s/n4mw3yl97m" class="stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Labelkollision</h2>
+          <iframe src="https://codepen.io/anon/pen/eMdoOb?&editors=1010" class="stretch"></iframe>
+        </section>
+        <section>
+          <h2><code>declutter</code></h2>
+          <iframe src="https://codepen.io/marcjansen/pen/bvqJKq?&editors=1010" class="stretch"></iframe>
+        </section>
+
+        <section>
+          <h2>Deprecations</h2>
+          <ul>
+            <li>Custom Builds</li>
+            <li><a href="https://www.npmjs.com/package/closure-util"><code>closure-util</code></a>-Paket</li>
+            <li><code>ol.source.ImageVector</code> (<code>renderMode: 'image'</code>)</li>
+            <li><code>ol.DeviceOrientation</code></li>
+            <li><code>ol.Attribution</code></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Geistige Gesundheit</h2>
+
+          <pre><code data-trim class="javascript">
+          var source = new ol.source.XYZ({
+            attributions: [
+              new ol.Attribution({html: 'some attribution'})
+            ]
+          });
+          </code></pre>
+          <pre><code data-trim class="javascript">
+          var source = new ol.source.XYZ({
+            attributions: 'some attribution'
+          }); // oder Funktion (=> framestate)
+          </code></pre>
+
+          <pre><code data-trim class="javascript">
+          map.addLayer(layer);
+          map.addLayer(layer);
+          map.removeLayer(layer);
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Sonstiges</h2>
+          <ul>
+            <li>Interaktivere <code>Overview-Control</code></li>
+            <li><code>insertVertexCondition</code> for Modify-Interaktion, Löschen mit Alt-Taste</li>
+            <li><code>movestart</code> / <code>moveTolerance</code> für <code>ol.Map</code></li>
+            <li><code>ol.animation</code> => (shortest path, no-ops, Kaskaden)</li>
+            <li><code>map.getFeaturesAtPixel()</code></li>
+          </ul>
+        </section>
+
+        <section>
+          <h1>Zukunft</h1>
+        </section>
+
+        <section>
+          <h2>Zukunft</h2>
+          <ul>
+              <li>Aktuell: <span class="highlight">v4.6.5</span>, 19.03.2018</li>
+              <li><code>master</code>-Branch, 17.03.2018</li>
+              <li>&gt; 1.000 Commits</li>
+              <li>&gt; 950 ge&auml;nderte Dateien</li>
+              <li><a href="https://github.com/openlayers/openlayers/compare/v4.6.5...master">GitHub compare/v4.6.5...master</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <img src="../shared/img/ol-talk/contributors-v4.6.4-2018-03-17.png" class="plain stretch">
+        </section>
+
+        <section>
+          <h2>Ausblick auf v5.0</h2>
+          <ul>
+              <li>Aktuelle Beta: <span class="highlight">v5.0.0-beta.9</span>, 17.03.2018</li>
+              <li>Entwicklerfreundliche Build-Umgebung</li>
+              <li>Quellcode als Set von ES Modulen</li>
+              <li>API-Verbesserungen für Benutzer</li>
+              <li>Neue Website und API-Dokumentation</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Entwicklerfreundliche Build-Umgebung</h2>
+          <ul>
+              <li>Bereits jetzt umgesetzt</li>
+              <li>closure-util nicht mehr nötig</li>
+              <li>Full Build und Beispiele mit Webpack</li>
+              <li>Closure Compiler nur noch für Type Checking</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Quellcode als Set von ES-Modulen</h2>
+          <ul>
+              <li>Bereits in der Beta des ol Paketes umgesetzt</li>
+              <li>Kann z.B. mit Webpack oder Parcel direkt verwendet werden</li>
+              <li>Einfaches Upgrade für ol v4.x Benutzer</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>API-Verbesserungen für Benutzer</h2>
+          <ul>
+              <li>proj4 Integration ohne Überraschungen</li>
+              <li>Sphere Berechnungen mit statischen Funktionen</li>
+              <li>Gleiche Signatur bei Style Funktionen für Layer und Features</li>
+              <li>Verzicht auf <code>opt_this</code> Argumente in Funktionen
+          </ul>
+        </section>
+
+        <section>
+          <h2>Umstellung auf v5.0</h2>
+          <ul>
+              <li>Geplant: Transform für automatisches Umstellen der Imports: <br><code>import Map from 'ol/map'</code> -> <br><code>import Map from 'ol/Map'</code>
+              <br><code>import * from 'ol/extent'</code> -> <br><code>import {* as extent} from 'ol/extent'</code></li>
+              <li>Ansonsten: Achten auf Release Notes</li>
+          </ul>
+        </section>
+
+        <section id="thanks-questions">
+          <h4>Vielen Dank</h4>
+          <hr />
+          <h1 style="font-size:3.0em">Fragen &amp; Anmerkungen?</h1>
+          <hr />
+          <p class="subtle">
+            <a href="#/imprint">Impressum</a>
+          </p>
+        </section>
+
+        <section id="imprint">
+          <h2>Impressum</h2>
+          <h4>Autor</h4>
+
+          <div style="width: 45%; float: left;">
+            <address style="text-align: left">
+              <strong>Marc Jansen</strong><br />
+              <span style="font-size: smaller;">
+                terrestris GmbH &amp; Co. KG<br />
+                K&ouml;lnstr. 99, 53111 Bonn<br />
+                Germany<br />
+                jansen@terrestris.de
+              </span>
+            </address>
+          </div>
+          <div style="width: 45%; float: right;">
+            <address style="text-align: right">
+              <strong>Andreas Hocevar</strong><br />
+              <span style="font-size: smaller;">
+              Boundless Spatial <br />
+              <br />
+              <br />
+              ahocevar@boundlessgeo.com
+              </span>
+            </address>
+          </div>
+
+          <h4 style="clear:both;">Lizenz</h4>
+          <p id="license">
+            Diese Folien sind unter <a
+            href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>
+            ver&ouml;ffentlicht.
+          </p>
+          <p>
+            <a href="https://rawgit.com/terrestris/fossgis2018/master/talks/openlayers-stand-und-zukunft.html">Vortragsfolien</a>,
+            <a href="https://rawgit.com/terrestris/fossgis2018/master/talks/openlayers-stand-und-zukunft.pdf">PDF-Version</a>,
+            <a href="https://github.com/terrestris/fossgis2018">git repository</a>
+          </p>
+        </section>
+
+      </div>
+      <!-- END OF SLIDES -->
+
+
+    </div>
+
+    <script src="../shared/reveal.js-3.6.0/lib/js/head.min.js"></script>
+    <script src="../shared/reveal.js-3.6.0/js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: '../shared/reveal.js-3.6.0/plugin/markdown/marked.js' },
+          { src: '../shared/reveal.js-3.6.0/plugin/markdown/markdown.js' },
+          { src: '../shared/reveal.js-3.6.0/plugin/notes/notes.js', async: true },
+          {
+            src: '../shared/reveal.js-3.6.0/plugin/highlight/highlight.js',
+            async: true,
+            callback: function() {
+              hljs.initHighlightingOnLoad();
+            }
+          }
+        ],
+        history: true
+      });
+      Reveal.addEventListener('slidechanged', (evt) => {
+          const prev = evt.previousSlide || {};
+          const curr = evt.currentSlide || {};
+          if (prev.id === 'example-galore') {
+            stopExampleGalore();
+          }
+          if (curr.id === 'example-galore') {
+            startExampleGalore();
+          }
+      });
+    </script>
+  </body>
+</html>
