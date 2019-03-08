@@ -1,0 +1,516 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>SHOGun-QGIS-Integration: WebGIS-Applikationen vom Desktop administrieren</title>
+  <meta name="author" content="Daniel Koch">
+  <meta name="author" content="Till Adams">
+  <meta name="author" content="Torsten Brassat">
+  <meta name="author" content="terrestris GmbH &amp; Co. KG">
+  <meta name="description"
+    content="SHOGun-QGIS-Integration: WebGIS-Applikationen vom Desktop administrieren | Vortrag auf der FOSSGIS 2019, Dresden" />
+
+  <!--[if lt IE 9]>
+    <script src="../shared/reveal.js-3.6.0/lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+  <link rel="stylesheet" href="../shared/reveal.js-3.6.0/css/reveal.css">
+  <link rel="stylesheet" href="../shared/reveal.js-3.6.0/css/theme/beige.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata|Lato|Merriweather" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/css/customized.css" />
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="../shared/reveal.js-3.6.0/lib/css/zenburn.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ?
+      '../shared/reveal.js-3.6.0/css/print/pdf.css' :
+      '../shared/reveal.js-3.6.0/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+
+  <div class="reveal">
+
+
+    <!-- BEGIN OF SLIDES -->
+    <div class="slides">
+
+      <section id="start" data-background-image="../shared/img/shogun-qgis-talk/logo-qgis-shogun.png"
+        data-background-size="auto 80%">
+        <p>&nbsp;</p>
+      </section>
+      <section id="title" data-background-image="../shared/img/shogun-qgis-talk/logo-qgis-shogun-faded.png"
+        data-background-size="auto 80%">
+        <h2>SHOGun-QGIS-Integration</h2>
+        <br />
+        <h3>WebGIS-Applikationen vom Desktop administrieren</h3>
+        <br />
+        <p>
+          <small>Torsten Brassat, terrestris GmbH & Co. KG</small>
+        </p>
+        <hr />
+        <p>
+          <small>FOSSGIS 2019, Dresden, 14.03.2019</small>
+        </p>
+      </section>
+
+      <section id="toc">
+        <h2>Gliederung</h2>
+        <ul>
+          <li>Über&hellip;</li>
+          <li>Rückblick & Motivation</li>
+          <li>Die Komponenten: QGIS, GeoServer & SHOGun</li>
+          <li>QGIS - SHOGun Editor</li>
+          <li>Ausblick</li>
+        </ul>
+      </section>
+
+      <section id="about-author">
+        <h2>Torsten Brassat</h2>
+        <div class="split-info">
+          <div class="part" style="width:35%">
+            <img src="../shared/img/tb.jpg" class="plain" width="200" /><br />
+            <small>
+              <a class="email" href="mailto:brassat@terrestris.de">brassat@terrestris.de</a><br />
+            </small><br />
+          </div>
+          <div class="part" style="width:60%">
+            <div class="enumeration">
+              <ul>
+                <li>Dipl.-Geograph</li>
+                <li>Geschäftsführer @terrestris</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="clear:both"></div>
+      </section>
+
+      <section id="about-company-terrestris">
+        <h2>terrestris</h2>
+        <div class="split-info">
+          <div class="part" style="width:35%">
+            <img src="../shared/img/terrestris-logo-normal.svg" class="plain" width="400" />
+            <br /><small>
+              <a class="email" href="mailto:info@terrestris.de">info@terrestris.de</a><br />
+              <a class="github" href="https://github.com/terrestris/">@terrestris</a><br />
+              <a class="twitter" href="https://twitter.com/terrestrisde/">@terrestrisde</a>
+            </small>
+          </div>
+          <div class="part" style="width:60%">
+            <div class="enumeration">
+              <ul>
+                <li><a href="https://www.terrestris.de/">terrestris.de</a></li>
+                <li>OpenSource GIS aus Bonn</li>
+                <li>Entwicklung, Projekte &amp; Support/Schulung</li>
+                <li>Beratung, Planung, Implementierung &amp; Wartung</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="clear:both"></div>
+      </section>
+
+      <section id="were-hiring">
+        <h3>Teil des Teams werden?</h3>
+        <div id="teampic"></div>
+        <ul>
+          <li>Softwareentwickler/in</li>
+          <li>GIS Consultant</li>
+          <li>Praktikanten / betreute Abschlussarbeiten</li>
+        </ul>
+        <p>
+          Details gerne am terrestris Stand
+        </p>
+      </section>
+
+      <section>
+        <h1>Rückblick & Motivation</h1>
+      </section>
+
+      <section>
+        <h2>Rückblick</h2>
+        <ul>
+          <li>Vortrag <a href="https://www.fossgis-konferenz.de/2018/programm/event.php?id=5306">QGIS, GeoServer und
+              SHOGun im Zusammenspiel</a> Till Adams FOSSGIS 2018</li>
+          <li><b>Inhalt: </b>Management von GeoServer-Layern über das QGIS-Plugin GeoServer Explorer</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Rückblick</h2>
+        <b>Problem:</b> Manuelle Synchronisation der Layer über SHOGun Oberfläche
+        <p></p>
+        <img src="../shared/img/shogun-qgis-talk/man-shrugging.png" width="150" class="plain">
+      </section>
+
+      <section>
+        <h2>Rückblick</h2>
+        <b>Idee:</b> Management von Layer direkt über SHOGun!
+        <p></p>
+        <img src="../shared/img/shogun-qgis-talk/ok-hand.png" width="150" class="plain">
+      </section>
+
+      <section>
+        <h2>Motivation</h2>
+        <ul>
+          <li>Gleiche Daten & Dienste in Desktop GIS und WebGIS Welt</li>
+          <li>Erstellung von Diensten über <i>PowerUser</i> (QGIS) mit anschließender Publizierung über SHOGun WebGIS Clients</li>
+          <li>Vereinfachung der Publizierung über GUI-Style-Editor in QGIS</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1>Die Komponenten</h1>
+      </section>
+
+      <section id="about-qgis">
+        <h2>QGIS</h2>
+        <div style="float: left; margin: 2em 0 0 3em;">
+          <img src="../shared/img/shogun-qgis-talk/logo-qgis.png" width="200" class="plain">
+          <br />
+          <small><a class="github" href="https://github.com/qgis/QGIS">github.com/qgis/QGIS</a></small><br>
+          <small><a class="url" href="https://www.qgis.org/">qgis.org</a></small>
+        </div>
+        <br />
+        <ul>
+          <li><i><b>DAS</b></i> Open Source <br /> Desktop GIS</li>
+          <li>Starke Verbreitung & <br />hohe Funktionalität</li>
+          <li>Erweiterbar über <br />Plugins (QGIS-Repo)</li>
+          <li>Aktuell in Version <br />3.6.0 (Noosa)</li>
+        </ul>
+      </section>
+
+      <section id="about-geoserver">
+        <h2>GeoServer</h2>
+        <div style="float: left; margin: 2em 0 0 3em;">
+          <img src="../shared/img/geoserver-full.svg" width="250" class="plain">
+          <br />
+          <small><a class="github" href="https://github.com/geoserver">github.com/geoserver</a></small><br>
+          <small><a class="url" href="http://geoserver.org/">geoserver.org</a></small>
+        </div>
+        <br />
+        <ul>
+          <li>Java-basierter Server
+            <br />für Geodaten</li>
+          <li>Standards des <a href="http://www.opengeospatial.org/">OGC</a>
+            <br />
+            <small>(z.B. WMS, WFS(-T), WCS, WPS)</small>
+          </li>
+          <li>flexibel und erweiterbar</li>
+          <li>gut dokumentiert (<a href="http://docs.geoserver.org/stable/user/">user</a>/<a
+              href="http://docs.geoserver.org/stable/developer/">dev</a>)
+          </li>
+        </ul>
+      </section>
+
+      <section id="geoserver-gui">
+        <h2>GeoServer</h2>
+        <img src="../shared/img/geoserver-gui.png" class="plain" height="500" style="float: left; margin: 0 0 0 3em;">
+        <ul>
+          <li>Konfiguration über Browser</li>
+          <li>Konfiguration über REST
+            <br />
+            <small>GeoServer Explorer QGIS Plugin</small>
+          </li>
+          <li>OGC-Dienste</li>
+          <li>Monitoring
+            <br />
+            <small>(Serverstatus, Logs)</small>
+          </li>
+          <li>erweiterte Features
+            <br />
+            <small>(z.B. GeoWebCache)</small>
+          </li>
+          <li>Erweiterbar über Plugins</li>
+        </ul>
+      </section>
+
+      <section id="about-shogun">
+        <h2>SHOGun</h2>
+        <div style="float: left; margin: 3em 0 0 3em;">
+          <img src="../shared/img/shogun-qgis-talk/logo-shogun.png" width="200" class="plain">
+          <br />
+          <small><a class="github"
+              href="https://github.com/terrestris/shogun">github.com/terrestris/shogun</a></small><br>
+        </div>
+        <ul>
+          <li>WebGIS-Suite aus <br>Open Source <br> Komponenten</li>
+          <li>4 Freiheiten:</li>
+          <ul>
+            <small>
+              <li>Verschiedene GIS-<br>Clients</li>
+              <li>Datenbank-<br>unabhängig</li>
+              <li>Funktional offen <br>(Plugin-Schnittstelle)</li>
+              <li>Inhaltlich offen <br>(Upload & Publizierung <br>von Geodaten)</li>
+            </small>
+          </ul>
+          <!-- <li>Eigene Benutzerverwaltung oder <br>LDAP/CAS</li> -->
+        </ul>
+      </section>
+
+      <section id="shogun-architecture">
+        <h2>Architektur</h2>
+        <img src="../shared/img/shogun-qgis-talk/architecture-shogun.png" class="plain" width="240" />
+      </section>
+
+      <section id="shogun-news">
+        <h2>Aktuelles</h2>
+        <ul>
+          <li>GIS-Client's unterstützen aktuellste OpenLayers Version 5.x</li>
+          <li>Update von Java 8 auf Java 9 / 10 / 11 in shogun-core</li>
+          <li>GeoServer Dockerisierung für alle GeoServer Version ab 2.5</li>
+          <li>Refactoring von SHOGun, Release als Docker Image (in progress!)</li>
+        </ul>
+      </section>
+
+      <section id="shogun-example-1">
+        <h2>Beispiele SHOGun</h2>
+        <img src="../shared/img/shogun-qgis-talk/shogun-lfu-wasser.png" class="plain" width="800" />
+      </section>
+
+      <section id="shogun-example-2">
+        <h2>Beispiele SHOGun</h2>
+        <img src="../shared/img/shogun-qgis-talk/shogun-progemis.png" class="plain" width="800" />
+      </section>
+
+      <section id="shogun-example-3">
+        <h2>Beispiele SHOGun</h2>
+        <img src="../shared/img/shogun-qgis-talk/shogun-lfu-boden.png" class="plain" width="800" />
+      </section>
+
+      <section id="shogun-example-4">
+        <h2>Beispiele SHOGun</h2>
+        <img src="../shared/img/shogun-qgis-talk/shogun-ftth.png" class="plain" width="800" />
+      </section>
+
+      <!-- <section>
+        <h2>QGIS - GeoServer Explorer</h2>
+        <br /><br />
+        <ul>
+          <li>Anlegen eines neuen Stils über QGIS in GeoServer</li>
+          <li>Editieren eine bestehenden GeoServer Stils in GeoServer</li>
+          <li>Verweis auf <a href="https://www.fossgis-konferenz.de/2018/programm/event.php?id=5306">QGIS, GeoServer und
+              SHOGun im Zusammenspiel</a></li>
+        </ul>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_diagram.png" class="plain" width="400" />
+      </section> -->
+
+      <!--
+          Installation:
+            sudo add-apt-repository ppa:nextgis/ppa
+            sudo apt update
+            sudo apt install ngqgis
+
+            https://qgis.boundlessgeo.com/plugins/plugins.xml
+
+            /home/dkoch/.config/NextGIS/qgis2/python/plugins
+            ln -s /home/dkoch/Dokumente/workspace/qgis-shogun-editor/src/shoguneditor shoguneditor
+
+            git checkout jgrieb/shogun2-webapp-support-basic-auth
+            mvn clean package -Dapp.profile=production -Dmaven.javadoc.skip=true -Dskip-build-javascript-resources=false
+            docker-compose -f docker-compose-dev.yml build --no-cache
+            docker-compose -f docker-compose-dev.yml up
+        -->
+
+      <section>
+        <h1>QGIS - SHOGun Editor</h1>
+      </section>
+
+      <section id="qgis-shogun-plugin">
+        <h2>QGIS - SHOGun Editor</h2>
+        <div style="float: left; margin: 2em 0 0 3em;">
+          <img src="../shared/img/shogun-qgis-talk/logo-qgis-shogun.png" width="250" class="plain">
+          <br />
+          <small><a class="github"
+              href="https://github.com/terrestris/qgis-shogun-editor">github.com/terrestris/qgis-shogun-editor</a></small><br>
+        </div>
+        <br />
+        <ul>
+          <li>QGIS-Plugin für <br /> das Management <br /> von SHOGun <br /> Konfigurationen<br />
+            <small>(aktuell Applikationen <br /> und Layer)</small>
+          </li>
+          <li>Verfügbar im <br /> offiziellen <br /> QGIS-Plugin-<br />Repository</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Funktionen</h2>
+        <ul>
+          <li>Hinzufügen von Layern aus SHOGun in QGIS (über WFS bzw. WMS)</li>
+          <li>Erstellen von neuen Layern (Vektor und Raster) von QGIS in SHOGun</li>
+          <li>Stilen von Layern über QGIS-Style Editor (für Vektor Layer)</li>
+          <li>Editieren von SHOGun Entitäten (Namen, Beschreibungen, …)</li>
+          <li>Erstellen von neuen SHOGun Applikationen</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Übersicht</h2>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_architecture.png" class="plain" width="400" />
+      </section>
+
+      <section>
+        <h2>SHOGun-Inhalte lesen</h2>
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_blank.png" class="plain" width="800" />
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_shogun_new_connection.png" class="plain" width="800" />
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_shogun_connection.png" class="plain" width="800" />
+      </section>
+
+      <section>
+        <h2>Applikationen öffnen</h2>
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_context_menu_view_application_browser.png" class="plain"
+          width="800" />
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_context_menu_view_application_browser_open.png"
+          class="plain" width="800" />
+      </section>
+
+      <section>
+        <h2>Applikationen erstellen/editieren</h2>
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_context_menu_application_settings.png" class="plain"
+          width="800" />
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_application_settings_general.png" class="plain"
+          width="400" />
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_application_settings_tools.png" class="plain"
+          width="400" />
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_application_settings_homeview.png" class="plain"
+          width="400" />
+      </section>
+
+      <section>
+        <h2>Layer erstellen und einer Applikation zuordnen</h2>
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_context_menu_upload_layer.png" class="plain" width="800" />
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_upload_layer_to_shogun.png" class="plain" width="400" />
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_upload_layer_to_shogun_success.png" class="plain"
+          width="400" />
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_layer_uploaded.png" class="plain" width="800" />
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_application_edit_layers.png" class="plain" width="400" />
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_layer_loaded_shogun_client.png" class="plain"
+          width="800" />
+      </section>
+      <section>
+        <img src="../shared/img/shogun-qgis-talk/qgis_plugin_context_menu_add_layer_to_qgis.png" class="plain"
+          width="800" />
+      </section>
+
+      <section>
+        <h2>Ausblick</h2>
+        <ul>
+          <li>Unterstützung weiterer/aller SHOGun Konfigurationen (z.B. Berechtigungen)</li>
+          <li>Unterstützung von Raster Symbolisierung</li>
+          <li>Unterstützung für Font Symbolisierung</li>
+          <li>Unterstützung QGIS > 3.4</li>
+          <li>Diverse Bugfixes für QGIS 3 (z.B. Einladen von Layern über WFS)</li>
+        </ul>
+      </section>
+
+      <section id="thanks-questions">
+        <h4>Vielen Dank</h4>
+        <hr />
+        <h1 style="font-size:3.0em">Fragen &amp; Anmerkungen?</h1>
+        <hr />
+        <p class="subtle">
+          <a href="#/imprint">Impressum</a>
+        </p>
+      </section>
+
+      <section id="imprint">
+        <h2>Impressum</h2>
+        <h4>Autoren</h4>
+        <div style="display: table; width: 100%; table-layout: fixed; border-spacing: 10px;">
+          <div style="display: table-cell;">
+            <address style="text-align: left">
+              <strong style="font-size:0.8em">Torsten Brassat</strong><br />
+              <span style="font-size: 0.6em;">
+                terrestris GmbH &amp; Co. KG<br />
+                Kölnstr. 99<br />
+                53111 Bonn<br />
+                brassat@terrestris.de
+              </span>
+            </address>
+          </div>
+        </div>
+        <h4 style="clear:both;">Lizenz</h4>
+        <p id="license">
+          Diese Folien sind unter <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA</a>
+          veröffentlicht.
+        </p>
+        <p>
+          <a href="https://rawgit.com/terrestris/fossgis2019/master/talks/shogun-qgis.html">Vortragsfolien</a>,
+          <a href="https://rawgit.com/terrestris/fossgis2019/master/talks/shogun-qgis.pdf">PDF-Version</a>,
+          <a href="https://github.com/terrestris/fossgis2018">git repository</a>
+        </p>
+      </section>
+
+    </div>
+    <!-- END OF SLIDES -->
+
+
+  </div>
+
+  <script src="../shared/reveal.js-3.6.0/lib/js/head.min.js"></script>
+  <script src="../shared/reveal.js-3.6.0/js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      // Push each slide change to the browser history
+      history: true,
+      dependencies: [
+        { src: '../shared/reveal.js-3.6.0/plugin/markdown/marked.js' },
+        { src: '../shared/reveal.js-3.6.0/plugin/markdown/markdown.js' },
+        { src: '../shared/reveal.js-3.6.0/plugin/notes/notes.js', async: true },
+        {
+          src: '../shared/reveal.js-3.6.0/plugin/highlight/highlight.js',
+          async: true,
+          callback: function () {
+            hljs.initHighlightingOnLoad();
+          }
+        }
+      ]
+    });
+  </script>
+</body>
+
+</html>
