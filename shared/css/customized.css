@@ -120,7 +120,8 @@ span.nope {
 .reveal section a.twitter,
 .reveal section a.github,
 .reveal section a.email,
-.reveal section a.npm {
+.reveal section a.npm,
+.reveal section a.url {
   display: inline;
   padding-left: 1.2em;
   background-repeat: no-repeat;
@@ -143,6 +144,10 @@ span.nope {
 .reveal section a.npm {
   background-image: url("../img/npm-logo.svg");
     background-position: left 0.55em;
+}
+
+.reveal section a.url {
+  background-image: url("../img/url-logo.png");
 }
 
 .reveal section .highlight {
