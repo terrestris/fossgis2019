@@ -10,14 +10,14 @@ Abstract submissions:
   * [SHOGun & QGIS](https://github.com/terrestris/fossgis2019/blob/master/abstracts/demo-sessions/live-vorstellung-shogun-und-qgis.md)
 
 * Talks
-  * [3D](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/3d-geo-applikationen-im-browser-ueberblick-und-erfahrungen.md)
+  * [3D](https://terrestris.github.io/fossgis2019/talks/3d-geo-applikationen-im-browser-ueberblick-und-erfahrungen.html)
   * [GDI & Docker](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/gdi-mit-docker-und-co-einfuehrung-ueberblick-und-diskussion.md)
-  * [GeoStyler](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/geostyler-ein-generischer-grafischer-stileditor-fuer-geodaten.md)
+  * [GeoStyler](https://terrestris.github.io/fossgis2019/talks/geostyler.html)
   * [GeoServer](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/neuerungen-im-geoserver.md)
   * [OpenLayers](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/openlayers-stand-und-aktuelle-entwicklungen.md)
   * [PROGEMIS®](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/progemis-ein-bedarfsgerechtes-nachhaltiges-und-mitwachsendes-gewaessermanagement-aus-opensource-gis-komponenten.md)
   * [react-geo](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/react-geo-und-co-react-komponenten-und-utilities-fuer-openlayers-anwendungen.md)
-  * [SHOGun & QGIS](https://github.com/terrestris/fossgis2019/blob/master/abstracts/talks/shogun-qgis-integration-vom-desktop-webgis-applikationen-administrieren.md)
+  * [SHOGun & QGIS](https://terrestris.github.io/fossgis2019/talks/shogun-qgis.html)
 
 * Workshops:
   * [OpenLayers](https://github.com/terrestris/fossgis2019/blob/master/abstracts/workshops/einfuehrung-in-openlayers.md)
