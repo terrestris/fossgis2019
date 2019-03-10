@@ -1,0 +1,21 @@
+{
+  "name": "ol-inline-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mouseposition.js",
+  "dependencies": {
+    "ol": "^5.3.1"
+  },
+  "devDependencies": {
+    "rollup": "^1.6.0",
+    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-terser": "^4.0.4"
+  },
+  "scripts": {
+    "start": "rollup --config rollup.config.js --watch",
+    "build": "rollup --config rollup.config.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
