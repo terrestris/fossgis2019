@@ -58,10 +58,10 @@
           <h3>Stand und aktuelle Entwicklungen</h3>
           <br />
           <p>
-            <small>Marc Jansen <br />terrestris GmbH &amp; Co. KG</small>
+            <small>Marc Jansen, terrestris GmbH &amp; Co. KG</small>
           </p>
           <p>
-            <small>Andreas Hocevar <br />ahocevar geospatial</small>
+            <small>Andreas Hocevar, ahocevar geospatial</small>
           </p>
           <hr />
           <p>
@@ -132,7 +132,7 @@
           <div style="clear:both"></div>
         </section>
 
-        <section id="were-hiring">
+        <!-- <section id="were-hiring">
           <h3>Teil des Teams werden?</h3>
           <div id="teampic"></div>
           <ul>
@@ -143,7 +143,7 @@
           <p>
             Details gerne am terrestris Stand
           </p>
-        </section>
+        </section> -->
 
         <section id="author-andreas-hocevar">
           <h2>Andreas Hocevar</h2>
@@ -173,7 +173,7 @@
           <h2>ahocevar geospatial</h2>
           <div class="split-info">
             <div class="part" style="width:35%">
-              <img src="../shared/img/ahocevar-geospatial-logo.jpg" class="plain" width="200"/>
+              <img src="../shared/img/ahocevar-geospatial-logo.png" class="plain" width="200"/>
               <br /><br />
               <a class="github" href="https://github.com/ahocevar/">@ahocevar</a><br />
               <a class="twitter" href="https://twitter.com/ahoce/">@ahoce</a><br />
@@ -228,6 +228,7 @@
                 <li>v3.0.0, August 2014</li>
                 <li>v4.0.0, Februar 2017</li>
                 <li>seitdem <a href="https://semver.org/">Semantic Versioning</a></li>
+                <li>v5.0.0, Juni 2018</li>
               </ul>
             </li>
           </ul>
@@ -241,7 +242,7 @@
             <h2>Stand</h2>
             <ul>
                 <li>Aktuell: <span class="highlight">v5.3.1</span>, 21.02.2019</li>
-                <li>Beta: <span class="highlight">v6.0.0-beta.1</span>, 04.02.2019</li>
+                <li class="fragment">Beta: <span class="highlight">v6.0.0-beta.1</span>, 04.02.2019</li>
                 <li>Letzte FOSSGIS: <span class="highlight">v4.6.5</span>, 19.03.2018</li>
                 <li>14 Releases</li>
                 <li>&gt; 2.500 Commits</li>
@@ -255,7 +256,7 @@
         </section>
 
         <section>
-            <h1>Highlights</h1>
+            <h1>Highlights v5.x</h1>
         </section>
 
         <section>
@@ -265,13 +266,63 @@
             <pre><code data-trim class="bash">$ npm install ol</code></pre>
             <pre><code data-trim class="bash">$ yarn add ol</code></pre>
           </div>
-          <p class="fragment">Vor zwei Jahren: Beta &amp; Obacht! <br><br> <strong class="highlight">Vor einem Jahr: Bitte nur so</strong></p>
+          <p class="fragment">Vor zwei Jahren: Beta &amp; Obacht! <br><br> <strong class=" fragment highlight">Vor einem Jahr: Bitte nur so</strong></p>
+          <p class="fragment">Heute: Nutzt den full build bitte nicht mehr</p>
+        </section>
+
+        <section>
+          <p>Früher (<code>ol@4</code>):</p>
+          <pre><code>import Map from 'ol/map';</code></pre>
+          <p><code>ol@5</code>:</p>
+          <pre><code>import Map from 'ol/Map';</code></pre>
+          <p class="fragment"><code>ol@6</code> genauso
+            <pre class="fragment"><code>import Map from 'ol/Map';</code></pre>
+          </p>
+        </section>
+
+        <section>
+          <h2>Mouseposition</h2>
+          <ul>
+            <li><code>undefinedHTML: ''</code></li>
+          </ul>
+          <p>&nbsp;</p>
+
+          <iframe src="./ol-inline-examples/mouseposition.html" class="plain stretch"></iframe>
+          <a class="pr-detail" href="https://github.com/openlayers/openlayers/pull/7784">PR #7784</a>
+        </section>
+
+        <section>
+          <h2>(I)CLA</h2>
+          keine iclas mehr: 7711
+          https://ben.balter.com/2018/01/02/why-you-probably-shouldnt-add-a-cla-to-your-open-source-project/
+          und GitHub Terms of Service https://help.github.com/articles/github-terms-of-service/#6-contributions-under-repository-license
+        </section>
+
+        <section>
+          <h2>Mousewheel condition</h2>
+
+          <pre><code data-trim>import {shiftKeyOnly} from 'ol/events/condition';
+
+const myZoom = new MouseWheelZoom({
+  condition: shiftKeyOnly
+});</code></pre>
+
+          <iframe src="./ol-inline-examples/zoom-condition.html" class="plain stretch"></iframe>
+          <a class="pr-detail" href="https://github.com/openlayers/openlayers/pull/7682">PR #7682</a>
+        </section>
+
+        <section> https://github.com/openlayers/openlayers/pull/7578
+          deprecates weg:
+
+          * ol.Attribution
+
+          => '', [''], function(view): ''
         </section>
 
         <section>
           <h2>TODO</h2>
           <img src="../shared/img/ol-talk/graticule.png" class="plain stretch">
-          <a class="pr-detail" href="https://github.com/openlayers/openlayers/pull/6737">PR #6737</a>
+
         </section>
 
         <section>
