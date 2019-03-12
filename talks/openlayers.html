@@ -275,9 +275,7 @@
           <pre><code>import Map from 'ol/map';</code></pre>
           <p><code>ol@5</code>:</p>
           <pre><code>import Map from 'ol/Map';</code></pre>
-          <p class="fragment"><code>ol@6</code> genauso
-            <pre class="fragment"><code>import Map from 'ol/Map';</code></pre>
-          </p>
+          <p class="fragment"><code>ol@6</code> genauso</p>
         </section>
 
         <section>
@@ -292,10 +290,13 @@
         </section>
 
         <section>
-          <h2>(I)CLA</h2>
-          keine iclas mehr: 7711
-          https://ben.balter.com/2018/01/02/why-you-probably-shouldnt-add-a-cla-to-your-open-source-project/
-          und GitHub Terms of Service https://help.github.com/articles/github-terms-of-service/#6-contributions-under-repository-license
+          <h2 style="text-decoration: line-through;">(I)CLA</h2>
+          <ul>
+            <li>Seit <a href="https://github.com/openlayers/openlayers/pull/7711">PR #7711</a></li>
+            <li>Ben Balter <a href="https://ben.balter.com/2018/01/02/why-you-probably-shouldnt-add-a-cla-to-your-open-source-project/">Why CLA?!?</a></li>
+            <li>GitHub Terms of Service: <a href="https://help.github.com/articles/github-terms-of-service/#6-contributions-under-repository-license">Contributions under repository license</a></li>
+            <li>Geringere Hürde für potentielle Committer</li>
+          </ul>
         </section>
 
         <section>
@@ -311,12 +312,15 @@ const myZoom = new MouseWheelZoom({
           <a class="pr-detail" href="https://github.com/openlayers/openlayers/pull/7682">PR #7682</a>
         </section>
 
-        <section> https://github.com/openlayers/openlayers/pull/7578
-          deprecates weg:
-
-          * ol.Attribution
-
-          => '', [''], function(view): ''
+        <section>
+          <h2 style="text-decoration: line-through;">Deprecated API</h2>
+          <ul>
+            <li>z.B. <code>ol.Attribution</code></li>
+            <li>proj4 Integration ohne Überraschungen</li>
+            <li>Sphere Berechnungen mit statischen Funktionen</li>
+            <li>Gleiche Signatur bei Style Funktionen für Layer und Features</li>
+          </ul>
+          <a class="pr-detail" href="https://github.com/openlayers/openlayers/pull/7578">PR #7578</a>
         </section>
 
         <section>
