@@ -58,9 +58,7 @@
           <h3>Stand und aktuelle Entwicklungen</h3>
           <br />
           <p>
-            <small>Marc Jansen, terrestris GmbH &amp; Co. KG</small>
-          </p>
-          <p>
+            <small>Marc Jansen, terrestris GmbH &amp; Co. KG</small> <br />
             <small>Andreas Hocevar, ahocevar geospatial</small>
           </p>
           <hr />
@@ -260,6 +258,10 @@
         </section>
 
         <section>
+          <img class="stretch plain" src="../shared/img/npm-ol.png" alt="">
+        </section>
+
+        <section>
           <h2>Take home:</h2>
 
           <div class="fragment">
@@ -271,11 +273,35 @@
         </section>
 
         <section>
+          <h2>…viele bunte Slides?</h2>
+          <p>&nbsp;</p>
+          <h2 class="fragment">…eher nein, da Schwerpunkt Refaktorierung</h2>
+        </section>
+
+        <section>
+          <h2>ES Module</h2>
           <p>Früher (<code>ol@4</code>):</p>
           <pre><code>import Map from 'ol/map';</code></pre>
           <p><code>ol@5</code>:</p>
           <pre><code>import Map from 'ol/Map';</code></pre>
           <p class="fragment"><code>ol@6</code> genauso</p>
+        </section>
+
+        <section>
+          <h2><code>ol</code> <span style="color: #ee0000;">❤</span> devs</h2>
+          <ul>
+            <li>Dank ES Module</li>
+            <li>parcel</li>
+            <li>webpack</li>
+            <li>rollup</li>
+            <li>usw.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>…viele bunte Slides?</h2>
+          <p>&nbsp;</p>
+          <h2 class="fragment">…2 haben wir…</h2>
         </section>
 
         <section>
@@ -287,16 +313,6 @@
 
           <iframe src="./ol-inline-examples/mouseposition.html" class="plain stretch"></iframe>
           <a class="pr-detail" href="https://github.com/openlayers/openlayers/pull/7784">PR #7784</a>
-        </section>
-
-        <section>
-          <h2 style="text-decoration: line-through;">(I)CLA</h2>
-          <ul>
-            <li>Seit <a href="https://github.com/openlayers/openlayers/pull/7711">PR #7711</a></li>
-            <li>Ben Balter <a href="https://ben.balter.com/2018/01/02/why-you-probably-shouldnt-add-a-cla-to-your-open-source-project/">Why CLA?!?</a></li>
-            <li>GitHub Terms of Service: <a href="https://help.github.com/articles/github-terms-of-service/#6-contributions-under-repository-license">Contributions under repository license</a></li>
-            <li>Geringere Hürde für potentielle Committer</li>
-          </ul>
         </section>
 
         <section>
@@ -313,6 +329,16 @@ const myZoom = new MouseWheelZoom({
         </section>
 
         <section>
+          <h2 style="text-decoration: line-through;">(I)CLA</h2>
+          <ul>
+            <li>Seit <a href="https://github.com/openlayers/openlayers/pull/7711">PR #7711</a></li>
+            <li>Ben Balter <a href="https://ben.balter.com/2018/01/02/why-you-probably-shouldnt-add-a-cla-to-your-open-source-project/">Why CLA?!?</a></li>
+            <li>GitHub Terms of Service: <a href="https://help.github.com/articles/github-terms-of-service/#6-contributions-under-repository-license">Contributions under repository license</a></li>
+            <li>Geringere Hürde für potentielle Committer</li>
+          </ul>
+        </section>
+
+        <section>
           <h2 style="text-decoration: line-through;">Deprecated API</h2>
           <ul>
             <li>z.B. <code>ol.Attribution</code></li>
@@ -324,83 +350,13 @@ const myZoom = new MouseWheelZoom({
         </section>
 
         <section>
-          <h2>TODO</h2>
-          <img src="../shared/img/ol-talk/graticule.png" class="plain stretch">
-
+          <h1>aktuelle Entwick&shy;lungen</h1>
         </section>
 
         <section>
-          <h2>Sonstiges</h2>
+          <h2>Ausblick auf v6.0</h2>
           <ul>
-            <li>Interaktivere <code>Overview-Control</code></li>
-          </ul>
-        </section>
-
-        <section>
-          <h1>aktuelle Entwicklungen</h1>
-        </section>
-
-        <section>
-          <h2>Zukunft</h2>
-          <ul>
-              <li>Aktuell: <span class="highlight">v4.6.5</span>, 19.03.2018</li>
-              <li><code>master</code>-Branch, 17.03.2018</li>
-              <li>&gt; 1.000 Commits</li>
-              <li>&gt; 950 ge&auml;nderte Dateien</li>
-              <li><a href="https://github.com/openlayers/openlayers/compare/v4.6.5...master">GitHub compare/v4.6.5...master</a></li>
-          </ul>
-        </section>
-
-        <section>
-          <img src="../shared/img/ol-talk/contributors-v4.6.4-2018-03-17.png" class="plain stretch">
-        </section>
-
-        <section>
-          <h2>Ausblick auf v5.0</h2>
-          <ul>
-              <li>Aktuelle Beta: <span class="highlight">v5.0.0-beta.9</span>, 17.03.2018</li>
-              <li>Entwicklerfreundliche Build-Umgebung</li>
-              <li>Quellcode als Set von ES Modulen</li>
-              <li>API-Verbesserungen für Benutzer</li>
-              <li>Neue Website und API-Dokumentation</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Entwicklerfreundliche Build-Umgebung</h2>
-          <ul>
-              <li>Bereits jetzt umgesetzt</li>
-              <li>closure-util nicht mehr nötig</li>
-              <li>Full Build und Beispiele mit Webpack</li>
-              <li>Closure Compiler nur noch für Type Checking</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Quellcode als Set von ES-Modulen</h2>
-          <ul>
-              <li>Bereits in der Beta des ol Paketes umgesetzt</li>
-              <li>Kann z.B. mit Webpack oder Parcel direkt verwendet werden</li>
-              <li>Einfaches Upgrade für ol v4.x Benutzer</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>API-Verbesserungen für Benutzer</h2>
-          <ul>
-              <li>proj4 Integration ohne Überraschungen</li>
-              <li>Sphere Berechnungen mit statischen Funktionen</li>
-              <li>Gleiche Signatur bei Style Funktionen für Layer und Features</li>
-              <li>Verzicht auf <code>opt_this</code> Argumente in Funktionen
-          </ul>
-        </section>
-
-        <section>
-          <h2>Umstellung auf v5.0</h2>
-          <ul>
-              <li>Geplant: Transform für automatisches Umstellen der Imports: <br><code>import Map from 'ol/map'</code> -> <br><code>import Map from 'ol/Map'</code>
-              <br><code>import * from 'ol/extent'</code> -> <br><code>import {* as extent} from 'ol/extent'</code></li>
-              <li>Ansonsten: Achten auf Release Notes</li>
+              <li>TODO Andreas</li>
           </ul>
         </section>
 
