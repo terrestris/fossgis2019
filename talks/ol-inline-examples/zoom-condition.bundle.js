@@ -30977,8 +30977,23 @@
     center: fromLonLat([13.73836, 51.049259]),
     zoom: 12
   });
+  var view2 = new View({
+    center: fromLonLat([13.73836, 51.049259]),
+    zoom: 12
+  });
 
   var map = new Map({
+    interactions: [new MouseWheelZoom()],
+    layers: [
+      new TileLayer({
+        source: source
+      })
+    ],
+    target: 'map',
+    view: view
+  });
+
+  var map2 = new Map({
     interactions: [new MouseWheelZoom({
       condition: shiftKeyOnly
     })],
@@ -30987,8 +31002,8 @@
         source: source
       })
     ],
-    target: 'map',
-    view: view
+    target: 'map2',
+    view: view2
   });
 
 }());
