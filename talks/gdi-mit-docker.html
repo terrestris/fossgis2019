@@ -153,7 +153,7 @@
             <li>Docker ist nach wie vor heiß</li>
             <ul>
               <li> <a href="https://pretalx.com/fossgis2019/talk/7NNPCF/">Workshop</a></li>
-              <li>3 Vorträge</li>
+              <li>mind. 4 Vorträge</li>
             </ul>
             <li>Ich wollte über Pro und Kontra ins Gespräch kommen</li>
             <li class="fragment">…dazu braucht man jedoch eine Einführung</li>
@@ -175,20 +175,36 @@
         </section>
 
         <section>
-          <h2>Geodateninfrastrukturen GDI</h2>
+          <h2>Geodateninfra&shy;strukturen (GDI)</h2>
+          <ul>
+            <li>zentral &amp; nutzbar</li>
+            <li>verschiedene Komponenten</li>
+            <li>Datenhaltung <span class="fragment">&amp; Metadaten</span> </li>
+            <li>Dienstebasiert</li>
+            <li>Anzeigende Komponenten</li>
+            <li>häufig Client / Server </li>
+          </ul>
         </section>
 
         <section>
           <h2>Docker</h2>
+          <ul>
+            <li>Virtualisierung auf Betriebssystemebene</li>
+            <li>Isoliert / standalone / portabel</li>
+            <li>Appliaktion und deren Dependenzen in Container</li>
+            <li>Container aus images</li>
+            <li>zentrale registries, etwa hub.docker.com</li>
+            <li>Basis für eigene images</li>
+          </ul>
         </section>
 
         <section>
           <h2>Nutzungskontexte</h2>
           <ul>
-            <li>Entwicklung</li>
+            <li>Entwicklung einer GDI</li>
             <li>Schulung</li>
-            <li>Produktivstellung</li>
-            <li>…</li>
+            <li>Produktivstellung et al.</li>
+            <li>Wartung / Support der GDI</li>
           </ul>
         </section>
 
@@ -197,7 +213,92 @@
         </section>
 
         <section>
+          <h2>&Uuml;berblick</h2>
+          <ul>
+            <li>Hallo Welt Docker</li>
+          </ul>
+          <pre><code>docker run hello-world</code></pre>
+          <ul>
+            <li>Was ist alles passiert?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Komponenten einer GDI</h2>
+          <ul>
+            <li>Datenbank &rArr; PostgreSQL + PostGIS</li>
+            <li>(OGC-) Dienste: &rArr; GeoServer</li>
+            <li>Metadaten: &rArr; GeoNetwork OS</li>
+            <li>Applikation: &rArr; OpenLayers Applikation</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Optionen</h2>
+          <ul>
+            <li>TODO container aufzählen</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>OpenLayers Applikation</h2>
+          <p>TODO Dockerfile</p>
+        </section>
+
+        <section>
+          <h2>Wie lässt man alles laufen?</h2>
+          <p>docker-compose erklären</p>
+        </section>
+
+        <section>
+          <h2>…implizit dev-setup gezeigt</h2>
+          <ul>
+            <li>so übertragbar auch auf andere Umgebungen</li>
+            <li>aber… TODO</li>
+          </ul>
+        </section>
+
+        <section>
           <h1>Diskussion</h1>
+        </section>
+
+        <section>
+          <h2>Unterschiede je Environment</h2>
+          <ul>
+            <li>Cloud Datenbank-Services</li>
+            <li>Hardening der Umgebungen</li>
+            <li>Security-Advices vs. 08/15-Images</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Existierende GDIs migrieren</h2>
+          <ul>
+            <li>Nur TODO oder auch SHOULDWE?</li>
+            <li>Nicht automatisch profitieren von e.g. Cloud</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Security</h2>
+          <ul>
+            <li>Weitere Angriffsoberfläche</li>
+            <li>ggf. auch klassische Docker Security Dinge TODO</li>
+            <li>Erhöhte Komplexität?</li>
+            <li>snyk</li>
+            <li>Lösung Base Image / Alternative</li>
+            <li>OSS-(Security-)Updates?</li>
+            <li>Widerspruch zu inhärenten Philosophie</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Schulung &amp; Win &amp; Corporate Setup</h2>
+          <ul>
+            <li>Proxy (2-fach)</li>
+            <li>Ordnerfreigaben</li>
+            <li>Verschiedene Windows Betriebssysteme</li>
+          </ul>
         </section>
 
         <section id="thanks-questions">
