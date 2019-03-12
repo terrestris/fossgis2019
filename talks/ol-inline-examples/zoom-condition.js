@@ -41,4 +41,4 @@ var map2 = new Map({
 });
 map2.getInteractions().insertAt(0, new MouseWheelZoom({
   condition: shiftKeyOnly
-}))
+}));
