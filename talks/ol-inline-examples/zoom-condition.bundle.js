@@ -30983,7 +30983,6 @@
   });
 
   var map = new Map({
-    interactions: [new MouseWheelZoom()],
     layers: [
       new TileLayer({
         source: source
@@ -30994,9 +30993,9 @@
   });
 
   var map2 = new Map({
-    interactions: [new MouseWheelZoom({
-      condition: shiftKeyOnly
-    })],
+    interactions: defaults$1({
+      mouseWheelZoom: false
+    }),
     layers: [
       new TileLayer({
         source: source
@@ -31005,5 +31004,8 @@
     target: 'map2',
     view: view2
   });
+  map2.getInteractions().insertAt(0, new MouseWheelZoom({
+    condition: shiftKeyOnly
+  }));
 
 }());

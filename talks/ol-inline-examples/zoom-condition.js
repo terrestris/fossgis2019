@@ -3,7 +3,7 @@ import View from 'ol/View.js';
 import TileLayer from 'ol/layer/Tile.js';
 import OSM from 'ol/source/OSM.js';
 import {fromLonLat} from 'ol/proj.js'
-import MouseWheelZoom from 'ol/interaction/MouseWheelZoom.js';
+import {defaults, MouseWheelZoom} from 'ol/interaction.js';
 
 import {shiftKeyOnly} from 'ol/events/condition';
 
@@ -18,7 +18,6 @@ var view2 = new View({
 });
 
 var map = new Map({
-  interactions: [new MouseWheelZoom()],
   layers: [
     new TileLayer({
       source: source
@@ -29,9 +28,9 @@ var map = new Map({
 });
 
 var map2 = new Map({
-  interactions: [new MouseWheelZoom({
-    condition: shiftKeyOnly
-  })],
+  interactions: defaults({
+    mouseWheelZoom: false
+  }),
   layers: [
     new TileLayer({
       source: source
@@ -40,3 +39,6 @@ var map2 = new Map({
   target: 'map2',
   view: view2
 });
+map2.getInteractions().insertAt(0, new MouseWheelZoom({
+  condition: shiftKeyOnly
+}))
