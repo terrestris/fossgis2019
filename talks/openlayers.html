@@ -366,17 +366,63 @@ const myZoom = new MouseWheelZoom({
         </section>
 
         <section>
-          <h2>v6.0: Type Checking</h2>
+            <h2>v6.0: Benutzerfreundlichkeit</h2>
+            <ul>
+                <li>Type Checking mit TypeScript JSDoc Annotations</li>
+                <li>Named Exports pro Verzeichnis</li>
+                <li>Entfernung von "Kopfweh-Optionen"</li>
+            </ul>
+          </section>
+
+        <section>
+          <h2>Type Checking</h2>
           <img src="intellisense.gif" class="plain">
+        </section>
+
+        <section>
+            <h2>Weniger "Kopfweh-Optionen"</h2>
+            <ul>
+                <li>snapToPixel: off während Interaktion, ansonsten on</li>
+                <li>Frame Budget Management statt loadTilesWhileAnimating/Interacting</li>
+                <li>cacheSize: so klein wie möglich, Browser Cache FTW</li>
+            </ul>
         </section>
 
         <section>
           <h2>v6.0: API-Änderungen</h2>
           <ul>
+              <li>Einfacheres Handling der View Constraints</li>
               <li>DOM Composition -> ein Canvas pro Layer</li>
               <li>Internes XYZ Tile Grid</li>
               <li>WebGL nur noch für Spezialanwendungen</li>
           </ul>
+        </section>
+
+        <section>
+          <h2>v6.0: Performance und Speichermanagement</h2>
+          <ul>
+              <li>Effizienteres Vector Tile Rendering</li>
+              <li>Bessere Nutzung von Render Frames</li>
+              <li>Besseres Tree-Shaking -> kleinere Builds</li>
+              <li>Intelligentere Kachel- und Label-Caches</li>
+          </ul>
+        </section>
+
+        <section>
+            <h2>…viele bunte Slides?</h2>
+            <p>&nbsp;</p>
+            <h2 class="fragment">…1 hab ich noch…</h2>
+        </section>
+
+        <section>
+            <h2>Extent Restriction</h2>
+            <p>
+                <code>new View({extent: /** ... */})</code>
+            </p>
+            <p>&nbsp;</p>
+
+            <iframe src="./ol6-inline-examples/extent-constrained.html" class="plain stretch"></iframe>
+            <a class="pr-detail" href="https://github.com/openlayers/openlayers/pull/9137">PR #9137</a>
         </section>
 
         <section id="thanks-questions">
