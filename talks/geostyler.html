@@ -72,12 +72,9 @@
           <h2>Gliederung</h2>
           <ul>
             <li>Über&hellip;</li>
-            <li>GeoStyler
-              <ul>
-                <li>Architektur</li>
-                <li>Features</li>
-              </ul>
-            </li>
+            <!-- <li>GeoStyler</li> -->
+            <li>Architektur</li>
+            <li>Features</li>
             <li>Beispiele</li>
             <li>Stand & Ausblick</li>
           </ul>
@@ -132,7 +129,7 @@
           <div style="clear:both"></div>
         </section>
 
-        <section id="were-hiring">
+        <!-- <section id="were-hiring">
           <h3>Teil des Teams werden?</h3>
           <div id="teampic"></div>
           <ul>
@@ -143,7 +140,7 @@
           <p>
             Details gerne am terrestris Stand
           </p>
-        </section>
+        </section> -->
 
         <section id="author-christian-mayer">
           <h2>Christian Mayer</h2>
@@ -234,20 +231,24 @@
           </ul>
         </section>
 
+        <!-- <section>
+          <h2>Architektur</h2>
+          <img src="../shared/img/geostyler-talk/parser.png" class="plain" width="1000"/>
+          <br/>
+          <br/>
+          <small>Entwicklung & Integration eigener Parser möglich</small>
+        </section> -->
+
+        <!-- <section>
+          <h2>Architektur</h2>
+          <img src="../shared/img/geostyler-talk/geostyler-architecture.png" class="plain" width="600"/>
+        </section> -->
         <section>
           <h2>Architektur</h2>
-              <img src="../shared/img/geostyler-talk/geostyler-architecture.png" class="plain" width="600"/><br />
-          <ul>
-            <li>Micro Packages
-              <ul>
-                <li>UI-Komponenten</li>
-                <li>Stil Definition</li>
-                <li>Stilparser</li>
-                <li>Datenparser</li>
-              </ul>
-            </li>
-          </ul>
-          <i>Platzhalter Architektur Diagramm</i><br/>
+          <img src="../shared/img/geostyler-talk/geostyler-architektur.svg" class="plain" width="1500"/>
+          <br/>
+          <br/>
+          <small>Entwicklung & Integration eigener Parser möglich</small>
         </section>
 
         <section style="position: relative;">
@@ -292,19 +293,19 @@
             </code></pre>
         </section>
 
-        <section>
+        <!-- <section>
           <h2>GeoStyler Parser</h2>
           <img src="../shared/img/geostyler-talk/parser.png" class="plain" width="1000"/>
           <br/>
           <br/>
           <small>Entwicklung & Integration eigener Parser möglich</small>
-        </section>
+        </section> -->
 
         <section>
           <h2>GeoStyler</h2>
           <p>Features</p>
             <ul>
-              <li>Regelbasierte Stile (incl. Symbolizer)</li>
+              <li>Regelbasierte Stile (inkl. Symbolizer)</li>
               <li>Einfache bis komplexe Komponenten</li>
               <li>Previews der Stile</li>
               <li>Klassifikationen</li>
@@ -334,7 +335,7 @@
 
               $ npm i geostyler-sld-parser
               $ npm i geostyler-openlayers-parser
-              $ npm i geostyler-qgis-parser (*)
+              $ npm i geostyler-qgis-parser
               $ npm i geostyler-mapbox-parser (*)
 
               $ npm i geostyler-wfs-parser
