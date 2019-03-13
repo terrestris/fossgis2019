@@ -189,12 +189,13 @@
         <section>
           <h2>Docker</h2>
           <ul>
-            <li>Virtualisierung auf Betriebssystemebene</li>
+            <li>Containerisierung / Virtualisierung auf Betriebssystemebene</li>
             <li>Isoliert / standalone / portabel</li>
-            <li>Appliaktion und deren Dependenzen in Container</li>
-            <li>Container aus images</li>
-            <li>zentrale registries, etwa hub.docker.com</li>
-            <li>Basis für eigene images</li>
+            <li>Applikationen und deren Dependenzen in Container</li>
+            <li> <span class="highlight">Container</span> aus <span class="highlight">Images</span></li>
+            <li>Images aus <span class="highlight"><code>Dockerfile</code></span></li>
+            <li>zentrale <a href="https://hub.docker.com/_/registry">Registries</a>, etwa <a href="https://hub.docker.com/">hub.docker.com</a></li>
+            <li>Basis für eigene Images</li>
           </ul>
         </section>
 
@@ -213,14 +214,29 @@
         </section>
 
         <section>
-          <h2>&Uuml;berblick</h2>
-          <ul>
-            <li>Hallo Welt Docker</li>
-          </ul>
-          <pre><code>docker run hello-world</code></pre>
-          <ul>
-            <li>Was ist alles passiert?</li>
-          </ul>
+          <h3><code>docker run hello-world</code></h3>
+<pre class="fragment"><code data-trim>
+$ docker run hello-world
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+1b930d010525: Pull complete
+Digest: sha256:2557e3c07ed1e38f26e389462d03ed943586f744621577a99efb77324b0fe535
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+[…]
+</code></pre>
+
         </section>
 
         <section>
@@ -236,18 +252,64 @@
         <section>
           <h2>Optionen</h2>
           <ul>
-            <li>TODO container aufzählen</li>
+            <li>https://hub.docker.com/search?q=SUCHBEGRIFF&type=image</li>
+            <li>z.B. <a href="https://hub.docker.com/r/mdillon/postgis">mdillon/postgis</a></li>
+            <li>z.B. <a href="https://hub.docker.com/r/terrestris/geoserver">terrestris/geoserver</a></li>
+            <li>z.B. <a href="https://hub.docker.com/_/geonetwork">geonetwork</a></li>
+            <li>eine eigene Applikation als Viewer</li>
           </ul>
         </section>
 
         <section>
           <h2>OpenLayers Applikation</h2>
-          <p>TODO Dockerfile</p>
+          <p>Dockerfile</p>
+<pre><code data-trim>
+  FROM node:10
+
+  WORKDIR app
+  COPY node-example /app
+  RUN npm install
+  RUN npm run build
+  CMD npm run serve
+  EXPOSE 8080
+</code></pre>
         </section>
 
         <section>
           <h2>Wie lässt man alles laufen?</h2>
           <p>docker-compose erklären</p>
+<pre><code data-trim>
+version: '2'
+services:
+  fossgis-ol:
+    TODO
+  fossgis-geoserver:
+    image: terrestris/geoserver:2.15.0
+    ports:
+      - 8080:8080
+    volumes:
+      - ./fossgis-geoserver/geoserver_data:/opt/geoserver_data/:Z
+      - ./fossgis-geoserver/additional_libs:/opt/additional_libs/:Z
+    environment:
+      - EXTRA_JAVA_OPTS=-Xms1g -Xmx2g
+    depends_on:
+      - fossgis-postgis
+  fossgis-geonetwork:
+    image: geonetwork
+    ports:
+      - 8081:8080
+    depends_on:
+      - fossgis-postgis
+  fossgis-postgis:
+    image: mdillon/postgis:10-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: geoserver
+      POSTGRES_PASSWORD: geoserver
+    volumes:
+      - ./fossgis-postgis/postgresql_data:/var/lib/postgresql/data:Z
+</code></pre>
         </section>
 
         <section>
