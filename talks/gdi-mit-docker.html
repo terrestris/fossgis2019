@@ -262,10 +262,19 @@ To generate this message, Docker took the following steps:
 
         <section>
           <h2>OpenLayers Applikation</h2>
-          <p>TODO Dockerfile</p>
+          <p>Dockerfile</p>
 <pre><code data-trim>
-import node
-TODO
+  FROM node:10
+
+  WORKDIR app
+  COPY node-example /app
+
+  RUN npm install
+
+  RUN npm run build
+
+  CMD npm run serve
+  EXPOSE 8080
 </code></pre>
         </section>
 
