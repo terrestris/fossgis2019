@@ -13,6 +13,7 @@ Accepted submissions:
   * [GeoStyler](https://terrestris.github.io/fossgis2019/talks/geostyler.html)
   * [OpenLayers](https://terrestris.github.io/fossgis2019/talks/openlayers.html)
   * [SHOGun & QGIS](https://terrestris.github.io/fossgis2019/talks/shogun-qgis.html)
+  * [Luftbild zur Trasse](https://terrestris.github.io/fossgis2019/talks/tadams_luftbildzurtrasse.pdf)
 
 * Workshops:
   * [OpenLayers](https://openlayers.org/workshop/)
