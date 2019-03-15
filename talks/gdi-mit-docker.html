@@ -277,46 +277,52 @@ To generate this message, Docker took the following steps:
 
         <section>
           <h2>Wie lässt man alles laufen?</h2>
-          <p>docker-compose erklären</p>
+          <p><code>docker-compose.yml</code></p>
 <pre><code data-trim>
-version: '2'
-services:
-  fossgis-ol:
-    TODO
-  fossgis-geoserver:
-    image: terrestris/geoserver:2.15.0
-    ports:
-      - 8080:8080
-    volumes:
-      - ./fossgis-geoserver/geoserver_data:/opt/geoserver_data/:Z
-      - ./fossgis-geoserver/additional_libs:/opt/additional_libs/:Z
-    environment:
-      - EXTRA_JAVA_OPTS=-Xms1g -Xmx2g
-    depends_on:
-      - fossgis-postgis
-  fossgis-geonetwork:
-    image: geonetwork
-    ports:
-      - 8081:8080
-    depends_on:
-      - fossgis-postgis
-  fossgis-postgis:
-    image: mdillon/postgis:10-alpine
-    ports:
-      - 5432:5432
-    environment:
-      POSTGRES_USER: geoserver
-      POSTGRES_PASSWORD: geoserver
-    volumes:
-      - ./fossgis-postgis/postgresql_data:/var/lib/postgresql/data:Z
+  version: '2'
+  services:
+    fossgis-ol:
+      build: .
+      ports:
+        - 12345:8080
+    fossgis-geoserver:
+      image: terrestris/geoserver:2.15.0
+      ports:
+        - 8888:8080
+      volumes:
+        - ./fossgis-geoserver/geoserver_data:/opt/geoserver_data/:Z
+        - ./fossgis-geoserver/additional_libs:/opt/additional_libs/:Z
+      environment:
+        - EXTRA_JAVA_OPTS=-Xms1g -Xmx2g
+      depends_on:
+        - fossgis-postgis
+    fossgis-geonetwork:
+      image: geonetwork
+      ports:
+        - 8081:8080
+      depends_on:
+        - fossgis-postgis
+    fossgis-postgis:
+      image: mdillon/postgis:10-alpine
+      ports:
+        - 7777:5432
+      environment:
+        POSTGRES_USER: geoserver
+        POSTGRES_PASSWORD: geoserver
+      volumes:
+        - ./fossgis-postgis/postgresql_data:/var/lib/postgresql/data:Z
 </code></pre>
         </section>
 
         <section>
-          <h2>…implizit dev-setup gezeigt</h2>
+          <h2>…eine GDI mit einer Datei und einem Befehl…</h2>
+        </section>
+
+        <section>
+          <h2>implizit dev-setup gezeigt</h2>
           <ul>
             <li>so übertragbar auch auf andere Umgebungen</li>
-            <li>aber… TODO</li>
+            <li>aber…</li>
           </ul>
         </section>
 
@@ -342,15 +348,25 @@ services:
         </section>
 
         <section>
+          <img class="plain stretch" src="../shared/img/snyk.png" />
+          <a href="https://snyk.io/blog/top-ten-most-popular-docker-images-each-contain-at-least-30-vulnerabilities/">Quelle</a>
+        </section>
+
+        <section>
+          <img class="plain stretch" src="../shared/img/snyk-chart.png" />
+          <a href="https://snyk.io/blog/top-ten-most-popular-docker-images-each-contain-at-least-30-vulnerabilities/">Quelle</a>
+        </section>
+
+        <section>
           <h2>Security</h2>
           <ul>
             <li>Weitere Angriffsoberfläche</li>
-            <li>ggf. auch klassische Docker Security Dinge TODO</li>
+            <li>Vertrauen</li>
+            <li>Empfehlungen zu <a href="https://docs.docker.com/engine/security/security/">Docker Security</a></li>
             <li>Erhöhte Komplexität?</li>
-            <li>snyk</li>
             <li>Lösung Base Image / Alternative</li>
             <li>OSS-(Security-)Updates?</li>
-            <li>Widerspruch zu inhärenten Philosophie</li>
+            <li>Widerspruch zu inhärenten Philosophie?</li>
           </ul>
         </section>
 
@@ -360,6 +376,14 @@ services:
             <li>Proxy (2-fach)</li>
             <li>Ordnerfreigaben</li>
             <li>Verschiedene Windows Betriebssysteme</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>summa summarum</h2>
+          <ul>
+            <li>Es ist erstaunlich einfach eine solche GDI zu kompositionieren…</li>
+            <li class="fragment">…aber es braucht anschließend noch Aufwand &amp; Liebe, um stabile und sichere GDI zu haben</li>
           </ul>
         </section>
 
@@ -400,8 +424,8 @@ services:
             ver&ouml;ffentlicht.
           </p>
           <p>
-            <a href="https://rawgit.com/terrestris/fossgis2019/master/talks/openlayers.html">TODO Vortragsfolien</a>,
-            <a href="https://rawgit.com/terrestris/fossgis2019/master/talks/openlayers.pdf">TODO PDF-Version</a>,
+            <a href="https://terrestris.github.io/fossgis2019/talks/gdi-mit-docker.html">Vortragsfolien</a>,
+            <a href="https://terrestris.github.io/fossgis2019/talks/gdi-mit-docker.pdf">PDF-Version</a>,
             <a href="https://github.com/terrestris/fossgis2019">git repository</a>
           </p>
         </section>
